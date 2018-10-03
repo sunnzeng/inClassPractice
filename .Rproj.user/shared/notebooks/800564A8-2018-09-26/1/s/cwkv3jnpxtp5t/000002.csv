@@ -1,0 +1,9 @@
+"0","aVector<-c(5,6,7)"
+"2","Warning message:
+"
+"2","In dir.create(tempPath, recursive = TRUE) :"
+"2","
+ "
+"2"," cannot create dir 'C:\', reason 'Permission denied'
+"
+"0","a2Vector<-c(5L,6L,7L)"

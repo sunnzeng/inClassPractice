@@ -1,0 +1,35 @@
+---
+title: "2018-09-26"
+output: html_notebook
+---
+```{r}
+a<-5
+a2<-5L
+```
+
+```{r}
+aVector<-c(5,6,7)
+a2Vector<-c(5L,6L,7L)
+```
+
+```{r}
+num1<-1
+num2<-100
+num1+num2
+```
+
+```{r}
+100%%3
+```
+
+```{r}
+num1<-1.568
+num2<-2.121
+round(num1,digits = 2)
+```
+
+```{r}
+round(num2,digits = 1)
+```
+
+##2nd End
