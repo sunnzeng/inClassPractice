@@ -1,0 +1,6 @@
+"0","library(readr)"
+"0","library(stringr)"
+"0","library(lubridate)"
+"0","TyphoonData <- read_csv(""https://raw.githubusercontent.com/GaryLKL/course-programming-for-ds-Quiz/master/TyphoonData.csv"", col_types = cols(.default = col_character()))"
+"0","Year<- as.integer(Year)"
+"0","Year<- Year - 1911"
