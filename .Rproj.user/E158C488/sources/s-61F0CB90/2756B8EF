@@ -7,14 +7,14 @@
     "folds" : "",
     "hash" : "0",
     "id" : "2756B8EF",
-    "lastKnownWriteTime" : 1538557419,
-    "last_content_update" : 1538557419759,
+    "lastKnownWriteTime" : 1539764394,
+    "last_content_update" : 1539764394877,
     "path" : "C:/inClassPractice/2018-10-03.Rmd",
     "project_path" : "2018-10-03.Rmd",
     "properties" : {
         "chunk_output_type" : "inline",
-        "cursorPosition" : "48,0",
-        "scrollLine" : "27",
+        "cursorPosition" : "53,9",
+        "scrollLine" : "48",
         "tempName" : "Untitled1"
     },
     "relative_order" : 4,

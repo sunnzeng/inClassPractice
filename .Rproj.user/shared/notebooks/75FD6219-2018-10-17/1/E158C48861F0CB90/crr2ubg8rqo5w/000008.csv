@@ -1,0 +1,8 @@
+"0","gs_auth(new_user = TRUE)"
+"2","Disabling .httr-oauth by renaming to .httr-oauth-SUSPENDED
+"
+"2","Removing google token stashed internally in 'googlesheets'.
+"
+"2","httpuv not installed, defaulting to out-of-band authentication
+"
+"0","4/ewClL4FAtJek7MceNTVo085AYuohGvmktkVvK_Hn6WokCU2zubLwXKU"

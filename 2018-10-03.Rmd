@@ -67,5 +67,11 @@ str_split_fixed(fruits, " and ", 3)
 str_split_fixed(fruits, " and ", 4)
 ```
 
+```{r}
+aa<-str_split_fixed(filmVotingData$"請選擇你最喜歡的影片二部",", ",3)
+bb<-str_c(aa)
+table(bb)
+```
+
 
 
