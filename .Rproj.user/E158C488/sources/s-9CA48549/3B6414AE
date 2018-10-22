@@ -1,0 +1,29 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1540176701411.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "3B6414AE",
+    "lastKnownWriteTime" : 31244212041154560,
+    "last_content_update" : 1540176701411,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "F7043734",
+        "caption" : "TyphoonData",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=TyphoonData&cache_key=F7043734",
+        "displayedObservations" : "176",
+        "environment" : "",
+        "object" : "TyphoonData",
+        "preview" : "0",
+        "totalObservations" : "176",
+        "variables" : "1"
+    },
+    "relative_order" : 8,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}
