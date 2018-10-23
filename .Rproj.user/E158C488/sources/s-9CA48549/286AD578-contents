@@ -26,12 +26,12 @@ as.factor(bankdata$"銀行")
 library(readr)
 library(stringr)
 library(lubridate)
-Year<-str_sub(bankdata$年月,1L,3L)
-Month<-str_sub(bankdata$年月,5L,6L)
+Year<-str_sub(bankdata$年月,1,3)
+Month<-str_sub(bankdata$年月,5,6)
 Year<-as.integer(Year)
 Year<-Year+1911
 as.character(Year)
-str_c(Year[1:1061],"/",Month[1:1061])
+str_c(Year[1:1061],"/",Month[1:1061])->bankdata$年月
 ```
 
 ## 2
@@ -43,6 +43,4 @@ library(stringr)
 library(lubridate)
 X<-ydm_hm("2018/30/09 00:00",tz="UTC")
 with_tz(X,"Asia/Taipei")
-
-
 ```
