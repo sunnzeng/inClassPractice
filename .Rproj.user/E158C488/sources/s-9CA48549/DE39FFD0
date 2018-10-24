@@ -1,0 +1,24 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1540366658454.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "839190865",
+    "id" : "DE39FFD0",
+    "lastKnownWriteTime" : 1540371831,
+    "last_content_update" : 1540371831477,
+    "path" : "C:/inClassPractice/2018-10-24.Rmd",
+    "project_path" : "2018-10-24.Rmd",
+    "properties" : {
+        "chunk_output_type" : "inline",
+        "cursorPosition" : "129,5",
+        "scrollLine" : "121",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

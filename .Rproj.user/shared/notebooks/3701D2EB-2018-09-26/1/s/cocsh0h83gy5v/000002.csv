@@ -1,0 +1,59 @@
+"0","```r
+x <- 10
+class(x) # \"numeric\"
+```"
+"1","[1] \"numeric\"
+"
+"0","```r
+oldClass(x) # NULL
+```"
+"1","NULL
+"
+"0","```r
+inherits(x, \"a\") #FALSE
+```"
+"1","[1] FALSE
+"
+"0","```r
+class(x) <- c(\"a\", \"b\")
+inherits(x,\"a\") #TRUE
+```"
+"1","[1] TRUE
+"
+"0","```r
+inherits(x, \"a\", TRUE) # 1
+```"
+"1","[1] 1
+"
+"0","```r
+inherits(x, c(\"a\", \"b\", \"c\"), TRUE) # 1 2 0
+```"
+"1","[1] 1 2 0
+"
+"0","```r
+class( quote(pi) )           # \"name\"
+```"
+"1","[1] \"name\"
+"
+"0","```r
+## regular calls
+class( quote(sin(pi*x)) )    # \"class\"
+```"
+"1","[1] \"call\"
+"
+"0","```r
+## special calls
+class( quote(x <- 1) )       # \"<-\"
+```"
+"1","[1] \"<-\"
+"
+"0","```r
+class( quote((1 < 2)) )      # \"(\"
+```"
+"1","[1] \"(\"
+"
+"0","```r
+class( quote( if(8<3) pi ) ) # \"if\"
+```"
+"1","[1] \"if\"
+"

@@ -1,0 +1,160 @@
+---
+title: "2018-10-24"
+output: html_notebook
+---
+```{r}
+library(lubridate)
+library(stringr)
+library(googlesheets)
+```
+
+
+```{r}
+gs_auth(new_user = TRUE)
+```
+
+```{r}
+gsSurvey<-gs_key("1mC9bnxj11NCNoOCw0Vmn4nxERbHtLjeGo9v9C9b2GDE")  #download sheet information as an object
+classSurvey<-gs_read(gsSurvey,ws=1) #access the 1st worksheet
+```
+
+```{r}
+class(classSurvey)
+```
+
+```{r}
+StuDF <- data.frame(
+  StuID=c(1,2,3,4,5),
+  name=c("小明","大雄","胖虎","小新","大白"),
+  score=c(80,60,90,70,50)
+  )
+StuDF 
+```
+
+```{r}
+as.character(StuDF$name) -> StuDF$name
+```
+
+```{r}
+StuDF <- data.frame(
+  StuID=c(1,2,3,4,5),
+  name=c("小明","大雄","胖虎","小新","大白"),
+  score=c(80,60,90,70,50),
+  stringsAsFactors = F
+  )
+StuDF 
+```
+
+```{r}
+names(StuDF) 
+colnames(StuDF)
+```
+
+```{r}
+rownames(StuDF)
+```
+
+```{r}
+StuDF[1,2]
+StuDF[,2]
+StuDF[1,]
+StuDF[c(1,4),]
+StuDF[c(1,4),c(2,3)]
+```
+#[欄,列]
+#[1:3]→選1~3
+
+
+```{r}
+StuDF[c(1,4),]
+```
+#上下兩個：有一個"-"是不選
+```{r}
+StuDF[-c(1,4),]
+```
+
+```{r}
+head(classSurvey,10)
+```
+#選出1~10
+
+```{r}
+StuDF[c(T,F,F,F,F),c(F,T,F)]
+StuDF[c(T,F,F,T,F),]
+```
+
+
+```{r}
+a<-c(T,T,F,F,T,F,F)
+sum(a)
+```
+```{r}
+(StuDF$score >= 80)
+(StuDF$name == "小新")
+```
+
+#找出分數大於等於80的人名
+#找出小新的分數
+```{r}
+StuDF[(StuDF$score>=80),2]
+StuDF[(StuDF$name == "小新"),3]
+```
+#欄選定某個資料，並選該資料的第幾列
+
+```{r}
+which(StuDF$score >= 80)
+which(StuDF$name == "小新")
+```
+
+```{r}
+aa<-(classSurvey$"性別" == "男")
+
+bb<-(classSurvey$"本學期學分數" > 20)
+
+cc<-(classSurvey$"性別" == "男" | 
+    classSurvey$"本學期學分數" > 20)
+
+cbind(aa,bb,cc)
+```
+
+#找出「性別為男」且「本學期學分數>26」的人名。
+#找出住在台北市的人。
+#找出住在新北市的人。
+```{r} 
+classSurvey$"性別" == "男"
+classSurvey$"本學期學分數" > 26
+classSurvey[(classSurvey$"性別" == "男")&(classSurvey$"本學期學分數" > 26),3]
+```
+
+```{r}
+a <- str_sub(classSurvey$"居住地行政區",1,3)
+```
+
+```{r}
+StuDF$StuID
+StuDF[,c("StuID")]
+StuDF$name
+StuDF[,c("name")]
+```
+
+```{r}
+StuDF[,c("StuID","name")]
+```
+
+```{r}
+StuDF[c(1,4),c(2)]
+StuDF[,c(2)][c(1,4)]
+
+## the second one is equivalent to 
+StuDF[,c(2)] -> aa
+aa[c(1,4)] 
+```
+
+```{r}
+StuDF$name[c(2)]
+```
+
+```{r}
+StuDF[,c(1,3)][c(1,4),]
+```
+
