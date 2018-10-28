@@ -1,8 +1,0 @@
----
-title: "20180926HW"
-output: html_notebook
----
-```{r}
-c(2L, 'a', 3.0, 4)
-```
-
