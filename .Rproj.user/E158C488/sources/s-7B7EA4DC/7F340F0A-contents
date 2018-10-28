@@ -20,7 +20,7 @@ library(stringr)
 s1 <- str_split_fixed(iPeenData$"均消"," ",3)
 X <- s1[1:450,2]
 str_replace(X,",","") -> X
-as.numeric(X)
+as.numeric(X) -> X
 ```
 
 
@@ -36,23 +36,25 @@ filmVotingData <- read_csv("https://raw.githubusercontent.com/tpemartin/course-1
 
 ```{r ans21}
 library(lubridate)
-mdy_hms()
+Y <- mdy_hms(filmVotingData$Timestamp , tz="UTC")
 ```
 
 2.2 由於原始資料的時區為UTC，請透過`lubridate::with_tz()`將時區設為"Asia/Taipei"。
 
 ```{r ans22}
-
+library(lubridate)
+with_tz(Y,tz="Asia/Taipei") -> filmVotingData$Timestamp
 ```
 
 2.3 由Timestamp透過`lubridate::hour()`取出學生上網填表的小時值並存在新的變數`filmVotingData$hour`。  
 
 ```{r ans23}
-
+library(lubridate)
+filmVotingData$hour <- hour(filmVotingData$Timestamp)
 ```
 
 2.4 使用`table()`統計學生最活躍的填表時間。
 
 ```{r ans24}
-
+table(filmVotingData$hour)
 ```

@@ -6,7 +6,6 @@ params:
   studentID: "410773017"
   studentName: "曾雨晴"
 ---
-存檔時，請用你的學號當延伸檔名。例如：若你的學號為41078392，則請`File->Save As...`存成Exercise2-41078392.Rmd。
 
 ## 1
 引入「愛評網」三峽店家資料，請由`均消`變數中的文字取出數字部份，並轉成numeric class（要注意金錢千位數會有逗號，可用`stringr::str_replace()`把`","`換成`""`）。
@@ -17,7 +16,13 @@ iPeenData <- read_csv("https://raw.githubusercontent.com/tpemartin/course-107-1-
 ```
 
 ```{r ans1}
+library(stringr)
+s1 <- str_split_fixed(iPeenData$"均消"," ",3)
+X <- s1[1:450,2]
+str_replace(X,",","") -> X
+as.numeric(X) -> X
 ```
+
 
 ## 2 
 引入學生播客競賽投票記錄。
@@ -30,19 +35,26 @@ filmVotingData <- read_csv("https://raw.githubusercontent.com/tpemartin/course-1
 2.1 將`filmVotingData$Timestamp`透過`lubridate::mdy_hms()`轉成POSIXct Date/Time class。
 
 ```{r ans21}
+library(lubridate)
+Y <- mdy_hms(filmVotingData$Timestamp , tz="UTC")
 ```
 
 2.2 由於原始資料的時區為UTC，請透過`lubridate::with_tz()`將時區設為"Asia/Taipei"。
 
 ```{r ans22}
+library(lubridate)
+with_tz(Y,tz="Asia/Taipei") -> filmVotingData$Timestamp
 ```
 
 2.3 由Timestamp透過`lubridate::hour()`取出學生上網填表的小時值並存在新的變數`filmVotingData$hour`。  
 
 ```{r ans23}
+library(lubridate)
+filmVotingData$hour <- hour(filmVotingData$Timestamp)
 ```
 
 2.4 使用`table()`統計學生最活躍的填表時間。
 
 ```{r ans24}
+table(filmVotingData$hour)
 ```

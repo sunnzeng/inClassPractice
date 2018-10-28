@@ -1,11 +1,4 @@
 "0","library(readr)"
-"2","Warning message:
-"
-"2","In grepl(""|||"", what, fixed = TRUE) :"
-"2","
- "
-"2"," input string 1 is invalid in this locale
-"
 "0","iPeenData <- read_csv(""https://raw.githubusercontent.com/tpemartin/course-107-1-programming-for-data-science/master/data/iPeenData.csv"")"
 "2","Parsed with column specification:
 cols(

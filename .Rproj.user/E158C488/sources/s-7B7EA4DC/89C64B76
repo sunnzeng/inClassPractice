@@ -12,15 +12,15 @@
     "path" : null,
     "project_path" : null,
     "properties" : {
-        "cacheKey" : "CD94605E",
+        "cacheKey" : "7D1C6538",
         "caption" : "filmVotingData",
-        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=filmVotingData&cache_key=CD94605E",
-        "displayedObservations" : 156,
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=filmVotingData&cache_key=7D1C6538",
+        "displayedObservations" : "156",
         "environment" : "",
         "object" : "filmVotingData",
-        "preview" : 0,
-        "totalObservations" : 156,
-        "variables" : 3
+        "preview" : "0",
+        "totalObservations" : "156",
+        "variables" : "3"
     },
     "relative_order" : 11,
     "source_on_save" : false,
