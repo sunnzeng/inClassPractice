@@ -1,0 +1,74 @@
+---
+title: "2018-10-31"
+output: html_notebook
+---
+```{r}
+StuDF <- data.frame(
+  StuID=c(1,2,3,4,5),
+  name=c("小明","大雄","胖虎","小新","大白"),
+  score=c(80,60,90,70,50)
+)
+StuDF
+```
+
+```{r}
+names(StuDF)
+```
+
+```{r}
+names(StuDF) <- c("學號","姓名","成績")
+names(StuDF)
+```
+
+```{r}
+names(StuDF)[2] <- c("姓名")
+names(StuDF)
+```
+
+```{r}
+library(readr)
+student <- read_csv("https://raw.githubusercontent.com/tpemartin/course-107-1-programming-for-data-science/master/data/student.csv")
+library(dplyr)
+library(magrittr)
+student %<>% mutate(
+  "身高級距"=cut(student$"身高",c(0,150,155,160,165,170,175,180,185,200)))
+levels(student$"身高級距")
+```
+
+```{r}
+levels(student$"身高級距") <- 
+  c("小個子","小個子","小個子","小個子","小個子",
+    "中等個子","中等個子","中等個子",
+    "高個子","高個子")
+```
+
+## 課堂練習
+```{r}
+dim(classSurvey)
+```
+
+```{r}
+library(stringr)
+class(classSurvey$"學號")
+# 學號轉成character
+classSurvey$"學號" <- as.character(classSurvey$"學號")
+# 學號取出字串第2-4位 存成 年級
+classSurvey$"年級" <- str_sub(classSurvey$"學號",2,4)
+# 年級 轉 factor
+classSurvey$"年級" <- as.factor(classSurvey$"年級")
+# 年級進行 generic replacement
+levels(classSurvey$"年級") <- c("大四以及以上","大三","大二","大一")
+```
+
+#1.6 大一課外活動統計
+```{r}
+#篩選大一樣本
+freshIndicator <- (classSurvey$"年級" == "大一")
+freshActivity <- classSurvey$"本學期目前已參加之課外活動"[freshIndicator]
+#針對小樣本的課外活動統計
+library(stringr)
+str_split_fixed(freshActivity,", ",2) -> aa
+str_c(aa) -> bb
+table(bb)
+```
+
