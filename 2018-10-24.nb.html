@@ -293,13 +293,48 @@ In strsplit(code, &quot;\n&quot;, fixed = TRUE) :
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuU3R1REZbMSwyXVxuU3R1REZbLDJdXG5TdHVERlsxLF1cblN0dURGW2MoMSw0KSxdXG5TdHVERltjKDEsNCksYygyLDMpXVxuYGBgIn0= -->
-<pre class="r"><code>StuDF[1,2]
-StuDF[,2]
-StuDF[1,]
-StuDF[c(1,4),]
-StuDF[c(1,4),c(2,3)]</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuU3R1REZbMSwyXVxuYGBgIn0= -->
+<pre class="r"><code>StuDF[1,2]</code></pre>
 <!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwi5bCP5piOXCJcbiJ9 -->
+<pre><code>[1] &quot;小明&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuU3R1REZbLDJdXG5gYGAifQ== -->
+<pre class="r"><code>StuDF[,2]</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwi5bCP5piOXCIgXCLlpKfpm4RcIiBcIuiDluiZjlwiIFwi5bCP5pawXCIgXCLlpKfnmb1cIlxuIn0= -->
+<pre><code>[1] &quot;小明&quot; &quot;大雄&quot; &quot;胖虎&quot; &quot;小新&quot; &quot;大白&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuU3R1REZbMSxdXG5gYGAifQ== -->
+<pre class="r"><code>StuDF[1,]</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibmNvbCI6MywibnJvdyI6MX0sInJkZiI6Ikg0c0lBQUFBQUFBQUJsMVBNWTdDTUJEYzJBa25JcEZENGgxSmNhS0hnb1lXS0doOUlYRFJCVHV5SGNHRGFQZ2ROVVU0TzNqRFlSZjI3bmgyWm1lMTJIN0YyeGdBQ05Bb0FFSk5HUkp6QlJEQzBMNW5BRG94aGYxSkxEQzdBWjV4UjRTT0dGN3E2eDA1OHcxUzNzUWl6bzZGY29NVXdiVnVsZ3ZYaEphQkh5b1hzdkFraGxLY01wUVpPZi9BOThrcnBsUy80Qk9NZDB5emJDK3RBVURyalh5SVdwZUNteUZpMDBiZWNDQTk0TFBoZG90ZG12ODAvRGVkV29QWE52ODM2MnY2dENRUEp4VTVxVUhCRHlYdlUxZnN1NmhjazVpMFhkaXNsaVhYbU1TZ0t0TkNNK1RGdWFnUTZiSkIrd2RvSDhWTzJ3RUFBQT09In0= -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["StuID"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["name"],"name":[2],"type":["chr"],"align":["left"]},{"label":["score"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"1","2":"小明","3":"80","_rn_":"1"}],"options":{"columns":{"min":{},"max":[10],"total":[3]},"rows":{"min":[10],"max":[10],"total":[1]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuU3R1REZbYygxLDQpLF1cbmBgYCJ9 -->
+<pre class="r"><code>StuDF[c(1,4),]</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibmNvbCI6MywibnJvdyI6Mn0sInJkZiI6Ikg0c0lBQUFBQUFBQUJsMVF2VTdETUJBKzJ3bW9rU2lWZUk1bVFPenQwS1VqUDBOWGs2WWxJdGlSN1FoR0hvYUZKK0MxbUJrS1BuTlhoRDNZNTgvMy9aeHZWcHZMYWxNQmdBUlZDcEFxbG9XTW00QUNKbmkrQUtpTFdPRExGQnNYbjVEV2NnYThaa2tBRXFGNEc5Ni8vdW9Qejd6bEhmR3VYNG4yejZnMCtxbjFKS1lZdkEzamVrV1hBanY0d1RmV3RabkV4Tm5ubW1YT0tKTkFadTdWOU5xekY0UFZWZ2RkN3h5YUFCd3l5cWtkUW1kTkpFbjhqVElqQzVjQjU2UEJKTnQ1OHpDYXgva1ZHbEFhUWVrRUplUmEvVnJLYjVJcVNlcWtOZnZPSENmdjlYM2IwMlVhSjA0RDE0UHJUT0JKSXVycllJUG12cXF4UFNOcE5qajhBQlBibDh2N0FRQUEifQ== -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["StuID"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["name"],"name":[2],"type":["chr"],"align":["left"]},{"label":["score"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"1","2":"小明","3":"80","_rn_":"1"},{"1":"4","2":"小新","3":"70","_rn_":"4"}],"options":{"columns":{"min":{},"max":[10],"total":[3]},"rows":{"min":[10],"max":[10],"total":[2]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuU3R1REZbYygxLDQpLGMoMiwzKV1cbmBgYCJ9 -->
+<pre class="r"><code>StuDF[c(1,4),c(2,3)]</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibmNvbCI6MiwibnJvdyI6Mn0sInJkZiI6Ikg0c0lBQUFBQUFBQUJsMVBTdzdDSUJBZGFLdXhpWi9FYzlpRjhRQmRlQUdOQzdkWXF6WldhSUJHbHg3R2pTZndiaTVVcG9JZldERERZOTZiOStiVDVUaGV4Z0JBSVlnSTBNQzBJVFVYZ1JBNldFOEF3YkFaQUJqWWloL2hwYnJldi8xTm1kckQvM1FCelVsbjUzZnpMeGh4ZHNqVlIrd05oZ2k2QVpVSm1YdXNqaFRIeERHNzFnWkJwaStmbFV3NWVRZkdhNlpac3BHNEJPRGhVZHFpMG9YZ2hrUXhhT1NSaWZTQWZzM1J5WHFVN1dxK0gwMXdnWFZEckR0aUhmNzB1SkkrclZSa3BWbzUzeGI4azd4a3E3eTBqNTVKM0FST0tsbHc3WklZVkNWYWFPYm00a3lVRG1teXdlTUZOVmhMeGRZQkFBQT0ifQ== -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["name"],"name":[1],"type":["chr"],"align":["left"]},{"label":["score"],"name":[2],"type":["dbl"],"align":["right"]}],"data":[{"1":"小明","2":"80","_rn_":"1"},{"1":"小新","2":"70","_rn_":"4"}],"options":{"columns":{"min":{},"max":[10],"total":[2]},"rows":{"min":[10],"max":[10],"total":[2]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <div class="section level1">
@@ -312,6 +347,13 @@ StuDF[c(1,4),c(2,3)]</code></pre>
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuU3R1REZbYygxLDQpLF1cbmBgYCJ9 -->
 <pre class="r"><code>StuDF[c(1,4),]</code></pre>
 <!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibmNvbCI6MywibnJvdyI6Mn0sInJkZiI6Ikg0c0lBQUFBQUFBQUJsMVF2VTdETUJBKzJ3bW9rU2lWZUk1bVFHSnVoeTRkK1JtNm1qUXRFY0dPYkVjdzhqQXNQQUd2eGN4UThKbTdJdXpCUG4rKzcrZDhzOXBjVnBzS0FDU29Vb0JVc1N4azNBUVVNTUh6QlVCZHhBSmZwdGk0K0lTMGxqUGdOVXNDa0FqRjIvRCs5VmQvZU9ZdDc0aDMvVXEwZjBhbDBVK3RKekhGNEcwWTF5dTZGTmpCRDc2eHJzMGtKczQrMXl4elJwa0VNbk92cHRlZXZSaXN0anJvZXVmUUJPQ1FVVTd0RURwcklrbmliNVFaV2JnTU9COE5KdG5PbTRmUlBNNnYwSURTQ0VvbktDSFg2dGRTZnBOVVNWSW5yZGwzNWpoNXIrL2JuaTdUT0hFYXVCNWNad0pQRWxGZkJ4czA5MVdON1JsSnM4SGhCekg1eWFqN0FRQUEifQ== -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["StuID"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["name"],"name":[2],"type":["chr"],"align":["left"]},{"label":["score"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"1","2":"小明","3":"80","_rn_":"1"},{"1":"4","2":"小新","3":"70","_rn_":"4"}],"options":{"columns":{"min":{},"max":[10],"total":[3]},"rows":{"min":[10],"max":[10],"total":[2]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
@@ -322,6 +364,13 @@ StuDF[c(1,4),c(2,3)]</code></pre>
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuU3R1REZbLWMoMSw0KSxdXG5gYGAifQ== -->
 <pre class="r"><code>StuDF[-c(1,4),]</code></pre>
 <!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibmNvbCI6MywibnJvdyI6M30sInJkZiI6Ikg0c0lBQUFBQUFBQUJsMVBzVTdETUJDOU9BbWxrVnFRMnQ5b0JnYm1EbG02ZENnUzZtclNGQUxCcmh4SE1QWmoycVVTWXVOUCtBaytvdUJMN29JU1MvWTd2N3Q3NzI2VnJHK2lkUVFBQXZ6UUErRzdNQkR1OFNDQUllSTdnRDl4QVdiR2lITm96dnlTY0FwOHJxa09HNFBEODljbnh4L0o2ZWVmUDM2M1drdlN1TjgzdUdDcHpoQ2hrcTlaMlJvUWVXZXJSVUtmQUNzNFVhYmFaRDJKb2RGdk1jdU1hRTVCR1BiOTBrS1c3TWRrdEpGV3hsdURSZ0RuWHN0QTcyeXVsV3NTazBheDAreVpIbkZWS1p4bU0wdWZLdlV5dTBXRE90M2NFYUhmamRGUy9KSlVTRklYbVhyTVZidDlJUit5Z2o1anQzVzlkTHd6dWJLOGlXUEwyR29ydVM1S2RjRk12UnVjL3dEQlZrQ1FHd0lBQUE9PSJ9 -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["StuID"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["name"],"name":[2],"type":["chr"],"align":["left"]},{"label":["score"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"2","2":"大雄","3":"60","_rn_":"2"},{"1":"3","2":"胖虎","3":"90","_rn_":"3"},{"1":"5","2":"大白","3":"50","_rn_":"5"}],"options":{"columns":{"min":{},"max":[10],"total":[3]},"rows":{"min":[10],"max":[10],"total":[3]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
@@ -329,6 +378,9 @@ StuDF[c(1,4),c(2,3)]</code></pre>
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaGVhZChjbGFzc1N1cnZleSwxMClcbmBgYCJ9 -->
 <pre class="r"><code>head(classSurvey,10)</code></pre>
 <!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiRXJyb3IgaW4gaGVhZChjbGFzc1N1cnZleSwgMTApIDogb2JqZWN0ICdjbGFzc1N1cnZleScgbm90IGZvdW5kXG4ifQ== -->
+<pre><code>Error in head(classSurvey, 10) : object 'classSurvey' not found</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
@@ -336,17 +388,29 @@ StuDF[c(1,4),c(2,3)]</code></pre>
 <h1>選出1~10</h1>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuU3R1REZbYyhULEYsRixGLEYpLGMoRixULEYpXVxuU3R1REZbYyhULEYsRixULEYpLF1cbmBgYCJ9 -->
-<pre class="r"><code>StuDF[c(T,F,F,F,F),c(F,T,F)]
-StuDF[c(T,F,F,T,F),]</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuU3R1REZbYyhULEYsRixGLEYpLGMoRixULEYpXVxuYGBgIn0= -->
+<pre class="r"><code>StuDF[c(T,F,F,F,F),c(F,T,F)]</code></pre>
 <!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwi5bCP5piOXCJcbiJ9 -->
+<pre><code>[1] &quot;小明&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuU3R1REZbYyhULEYsRixULEYpLF1cbmBgYCJ9 -->
+<pre class="r"><code>StuDF[c(T,F,F,T,F),]</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibmNvbCI6MywibnJvdyI6Mn0sInJkZiI6Ikg0c0lBQUFBQUFBQUJsMVF2VTdETUJBKzJ3bW9rU2lWZUk1bVlHSnJoeTRkK1JtNm1qUXRFY0dPYkVjdzhqQXNQQUd2eGN4UThKbTdJdXpCUG4rKzcrZDhzOXBjVnBzS0FDU29Vb0JVc1N4azNBUVVNTUh6QlVCZHhBSmZwdGk0K0lTMGxqUGdOVXNDa0FqRjIvRCs5VmQvZU9ZdDc0aDMvVXEwZjBhbDBVK3RKekhGNEcwWTF5dTZGTmpCRDc2eHJzMGtKczQrMXl4elJwa0VNbk92cHRlZXZSaXN0anJvZXVmUUJPQ1FVVTd0RURwcklrbmliNVFaV2JnTU9COE5KdG5PbTRmUlBNNnYwSURTQ0VvbktDSFg2dGRTZnBOVVNWSW5yZGwzNWpoNXIrL2JuaTdUT0hFYXVCNWNad0pQRWxGZkJ4czA5MVdON1JsSnM4SGhCMGhJalRIN0FRQUEifQ== -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["StuID"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["name"],"name":[2],"type":["chr"],"align":["left"]},{"label":["score"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"1","2":"小明","3":"80","_rn_":"1"},{"1":"4","2":"小新","3":"70","_rn_":"4"}],"options":{"columns":{"min":{},"max":[10],"total":[3]},"rows":{"min":[10],"max":[10],"total":[2]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3VtKGEpXG5cbmBgYCJ9 -->
-<pre class="r"><code>sum(a)
-</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYTwtYyhULFQsRixGLFQsRixGKVxuc3VtKGEpXG5gYGAifQ== -->
+<pre class="r"><code>a&lt;-c(T,T,F,F,T,F,F)
+sum(a)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-output-begin eyJkYXRhIjoiWzFdIDNcbiJ9 -->
 <pre><code>[1] 3</code></pre>
