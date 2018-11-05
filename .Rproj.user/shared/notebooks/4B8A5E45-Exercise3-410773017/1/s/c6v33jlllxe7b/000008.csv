@@ -8,5 +8,4 @@ Attaching package: ¡¥lubridate¡¦
     date
 
 "
-"0","X <- mdy_hms(hwData$Timestamp,tz=""UTC"")"
-"0","with_tz(X,tz=""Asia/Taipei"") -> hwData$Timestamp"
+"0","hwData$Timestamp <- mdy_hms(hwData$Timestamp,tz=""Asia/Taipei"")"
