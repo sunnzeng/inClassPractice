@@ -1,0 +1,16 @@
+"0","library(readr)"
+"2","Warning message:
+"
+"2","In strsplit(code, ""\n"", fixed = TRUE) :"
+"2","
+ "
+"2"," input string 1 is invalid in this locale
+"
+"0","cl<-locale(grouping_mark = "","") # 創造cl來描述千分位符號使用"",""的習慣場景"
+"0","collegeData %>% "
+"0","  mutate("
+"0","    `日間∕進修別`=as.factor(`日間∕進修別`),"
+"0","    等級別=as.factor(等級別),"
+"0","    一年級男生=parse_number(一年級男生,na = c("""",""NA"",""-""),locale=cl),"
+"0","    一年級女生=parse_number(一年級女生,na = c("""",""NA"",""-""),locale=cl)"
+"0","  ) -> collegeData4"
