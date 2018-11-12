@@ -1,0 +1,29 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1542033870895.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "5A8E5EC6",
+    "lastKnownWriteTime" : 8386059265024489317,
+    "last_content_update" : 1542033870895,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "B10E5105",
+        "caption" : "exData",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=exData&cache_key=B10E5105",
+        "displayedObservations" : 705,
+        "environment" : "",
+        "object" : "exData",
+        "preview" : 0,
+        "totalObservations" : 705,
+        "variables" : 19
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}

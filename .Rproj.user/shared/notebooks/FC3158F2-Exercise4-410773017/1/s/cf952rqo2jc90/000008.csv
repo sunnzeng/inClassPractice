@@ -1,0 +1,4 @@
+"0","a <- sum(ans1, na.rm = TRUE)
+"
+"2","Error: object 'ans1' not found
+"
