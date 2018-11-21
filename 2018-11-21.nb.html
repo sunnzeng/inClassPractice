@@ -10,6 +10,7 @@
 
 
 
+<meta name="date" content="2018-11-14" />
 
 <title>2018-11-21</title>
 
@@ -171,14 +172,247 @@ $(document).ready(function () {
 
 
 <h1 class="title toc-ignore">2018-11-21</h1>
+<h4 class="date"><em>2018-11-14</em></h4>
 
 </div>
 
 
 <!-- rnb-text-begin -->
+<div class="section level1">
+<h1>電子書</h1>
+<p>課程電子書： <a href="https://bookdown.org/tpemartin/ntpu-programming-for-data-science/" class="uri">https://bookdown.org/tpemartin/ntpu-programming-for-data-science/</a></p>
+<p>R for Data Science: <a href="https://r4ds.had.co.nz/" class="uri">https://r4ds.had.co.nz/</a></p>
+<p>Dplyr minicourse: <a href="https://bookdown.org/PoMingChen/Dplyr_minicourse/" class="uri">https://bookdown.org/PoMingChen/Dplyr_minicourse/</a></p>
+<p>曾意儒，資料科學與R： <a href="https://yijutseng.github.io/DataScienceRBook/index.html" class="uri">https://yijutseng.github.io/DataScienceRBook/index.html</a></p>
 <!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoibGlicmFyeShyZWFkcik7IGxpYnJhcnkoZHBseXIpOyBsaWJyYXJ5KHN0cmluZ3IpOyBsaWJyYXJ5KGx1YnJpZGF0ZSkifQ== -->
+<pre class="r"><code>library(readr); library(dplyr); library(stringr); library(lubridate)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div class="section level1">
+<h1>1. 性別差異</h1>
+<p>先執行以下程式引入學生的課外活動調查<strong>classSurvey</strong>及作業成績<strong>hwGrades</strong>資料：</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjpbImNsYXNzU3VydmV5IDwtIHJlYWRfY3N2KFwiaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3RwZW1hcnRpbi9naXRodWItZGF0YS9tYXN0ZXIvbWlkdGVybS1kYXRhL2NsYXNzU3VydmV5LmNzdlwiKSIsImh3R3JhZGVzIDwtIHJlYWRfY3N2KFwiaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3RwZW1hcnRpbi9naXRodWItZGF0YS9tYXN0ZXIvbWlkdGVybS1kYXRhL2h3R3JhZGVzLmNzdlwiKSJdfQ== -->
+<pre class="r"><code>classSurvey &lt;- read_csv(&quot;https://raw.githubusercontent.com/tpemartin/github-data/master/midterm-data/classSurvey.csv&quot;)
+hwGrades &lt;- read_csv(&quot;https://raw.githubusercontent.com/tpemartin/github-data/master/midterm-data/hwGrades.csv&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<div id="basic-" class="section level2">
+<h2>1.Basic 基本程式題</h2>
+<div id="basic1" class="section level3">
+<h3>1.Basic(1)</h3>
+<p>請將classSurvey資料中的<strong>性別</strong>變數轉成factor class.</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="basic2" class="section level3">
+<h3>1.Basic(2)</h3>
+<p>使用<code>str_sub()</code>將hwGrades資料的<strong>學號</strong>變數取出其第2到4碼。</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="basic3" class="section level3">
+<h3>1.Basic(3)</h3>
+<p>日常生活我們常會進行「A 是否屬於 B」的詢問，如「飲料店工讀生 是否屬於 經一B學生」, 在R裡我們可以用<code>A %in% B</code>的語法來得到回答，執行以下程式來理解<code>%in%</code>（即屬於）的用法：</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjpbIue2k+S4gELlrbjnlJ8gPC0gYyhcIuWwj+iKsVwiLFwi5bCP5ZKqXCIsXCLlsI/mnY5cIikiLCLpo7Lmlpnlupflt6XoroDnlJ8gPC0gYyhcIumZs+Wwj+aYjlwiLFwi5bCP5p2OXCIpIiwi6aOy5paZ5bqX5bel6K6A55SfICVpbiUg57aT5LiAQuWtuOeUnyJdfQ== -->
+<pre class="r"><code>經一B學生 &lt;- c(&quot;小花&quot;,&quot;小咪&quot;,&quot;小李&quot;)
+飲料店工讀生 &lt;- c(&quot;陳小明&quot;,&quot;小李&quot;)
+飲料店工讀生 %in% 經一B學生</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>使用<code>%in%</code>來判斷<strong>hwGrades</strong>中的學號，出現在<strong>classSurvey</strong>學號的真/偽（TRUE/FALSE） 。</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="basic4" class="section level3">
+<h3>1.Basic(4)</h3>
+<p>使用<code>which()</code>查出學號為“4104d245c7”的學生在<strong>classSurvey</strong>的第幾row。</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="basic5" class="section level3">
+<h3>1.Basic(5)</h3>
+<p>承上題，請接著找出其<strong>Exercise3</strong>成績（hint: 同上我們可以用<code>which()</code>查出該位學生在<strong>hwGrades</strong>的第幾個row，接著調出此row的Exercise3值。)</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiKGh3R3JhZGVzJCkifQ== -->
+<pre class="r"><code>(hwGrades$)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+</div>
+<div class="section level2">
+<h2>1.1 男女性比例</h2>
+<p>從<strong>classSurvey</strong>中統計本班男女比例。(hint: 使用<code>table()</code>得到人數，之後再將它的回傳值除以全班人數，即為比例)</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div class="section level2">
+<h2>1.2 參加「團隊活動」的人數</h2>
+<p>承上題。從<strong>classSurvey</strong>裡的<strong>課外活動</strong>變數計算有多少人勾選有參與“團隊活動”。(hint: 使用<code>str_detect()</code>來查詢在指定character vector由，某個特殊字眼出現在那幾個element，有出現的會標示TRUE, 沒有則為FALSE。在R裡TRUE有數字1的意思，而FALSE即為0，若要計算TRUE/FALSE logical vector裡TRUE的個數，只需<code>sum()</code>。)</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div class="section level2">
+<h2>1.3 女性的「團隊活動」參與意願</h2>
+<div id="section" class="section level3">
+<h3>1.3.1</h3>
+<p>從<strong>classSuvey$性別</strong>建立一個isFemale的TRUE/FALSE邏輯向量，它用來表示在<strong>classSurvey</strong>裡，觀測值若來自女性則為TRUE，反之為FALSE。（hint: 使用<code>==</code>）</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="section-1" class="section level3">
+<h3>1.3.2</h3>
+<p>從<strong>classSurvey</strong>選出純女性的樣本取名為subsample（即去除男性的觀測行；但所有變數均需保留）。（hint: 使用1.3.1）</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="section-2" class="section level3">
+<h3>1.3.3</h3>
+<p><strong>classSurvey</strong>的女同學裡有多少比例有參加“團隊活動”（結果必需是numeric vector含有「有參加」及「沒有參加」的比例值）。</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<blockquote>
+<p>小知識：在資料中，最後女性「有參與」團隊活動的人數是女性「沒有參與」的2.07倍；而男性則是2.4倍。</p>
+</blockquote>
+</div>
+</div>
+<div class="section level2">
+<h2>1.4 交作業次數</h2>
+<p>在<strong>hwGrades</strong>中NA表示沒交作業，我們可以用<code>is.na()</code>來判斷某向量物件裡，每個元素是否為NA，例如：</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjpbImFhYSA8LSBjKFwiYVwiLFwiYlwiLE5BKSIsImlzLm5hKGFhYSkiXX0= -->
+<pre class="r"><code>aaa &lt;- c(&quot;a&quot;,&quot;b&quot;,NA)
+is.na(aaa)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>記算每個人的<strong>交作業次數</strong>並在<strong>hwGrades</strong>新增<strong>交作業次數</strong>變數來儲存結果。(最後一行請打hwGrades顯示你的全部dataframe，批改程式會去比對hwGrades中的<strong>交作業次數</strong>欄位。) (hint: 利用<code>is.na()</code>去判斷每個作業是否有交，接著把每個人在三次作業的is.na判斷之TRUE/FALSE值加起來。)</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div class="section level2">
+<h2>1.5 計算平均成績</h2>
+<p>在<strong>hwGrades</strong>記算每個人的<strong>平均成績</strong>並在<strong>hwGrades</strong>新增<strong>平均成績</strong>變數來儲存結果；注意NA視同0分。(最後一行請打hwGrades，批改程式會去比對hwGrades中的<strong>平均成績</strong>欄位。) (hint: 使用<code>rowSums()</code>)</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div class="section level2">
+<h2>1.6 誰填了問卷？</h2>
+<p>從<strong>hwGrades</strong>資料中選出那些<strong>學號</strong>有出現在<strong>classSurvey</strong>資料<strong>學號</strong>中的子樣本。（結果必需是個dataframe，它有和<strong>hwGrades</strong>一樣的column數目，但row只包含那些符合條件的觀測樣本；row個數會縮小。）(hint: 參見1.Basic(3)題)</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<blockquote>
+<p>以下各題均以「有填」classSurvey的人為主，即hwGrades的縮小子樣本，我們稱此子樣本為hwGradeSubsample（你不一定要用這個名稱，但後面各題請把hwGradeSubsample替換成你用的dataframe名稱）。</p>
+</blockquote>
+</div>
+<div class="section level2">
+<h2>1.7 性別邏輯變數</h2>
+<p>請在<strong>hwGradesSubsample</strong>創造一個名稱為<strong>女性</strong>的變數，其為T/F logical vector, TRUE為女性。(最後一行請打hwGradesSubsample，批改程式會去比對hwGradesSubsample中的<strong>女性</strong>欄位。) (hint: 使用<code>%in%</code>找出<strong>classSurvey</strong>屬於女性的學號)</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div class="section level2">
+<h2>1.8 性別與學業表現：男性</h2>
+<p>依<strong>hwGradesSubsample</strong>的<strong>平均成績</strong>及<strong>女性</strong>變數來記算出男性的「平均」<strong>平均成績</strong>。(最後一行必需出現此平均值)</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<blockquote>
+<p>小知識：資料中女性平均成績表現高於男性近2.39分（滿分10分）</p>
+</blockquote>
+</div>
+<div class="section level2">
+<h2>1.9 團隊活動與學業表現：女性</h2>
+<p>請由<strong>hwGradesSubsample</strong>中計算女性「有參與」團隊活動的平均<strong>平均成績</strong>值。(最後一行必需出現此平均值) (hint: 可參考1.7來確認<strong>hwGradesSubsample</strong>有誰有參與團隊活動)</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<blockquote>
+<p>小知識：資料中女性「沒有參與」團隊活動的成績表現平均高於「有參與」的女性約2.14分；而這差距在男生中只有約1.74分。</p>
+</blockquote>
+</div>
+</div>
+<div class="section level1">
+<h1>2. 誰較早交作業？</h1>
+<p>請先執行以下程式引入學生交作業時間<strong>hwSubmit</strong>的資料：</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiaHdTdWJtaXQgPC0gcmVhZF9jc3YoXCJodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vdHBlbWFydGluL2dpdGh1Yi1kYXRhL21hc3Rlci9taWR0ZXJtLWRhdGEvaHdTdWJtaXQuY3N2XCIpIn0= -->
+<pre class="r"><code>hwSubmit &lt;- read_csv(&quot;https://raw.githubusercontent.com/tpemartin/github-data/master/midterm-data/hwSubmit.csv&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<div id="class" class="section level2">
+<h2>2.1 class檢查</h2>
+<p>請將<strong>hwSubmit</strong>的所有變數調整成正確的class，其中<strong>Timestamp</strong>為UTC時區，請將它轉成台灣Asia/Taipei時區。（最後一行請打hwSubmit, 程式將檢查裡面所有變數的class是否正確。）</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="-exercise3" class="section level2">
+<h2>2.2 交作業時間: Exercise3</h2>
+<p>取出<strong>hwSubmit</strong>中<strong>作業代碼</strong>為Exercise3的子樣本，稱它為<strong>hwSubmit3</strong>。Exercise3的截止時日是台灣時間2018-11-06 00:00:00，請計算每個人該作業離截止時日還有多少小時。（請於<strong>hwSubmit3</strong>中創一個新變數<strong>截止時差</strong>存入每個人的時差小時值，程式最後一行請打hwSubmit3，程式將檢查裡面的<strong>截止時差</strong>是否正確。）(hint: <code>difftime()</code>)</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="-1" class="section level2">
+<h2>2.3 性別差異</h2>
+<p><strong>hwSubmit3</strong>中, 女性「平均」截止時差比男性多多少小時呢？（最後一行答案必須女生減去男性的值。）</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<blockquote>
+<p>小知識：第一次作業男性平均早女性7.5小時交，第二次作業早35.5小時。</p>
+</blockquote>
+<!-- rnb-text-end -->
+</div>
+</div>
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIjIwMTgtMTEtMjEiDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0K</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIjIwMTgtMTEtMjEiDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KLS0tDQp0aXRsZTogIuizh+aWmeenkeWtuOeoi+W8j+ioreioiO+8iOS4gO+8ieacn+S4reiAgyINCm91dHB1dDoNCiAgaHRtbF9kb2N1bWVudDoNCiAgICBzZWxmX2NvbnRhaW5lZDogZmFsc2UNCmRhdGU6ICcyMDE4LTExLTE0Jw0KLS0tDQoNCg0KIyDpm7vlrZDmm7gNCg0K6Kqy56iL6Zu75a2Q5pu477yaIGh0dHBzOi8vYm9va2Rvd24ub3JnL3RwZW1hcnRpbi9udHB1LXByb2dyYW1taW5nLWZvci1kYXRhLXNjaWVuY2UvDQoNClIgZm9yIERhdGEgU2NpZW5jZTogaHR0cHM6Ly9yNGRzLmhhZC5jby5uei8NCg0KRHBseXIgbWluaWNvdXJzZTogaHR0cHM6Ly9ib29rZG93bi5vcmcvUG9NaW5nQ2hlbi9EcGx5cl9taW5pY291cnNlLw0KDQrmm77mhI/lhJLvvIzos4fmlpnnp5HlrbjoiIdS77yaIGh0dHBzOi8veWlqdXRzZW5nLmdpdGh1Yi5pby9EYXRhU2NpZW5jZVJCb29rL2luZGV4Lmh0bWwNCg0KDQoNCg0KYGBge3J9DQpsaWJyYXJ5KHJlYWRyKTsgbGlicmFyeShkcGx5cik7IGxpYnJhcnkoc3RyaW5ncik7IGxpYnJhcnkobHVicmlkYXRlKQ0KYGBgDQoNCiMgMS4g5oCn5Yil5beu55WwDQrlhYjln7fooYzku6XkuIvnqIvlvI/lvJXlhaXlrbjnlJ/nmoToqrLlpJbmtLvli5Xoqr/mn6UqKmNsYXNzU3VydmV5Kirlj4rkvZzmpa3miJDnuL4qKmh3R3JhZGVzKiros4fmlpnvvJoNCmBgYHtyIGRhdGExfQ0KY2xhc3NTdXJ2ZXkgPC0gcmVhZF9jc3YoImh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS90cGVtYXJ0aW4vZ2l0aHViLWRhdGEvbWFzdGVyL21pZHRlcm0tZGF0YS9jbGFzc1N1cnZleS5jc3YiKQ0KaHdHcmFkZXMgPC0gcmVhZF9jc3YoImh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS90cGVtYXJ0aW4vZ2l0aHViLWRhdGEvbWFzdGVyL21pZHRlcm0tZGF0YS9od0dyYWRlcy5jc3YiKQ0KYGBgDQojIyAxLkJhc2ljIOWfuuacrOeoi+W8j+mhjA0KDQojIyMgMS5CYXNpYygxKSANCuiri+Wwh2NsYXNzU3VydmV56LOH5paZ5Lit55qEKirmgKfliKUqKuiuiuaVuOi9ieaIkGZhY3RvciBjbGFzcy4gDQoNCmBgYHtyIGFuczFiMX0NCmBgYA0KDQojIyMgMS5CYXNpYygyKSANCuS9v+eUqGBzdHJfc3ViKClg5bCHaHdHcmFkZXPos4fmlpnnmoQqKuWtuOiZnyoq6K6K5pW45Y+W5Ye65YW256ysMuWIsDTnorzjgIINCg0KYGBge3IgYW5zMWIyfQ0KYGBgDQoNCiMjIyAxLkJhc2ljKDMpDQrml6XluLjnlJ/mtLvmiJHlgJHluLjmnIPpgLLooYzjgIxBIOaYr+WQpuWxrOaWvCBC44CN55qE6Kmi5ZWP77yM5aaC44CM6aOy5paZ5bqX5bel6K6A55SfIOaYr+WQpuWxrOaWvCDntpPkuIBC5a2455Sf44CNLCDlnKhS6KOh5oiR5YCR5Y+v5Lul55SoYEEgJWluJSBCYOeahOiqnuazleS+huW+l+WIsOWbnuetlO+8jOWft+ihjOS7peS4i+eoi+W8j+S+hueQhuino2AlaW4lYO+8iOWNs+WxrOaWvO+8ieeahOeUqOazle+8mg0KYGBge3J9DQrntpPkuIBC5a2455SfIDwtIGMoIuWwj+iKsSIsIuWwj+WSqiIsIuWwj+adjiIpDQrpo7Lmlpnlupflt6XoroDnlJ8gPC0gYygi6Zmz5bCP5piOIiwi5bCP5p2OIikNCumjsuaWmeW6l+W3peiugOeUnyAlaW4lIOe2k+S4gELlrbjnlJ8NCmBgYA0KDQrkvb/nlKhgJWluJWDkvobliKTmlrcqKmh3R3JhZGVzKirkuK3nmoTlrbjomZ/vvIzlh7rnj77lnKgqKmNsYXNzU3VydmV5KirlrbjomZ/nmoTnnJ8v5YG977yIVFJVRS9GQUxTRe+8iSDjgIINCg0KYGBge3IgYW5zMWIzfQ0KYGBgDQoNCiMjIyAxLkJhc2ljKDQpDQrkvb/nlKhgd2hpY2goKWDmn6Xlh7rlrbjomZ/ngroiNDEwNGQyNDVjNyLnmoTlrbjnlJ/lnKgqKmNsYXNzU3VydmV5KirnmoTnrKzlub5yb3fjgIINCg0KYGBge3IgYW5zMWI0fQ0KYGBgDQoNCiMjIyAxLkJhc2ljKDUpDQrmib/kuIrpoYzvvIzoq4vmjqXokZfmib7lh7rlhbYqKkV4ZXJjaXNlMyoq5oiQ57i+77yIaGludDog5ZCM5LiK5oiR5YCR5Y+v5Lul55SoYHdoaWNoKClg5p+l5Ye66Kmy5L2N5a2455Sf5ZyoKipod0dyYWRlcyoq55qE56ys5bm+5YCLcm9377yM5o6l6JGX6Kq/5Ye65q2kcm9355qERXhlcmNpc2Uz5YC844CCKQ0KDQpgYGB7ciBhbnMxYjV9DQooaHdHcmFkZXMkKQ0KYGBgDQoNCg0KIyMgMS4xIOeUt+Wls+aAp+avlOS+iw0K5b6eKipjbGFzc1N1cnZleSoq5Lit57Wx6KiI5pys54+t55S35aWz5q+U5L6L44CCKGhpbnQ6IOS9v+eUqGB0YWJsZSgpYOW+l+WIsOS6uuaVuO+8jOS5i+W+jOWGjeWwh+Wug+eahOWbnuWCs+WAvOmZpOS7peWFqOePreS6uuaVuO+8jOWNs+eCuuavlOS+iykNCmBgYHtyIGFuczExfQ0KYGBgDQoNCiMjIDEuMiDlj4PliqDjgIzlnJjpmormtLvli5XjgI3nmoTkurrmlbgNCuaJv+S4iumhjOOAguW+nioqY2xhc3NTdXJ2ZXkqKuijoeeahCoq6Kqy5aSW5rS75YuVKirorormlbjoqIjnrpfmnInlpJrlsJHkurrli77pgbjmnInlj4PoiIci5ZyY6ZqK5rS75YuVIuOAgihoaW50OiDkvb/nlKhgc3RyX2RldGVjdCgpYOS+huafpeipouWcqOaMh+WummNoYXJhY3RlciB2ZWN0b3LnlLHvvIzmn5DlgIvnibnmrorlrZfnnLzlh7rnj77lnKjpgqPlub7lgItlbGVtZW5077yM5pyJ5Ye654++55qE5pyD5qiZ56S6VFJVRSwg5rKS5pyJ5YmH54K6RkFMU0XjgILlnKhS6KOhVFJVReacieaVuOWtlzHnmoTmhI/mgJ3vvIzogIxGQUxTReWNs+eCujDvvIzoi6XopoHoqIjnrpdUUlVFL0ZBTFNFIGxvZ2ljYWwgdmVjdG9y6KOhVFJVReeahOWAi+aVuO+8jOWPqumcgGBzdW0oKWDjgIIpDQpgYGB7ciBhbnMxMn0NCmBgYA0KDQojIyAxLjMg5aWz5oCn55qE44CM5ZyY6ZqK5rS75YuV44CN5Y+D6IiH5oSP6aGYDQoNCiMjIyAxLjMuMQ0K5b6eKipjbGFzc1N1dmV5JOaAp+WIpSoq5bu656uL5LiA5YCLaXNGZW1hbGXnmoRUUlVFL0ZBTFNF6YKP6Lyv5ZCR6YeP77yM5a6D55So5L6G6KGo56S65ZyoKipjbGFzc1N1cnZleSoq6KOh77yM6KeA5ris5YC86Iul5L6G6Ieq5aWz5oCn5YmH54K6VFJVRe+8jOWPjeS5i+eCukZBTFNF44CC77yIaGludDog5L2/55SoYD09YO+8iQ0KDQpgYGB7ciBhbnMxMzF9DQpgYGANCg0KIyMjIDEuMy4yDQrlvp4qKmNsYXNzU3VydmV5Kirpgbjlh7rntJTlpbPmgKfnmoTmqKPmnKzlj5blkI3ngrpzdWJzYW1wbGXvvIjljbPljrvpmaTnlLfmgKfnmoTop4DmuKzooYzvvJvkvYbmiYDmnInorormlbjlnYfpnIDkv53nlZnvvInjgILvvIhoaW50OiDkvb/nlKgxLjMuMe+8iQ0KDQpgYGB7ciBhbnMxMzJ9DQpgYGANCg0KIyMjIDEuMy4zDQoqKmNsYXNzU3VydmV5KirnmoTlpbPlkIzlrbjoo6HmnInlpJrlsJHmr5TkvovmnInlj4PliqAi5ZyY6ZqK5rS75YuVIu+8iOe1kOaenOW/hemcgOaYr251bWVyaWMgdmVjdG9y5ZCr5pyJ44CM5pyJ5Y+D5Yqg44CN5Y+K44CM5rKS5pyJ5Y+D5Yqg44CN55qE5q+U5L6L5YC877yJ44CCDQoNCmBgYHtyIGFuczEzM30NCmBgYA0KDQo+IOWwj+efpeitmO+8muWcqOizh+aWmeS4re+8jOacgOW+jOWls+aAp+OAjOacieWPg+iIh+OAjeWcmOmaiua0u+WLleeahOS6uuaVuOaYr+Wls+aAp+OAjOaykuacieWPg+iIh+OAjeeahDIuMDflgI3vvJvogIznlLfmgKfliYfmmK8yLjTlgI3jgIINCg0KIyMgMS40IOS6pOS9nOalreasoeaVuCAgDQrlnKgqKmh3R3JhZGVzKirkuK1OQeihqOekuuaykuS6pOS9nOalre+8jOaIkeWAkeWPr+S7peeUqGBpcy5uYSgpYOS+huWIpOaWt+afkOWQkemHj+eJqeS7tuijoe+8jOavj+WAi+WFg+e0oOaYr+WQpueCuk5B77yM5L6L5aaC77yaIA0KYGBge3J9DQphYWEgPC0gYygiYSIsImIiLE5BKQ0KaXMubmEoYWFhKQ0KYGBgDQoNCuiomOeul+avj+WAi+S6uueahCoq5Lqk5L2c5qWt5qyh5pW4KirkuKblnKgqKmh3R3JhZGVzKirmlrDlop4qKuS6pOS9nOalreasoeaVuCoq6K6K5pW45L6G5YSy5a2Y57WQ5p6c44CCKOacgOW+jOS4gOihjOiri+aJk2h3R3JhZGVz6aGv56S65L2g55qE5YWo6YOoZGF0YWZyYW1l77yM5om55pS556iL5byP5pyD5Y675q+U5bCNaHdHcmFkZXPkuK3nmoQqKuS6pOS9nOalreasoeaVuCoq5qyE5L2N44CCKSAoaGludDog5Yip55SoYGlzLm5hKClg5Y675Yik5pa35q+P5YCL5L2c5qWt5piv5ZCm5pyJ5Lqk77yM5o6l6JGX5oqK5q+P5YCL5Lq65Zyo5LiJ5qyh5L2c5qWt55qEaXMubmHliKTmlrfkuYtUUlVFL0ZBTFNF5YC85Yqg6LW35L6G44CCKSANCg0KYGBge3IgYW5zMTR9DQpgYGANCg0KIyMgMS41IOioiOeul+W5s+Wdh+aIkOe4viAgDQrlnKgqKmh3R3JhZGVzKiroqJjnrpfmr4/lgIvkurrnmoQqKuW5s+Wdh+aIkOe4vioq5Lim5ZyoKipod0dyYWRlcyoq5paw5aKeKirlubPlnYfmiJDnuL4qKuiuiuaVuOS+huWEsuWtmOe1kOaenO+8m+azqOaEj05B6KaW5ZCMMOWIhuOAgijmnIDlvozkuIDooYzoq4vmiZNod0dyYWRlc++8jOaJueaUueeoi+W8j+acg+WOu+avlOWwjWh3R3JhZGVz5Lit55qEKirlubPlnYfmiJDnuL4qKuashOS9jeOAgikNCihoaW50OiDkvb/nlKhgcm93U3VtcygpYCkNCg0KYGBge3IgYW5zMTV9DQpgYGANCg0KIyMgMS42IOiqsOWhq+S6huWVj+WNt++8nw0K5b6eKipod0dyYWRlcyoq6LOH5paZ5Lit6YG45Ye66YKj5LqbKirlrbjomZ8qKuacieWHuuePvuWcqCoqY2xhc3NTdXJ2ZXkqKuizh+aWmSoq5a246JmfKirkuK3nmoTlrZDmqKPmnKzjgILvvIjntZDmnpzlv4XpnIDmmK/lgItkYXRhZnJhbWXvvIzlroPmnInlkowqKmh3R3JhZGVzKirkuIDmqKPnmoRjb2x1bW7mlbjnm67vvIzkvYZyb3flj6rljIXlkKvpgqPkupvnrKblkIjmop3ku7bnmoTop4DmuKzmqKPmnKzvvJtyb3flgIvmlbjmnIPnuK7lsI/jgILvvIkoaGludDog5Y+D6KaLMS5CYXNpYygzKemhjCkNCg0KYGBge3IgYW5zMTZ9DQpgYGANCg0KPiDku6XkuIvlkITpoYzlnYfku6XjgIzmnInloavjgI1jbGFzc1N1cnZleeeahOS6uueCuuS4u++8jOWNs2h3R3JhZGVz55qE57iu5bCP5a2Q5qij5pys77yM5oiR5YCR56ix5q2k5a2Q5qij5pys54K6aHdHcmFkZVN1YnNhbXBsZe+8iOS9oOS4jeS4gOWumuimgeeUqOmAmeWAi+WQjeeose+8jOS9huW+jOmdouWQhOmhjOiri+aKimh3R3JhZGVTdWJzYW1wbGXmm7/mj5vmiJDkvaDnlKjnmoRkYXRhZnJhbWXlkI3nqLHvvInjgIINCg0KIyMgMS43IOaAp+WIpemCj+i8r+iuiuaVuA0K6KuL5ZyoKipod0dyYWRlc1N1YnNhbXBsZSoq5Ym16YCg5LiA5YCL5ZCN56ix54K6KirlpbPmgKcqKueahOiuiuaVuO+8jOWFtueCulQvRiBsb2dpY2FsIHZlY3RvciwgVFJVReeCuuWls+aAp+OAgijmnIDlvozkuIDooYzoq4vmiZNod0dyYWRlc1N1YnNhbXBsZe+8jOaJueaUueeoi+W8j+acg+WOu+avlOWwjWh3R3JhZGVzU3Vic2FtcGxl5Lit55qEKirlpbPmgKcqKuashOS9jeOAgikNCihoaW50OiDkvb/nlKhgJWluJWDmib7lh7oqKmNsYXNzU3VydmV5KirlsazmlrzlpbPmgKfnmoTlrbjomZ8pDQoNCmBgYHtyIGFuczE3fQ0KYGBgDQoNCiMjIDEuOCDmgKfliKXoiIflrbjmpa3ooajnj77vvJrnlLfmgKcNCuS+nSoqaHdHcmFkZXNTdWJzYW1wbGUqKueahCoq5bmz5Z2H5oiQ57i+Kirlj4oqKuWls+aApyoq6K6K5pW45L6G6KiY566X5Ye655S35oCn55qE44CM5bmz5Z2H44CNKirlubPlnYfmiJDnuL4qKuOAgijmnIDlvozkuIDooYzlv4XpnIDlh7rnj77mraTlubPlnYflgLwpDQpgYGB7ciBhbnMxOH0NCmBgYA0KDQo+IOWwj+efpeitmO+8muizh+aWmeS4reWls+aAp+W5s+Wdh+aIkOe4vuihqOePvumrmOaWvOeUt+aAp+i/kTIuMznliIbvvIjmu7/liIYxMOWIhu+8iQ0KDQojIyAxLjkg5ZyY6ZqK5rS75YuV6IiH5a245qWt6KGo54++77ya5aWz5oCnDQroq4vnlLEqKmh3R3JhZGVzU3Vic2FtcGxlKirkuK3oqIjnrpflpbPmgKfjgIzmnInlj4PoiIfjgI3lnJjpmormtLvli5XnmoTlubPlnYcqKuW5s+Wdh+aIkOe4vioq5YC844CCKOacgOW+jOS4gOihjOW/hemcgOWHuuePvuatpOW5s+Wdh+WAvCkgKGhpbnQ6IOWPr+WPg+iAgzEuN+S+hueiuuiqjSoqaHdHcmFkZXNTdWJzYW1wbGUqKuacieiqsOacieWPg+iIh+WcmOmaiua0u+WLlSkNCmBgYHtyIGFuczE5fQ0KYGBgDQoNCj4g5bCP55+l6K2Y77ya6LOH5paZ5Lit5aWz5oCn44CM5rKS5pyJ5Y+D6IiH44CN5ZyY6ZqK5rS75YuV55qE5oiQ57i+6KGo54++5bmz5Z2H6auY5pa844CM5pyJ5Y+D6IiH44CN55qE5aWz5oCn57SEMi4xNOWIhu+8m+iAjOmAmeW3rui3neWcqOeUt+eUn+S4reWPquaciee0hDEuNzTliIbjgIINCg0KIyAyLiDoqrDovIPml6nkuqTkvZzmpa3vvJ8NCuiri+WFiOWft+ihjOS7peS4i+eoi+W8j+W8leWFpeWtuOeUn+S6pOS9nOalreaZgumWkyoqaHdTdWJtaXQqKueahOizh+aWme+8mg0KYGBge3IgZGF0YTJ9DQpod1N1Ym1pdCA8LSByZWFkX2NzdigiaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3RwZW1hcnRpbi9naXRodWItZGF0YS9tYXN0ZXIvbWlkdGVybS1kYXRhL2h3U3VibWl0LmNzdiIpDQpgYGANCg0KIyMgMi4xIGNsYXNz5qqi5p+lDQroq4vlsIcqKmh3U3VibWl0KirnmoTmiYDmnInorormlbjoqr/mlbTmiJDmraPnorrnmoRjbGFzc++8jOWFtuS4rSoqVGltZXN0YW1wKirngrpVVEPmmYLljYDvvIzoq4vlsIflroPovYnmiJDlj7DngaNBc2lhL1RhaXBlaeaZguWNgOOAgu+8iOacgOW+jOS4gOihjOiri+aJk2h3U3VibWl0LCDnqIvlvI/lsIfmqqLmn6Xoo6HpnaLmiYDmnInorormlbjnmoRjbGFzc+aYr+WQpuato+eiuuOAgu+8iQ0KYGBge3IgYW5zMjF9DQpgYGANCg0KIyMgMi4yIOS6pOS9nOalreaZgumWkzogRXhlcmNpc2UzDQrlj5blh7oqKmh3U3VibWl0KirkuK0qKuS9nOalreS7o+eivCoq54K6RXhlcmNpc2Uz55qE5a2Q5qij5pys77yM56ix5a6D54K6Kipod1N1Ym1pdDMqKuOAgkV4ZXJjaXNlM+eahOaIquatouaZguaXpeaYr+WPsOeBo+aZgumWkzIwMTgtMTEtMDYgMDA6MDA6MDDvvIzoq4voqIjnrpfmr4/lgIvkurroqbLkvZzmpa3pm6LmiKrmraLmmYLml6XpgoTmnInlpJrlsJHlsI/mmYLjgILvvIjoq4vmlrwqKmh3U3VibWl0Myoq5Lit5Ym15LiA5YCL5paw6K6K5pW4KirmiKrmraLmmYLlt64qKuWtmOWFpeavj+WAi+S6uueahOaZguW3ruWwj+aZguWAvO+8jOeoi+W8j+acgOW+jOS4gOihjOiri+aJk2h3U3VibWl0M++8jOeoi+W8j+Wwh+aqouafpeijoemdoueahCoq5oiq5q2i5pmC5beuKirmmK/lkKbmraPnorrjgILvvIkoaGludDogYGRpZmZ0aW1lKClgKQ0KYGBge3IgYW5zMjJ9DQpgYGANCg0KIyMgMi4zIOaAp+WIpeW3rueVsA0KKipod1N1Ym1pdDMqKuS4rSwg5aWz5oCn44CM5bmz5Z2H44CN5oiq5q2i5pmC5beu5q+U55S35oCn5aSa5aSa5bCR5bCP5pmC5ZGi77yf77yI5pyA5b6M5LiA6KGM562U5qGI5b+F6aCI5aWz55Sf5rib5Y6755S35oCn55qE5YC844CC77yJDQoNCmBgYHtyIGFuczIzfQ0KYGBgDQoNCj4g5bCP55+l6K2Y77ya56ys5LiA5qyh5L2c5qWt55S35oCn5bmz5Z2H5pep5aWz5oCnNy415bCP5pmC5Lqk77yM56ys5LqM5qyh5L2c5qWt5pepMzUuNeWwj+aZguOAgg0K</div>
 
 
 

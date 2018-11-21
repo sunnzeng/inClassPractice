@@ -1,0 +1,19 @@
+"0","classSurvey <- read_csv(""https://raw.githubusercontent.com/tpemartin/github-data/master/midterm-data/classSurvey.csv"")"
+"2","Parsed with column specification:
+cols(
+  學號 = col_character(),
+  居住地行政區 = col_character(),
+  性別 = col_character(),
+  本學期學分數 = col_integer(),
+  課外活動 = col_character()
+)
+"
+"0","hwGrades <- read_csv(""https://raw.githubusercontent.com/tpemartin/github-data/master/midterm-data/hwGrades.csv"")"
+"2","Parsed with column specification:
+cols(
+  學號 = col_character(),
+  hw1 = col_integer(),
+  hw2 = col_integer(),
+  Exercise3 = col_double()
+)
+"

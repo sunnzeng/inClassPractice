@@ -1,0 +1,20 @@
+"0","GActivity <- str_detect(subsample$""課外活動"",""團隊活動"")"
+"2","Warning message:
+"
+"2","In strsplit(code, ""\n"", fixed = TRUE) :"
+"2","
+ "
+"2"," input string 1 is invalid in this locale
+"
+"0","table(GActivity)"
+"1","GActivity
+"
+"1","FALSE "
+"1"," TRUE "
+"1","
+"
+"1","   14 "
+"1","   29 "
+"1","
+"
+"0","AGA <- table(GActivity)/43"

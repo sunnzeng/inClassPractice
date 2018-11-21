@@ -1,0 +1,9 @@
+"0","hwSubmit <- read_csv(""https://raw.githubusercontent.com/tpemartin/github-data/master/midterm-data/hwSubmit.csv"")"
+"2","Parsed with column specification:
+cols(
+  Timestamp = col_datetime(format = """"),
+  學號 = col_character(),
+  作業代碼 = col_character(),
+  女性 = col_logical()
+)
+"

@@ -1,0 +1,11 @@
+"0","Grade <- hwGrades%>%"
+"0","  select(hw1,hw2,Exercise3)"
+"2","Warning message:
+"
+"2","In strsplit(code, ""\n"", fixed = TRUE) :"
+"2","
+ "
+"2"," input string 1 is invalid in this locale
+"
+"0","hwGrades$""平均成績"" <- rowSums(Grade,na.rm = T)/3"
+"0","hwGrades"

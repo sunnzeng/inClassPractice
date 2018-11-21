@@ -1,0 +1,2 @@
+"0","classSurvey <- read_csv(""https://raw.githubusercontent.com/tpemartin/github-data/master/midterm-data/classSurvey.csv"")"
+"0","hwGrades <- read_csv(""https://raw.githubusercontent.com/tpemartin/github-data/master/midterm-data/hwGrades.csv"")"
