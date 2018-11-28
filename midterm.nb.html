@@ -207,11 +207,30 @@ The following object is masked from 愼㸱愼㸵package:base愼㸱愼㸶:
 <p>誰先執行以下資料引入：</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2xhc3NTdXJ2ZXkgPC0gcmVhZF9jc3YoXCJkYXRhL2NsYXNzU3VydmV5LmNzdlwiKVxuYGBgIn0= -->
-<pre class="r"><code>classSurvey &lt;- read_csv(&quot;data/classSurvey.csv&quot;)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2xhc3NTdXJ2ZXkgPC0gcmVhZF9jc3YoXCJjbGFzc1N1cnZleS5jc3ZcIilcbmBgYCJ9 -->
+<pre class="r"><code>classSurvey &lt;- read_csv(&quot;classSurvey.csv&quot;)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiRXJyb3I6ICdkYXRhL2NsYXNzU3VydmV5LmNzdicgZG9lcyBub3QgZXhpc3QgaW4gY3VycmVudCB3b3JraW5nIGRpcmVjdG9yeSAoJ0M6L2luQ2xhc3NQcmFjdGljZScpLlxuIn0= -->
-<pre><code>Error: 'data/classSurvey.csv' does not exist in current working directory ('C:/inClassPractice').</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiUGFyc2VkIHdpdGggY29sdW1uIHNwZWNpZmljYXRpb246XG5jb2xzKFxuICC+x7i5ID0gY29sX2NoYXJhY3RlcigpLFxuICCpfqbtpmGm5qxGsM8gPSBjb2xfY2hhcmFjdGVyKCksXG4gIKnKp08gPSBjb2xfY2hhcmFjdGVyKCksXG4gIKW7vse0wb7HpMC8xiA9IGNvbF9pbnRlZ2VyKCksXG4gIL3SpX6sobDKID0gY29sX2NoYXJhY3RlcigpXG4pXG4ifQ== -->
+<pre><code>Parsed with column specification:
+cols(
+  戼㹥Ǹ戼㸹 = col_character(),
+  愼㸹~愼㸶攼㹤愼㸶a愼㸶攼㸶愼㹣F戼㸰挼㹦 = col_character(),
+  愼㸹ʧO = col_character(),
+  愼㸵戼㹢戼㹥Ǵ挼㸱戼㹥Ǥ挼㸰戼㹣挼㸶 = col_integer(),
+  戼㹤ҥ~愼㹣愼㸱戼㸰挼㹡 = col_character()
+)</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaHdHcmFkZXMgPC0gcmVhZF9jc3YoXCJod0dyYWRlcy5jc3ZcIilcbmBgYCJ9 -->
+<pre class="r"><code>hwGrades &lt;- read_csv(&quot;hwGrades.csv&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiUGFyc2VkIHdpdGggY29sdW1uIHNwZWNpZmljYXRpb246XG5jb2xzKFxuICC+x7i5ID0gY29sX2NoYXJhY3RlcigpLFxuICBodzEgPSBjb2xfaW50ZWdlcigpLFxuICBodzIgPSBjb2xfaW50ZWdlcigpLFxuICBFeGVyY2lzZTMgPSBjb2xfZG91YmxlKClcbilcbiJ9 -->
+<pre><code>Parsed with column specification:
+cols(
+  戼㹥Ǹ戼㸹 = col_character(),
+  hw1 = col_integer(),
+  hw2 = col_integer(),
+  Exercise3 = col_double()
+)</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -220,6 +239,23 @@ The following object is masked from 愼㸱愼㸵package:base愼㸱愼㸶:
 <p>從<strong>classSurvey</strong>中統計本班男女比例。(hint: 使用<code>table()</code>之後再除以適當的數字)</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2xhc3NTdXJ2ZXkk5oCn5YilICU+JSB0YWJsZSgpICU+JVxuICB7Li9zdW0oLil9IC0+IHRiU2V4XG5gYGAifQ== -->
+<pre class="r"><code>classSurvey$性別 %&gt;% table() %&gt;%
+  {./sum(.)} -&gt; tbSex</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiV2FybmluZyBtZXNzYWdlOlxuSW4gc3Ryc3BsaXQoY29kZSwgXCJcXG5cIiwgZml4ZWQgPSBUUlVFKSA6XG4gIGlucHV0IHN0cmluZyAxIGlzIGludmFsaWQgaW4gdGhpcyBsb2NhbGVcbiJ9 -->
+<pre><code>Warning message:
+In strsplit(code, &quot;\n&quot;, fixed = TRUE) :
+  input string 1 is invalid in this locale</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudGJTZXhcbmBgYCJ9 -->
+<pre class="r"><code>tbSex</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiLlxuICAgICAgIOWlsyAgICAgICAg55S3IFxuMC43MTY2NjY3IDAuMjgzMzMzMyBcbiJ9 -->
+<pre><code>.
+       女        男 
+0.7166667 0.2833333 </code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
@@ -228,6 +264,21 @@ The following object is masked from 愼㸱愼㸵package:base愼㸱愼㸶:
 <p>承上題。從<strong>classSurvey</strong>裡的<strong>課外活動</strong>變數計算有多少人勾選有參與“團隊活動”。</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2xhc3NTdXJ2ZXkk6Kqy5aSW5rS75YuVICU+JVxuICBzdHJfZGV0ZWN0KFwi5ZyY6ZqK5rS75YuVXCIpIC0+IGhhc0dyb3VwQWN0aXZpdHlcbmBgYCJ9 -->
+<pre class="r"><code>classSurvey$課外活動 %&gt;%
+  str_detect(&quot;團隊活動&quot;) -&gt; hasGroupActivity</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiV2FybmluZyBtZXNzYWdlOlxuSW4gc3Ryc3BsaXQoY29kZSwgXCJcXG5cIiwgZml4ZWQgPSBUUlVFKSA6XG4gIGlucHV0IHN0cmluZyAxIGlzIGludmFsaWQgaW4gdGhpcyBsb2NhbGVcbiJ9 -->
+<pre><code>Warning message:
+In strsplit(code, &quot;\n&quot;, fixed = TRUE) :
+  input string 1 is invalid in this locale</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaGFzR3JvdXBBY3Rpdml0eSAlPiUgIHN1bVxuYGBgIn0= -->
+<pre class="r"><code>hasGroupActivity %&gt;%  sum</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDQxXG4ifQ== -->
+<pre><code>[1] 41</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
@@ -236,14 +287,61 @@ The following object is masked from 愼㸱愼㸵package:base愼㸱愼㸶:
 <p>承上題。女同學裡有多少比例有參加“團隊活動”（結果必需是numeric vector含有「有參加」及「沒有參加」的比例值）</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-output-begin eyJkYXRhIjoiSW4gc3Ryc3BsaXQoY29kZSwgXCJcXG5cIiwgZml4ZWQgPSBUUlVFKSA6XG4gIGlucHV0IHN0cmluZyAxIGlzIGludmFsaWQgaW4gdGhpcyBsb2NhbGVcbiJ9 -->
+<pre><code>In strsplit(code, &quot;\n&quot;, fixed = TRUE) :
+  input string 1 is invalid in this locale</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2xhc3NTdXJ2ZXkk6Kqy5aSW5rS75YuVW2lzRmVtYWxlXSAlPiUgI+WPqumBuOWls+aAp+eci+WlueWAkeeahOiqsuWklua0u+WLlVxuICBzdHJfZGV0ZWN0KFwi5ZyY6ZqK5rS75YuVXCIpICU+JSAj5om+5Ye65pyJ5ZyY6ZqK5rS75YuV55qEXG4gIHRhYmxlKC4pL3N1bShpc0ZlbWFsZSktPnRiRmVtYWxlXG50YkZlbWFsZVxuYGBgIn0= -->
+<pre class="r"><code>classSurvey$課外活動[isFemale] %&gt;% #只選女性看她們的課外活動
+  str_detect(&quot;團隊活動&quot;) %&gt;% #找出有團隊活動的
+  table(.)/sum(isFemale)-&gt;tbFemale
+tbFemale</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiLlxuICAgIEZBTFNFICAgICAgVFJVRSBcbjAuMzI1NTgxNCAwLjY3NDQxODYgXG4ifQ== -->
+<pre><code>.
+    FALSE      TRUE 
+0.3255814 0.6744186 </code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2xhc3NTdXJ2ZXkk6Kqy5aSW5rS75YuVWyFpc0ZlbWFsZV0gJT4lXG4gIHN0cl9kZXRlY3QoXCLlnJjpmormtLvli5VcIikgJT4lXG4gIHRhYmxlKC4pL3N1bSghaXNGZW1hbGUpLT50Yk1hbGVcbmBgYCJ9 -->
+<pre class="r"><code>classSurvey$課外活動[!isFemale] %&gt;%
+  str_detect(&quot;團隊活動&quot;) %&gt;%
+  table(.)/sum(!isFemale)-&gt;tbMale</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiV2FybmluZyBtZXNzYWdlOlxuSW4gc3Ryc3BsaXQoY29kZSwgXCJcXG5cIiwgZml4ZWQgPSBUUlVFKSA6XG4gIGlucHV0IHN0cmluZyAxIGlzIGludmFsaWQgaW4gdGhpcyBsb2NhbGVcbiJ9 -->
+<pre><code>Warning message:
+In strsplit(code, &quot;\n&quot;, fixed = TRUE) :
+  input string 1 is invalid in this locale</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudGJNYWxlXG5gYGAifQ== -->
+<pre class="r"><code>tbMale</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiLlxuICAgIEZBTFNFICAgICAgVFJVRSBcbjAuMjk0MTE3NiAwLjcwNTg4MjQgXG4ifQ== -->
+<pre><code>.
+    FALSE      TRUE 
+0.2941176 0.7058824 </code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudGJGZW1hbGVbXCJUUlVFXCJdL3RiRmVtYWxlW1wiRkFMU0VcIl1cbmBgYCJ9 -->
+<pre class="r"><code>tbFemale[&quot;TRUE&quot;]/tbFemale[&quot;FALSE&quot;]</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgIFRSVUUgXG4yLjA3MTQyOSBcbiJ9 -->
+<pre><code>    TRUE 
+2.071429 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudGJNYWxlW1wiVFJVRVwiXS90Yk1hbGVbXCJGQUxTRVwiXVxuYGBgIn0= -->
+<pre class="r"><code>tbMale[&quot;TRUE&quot;]/tbMale[&quot;FALSE&quot;]</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiVFJVRSBcbiAyLjQgXG4ifQ== -->
+<pre><code>TRUE 
+ 2.4 </code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <blockquote>
@@ -255,6 +353,32 @@ The following object is masked from 愼㸱愼㸵package:base愼㸱愼㸶:
 <p>在<strong>hwGrades</strong>中記算每個人的<strong>交作業次數</strong>並在<strong>hwGrades</strong>新增<strong>交作業次數</strong>變數來儲存結果。(最後一行請打hwGrades顯示你的全部dataframe，批改程式會去比對hwGrades中的<strong>交作業次數</strong>欄位。) (hint: <code>dplyr::select()</code>選出作業欄，適當使用<code>dplyr::mutate_all()</code>及<code>is.na()</code>來產生每次作業是否「沒有交」的T/F logical vector，若要是「有交」請使用<code>!is.na()</code>；再使用<code>rowSums()</code>。)</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaHdHcmFkZXMgJT4lXG4gIHNlbGVjdChjKDI6NCkpICU+JVxuICBtdXRhdGVfYWxsKFxuICAgIGZ1bnMoXG4gICAgICAhaXMubmEoLilcbiAgICApXG4gICkgLT4gaHdHcmFkZXMyXG5gYGAifQ== -->
+<pre class="r"><code>hwGrades %&gt;%
+  select(c(2:4)) %&gt;%
+  mutate_all(
+    funs(
+      !is.na(.)
+    )
+  ) -&gt; hwGrades2</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiV2FybmluZyBtZXNzYWdlOlxuSW4gc3Ryc3BsaXQoY29kZSwgXCJcXG5cIiwgZml4ZWQgPSBUUlVFKSA6XG4gIGlucHV0IHN0cmluZyAxIGlzIGludmFsaWQgaW4gdGhpcyBsb2NhbGVcbiJ9 -->
+<pre><code>Warning message:
+In strsplit(code, &quot;\n&quot;, fixed = TRUE) :
+  input string 1 is invalid in this locale</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaHdHcmFkZXMyICU+JSByb3dTdW1zKCkgLT4gaHdHcmFkZXMk5Lqk5L2c5qWt5qyh5pW4XCJcbjAsaHdHcmFkZXNcblxuXG5gYGAifQ== -->
+<pre class="r"><code>hwGrades2 %&gt;% rowSums() -&gt; hwGrades$交作業次數&quot;
+0,hwGrades
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibmNvbCI6NSwibnJvdyI6Nzd9LCJyZGYiOiJINHNJQUFBQUFBQUFCdFZYdldzY1J4UmYzZWtrblloRUlDSUVJM0FTM0FTQzJQbWVyWHlGamNIZ3hwVUpwSmczSDRsQXViTlBGMnd3T0hKdjNLY3lHQktEc0NzWGR1SEdqZDI1ekQ5Z25JUlVhZ05HeXF4dVI1bTMwY1drY0VBSHMyLzJ0Ny8zUFRPM2UvbmNGYnA4WmJrb2lrN1I3YzBWblc2Y3puZmlaYTZZTC9xMXZGRVUzWS9pcEJmSGgzRmNhaDRzYzFKSzRwUzJOa01VYzBGU2xTTWdwRkltUnlwR3RLSTVZa0VaakJCS1BOYnl0TlFnY3NTVmdaUTZSd3kzUmlQRWNRN2NJKytWcGlWQnZpd1FyQVdlZW9XMFJPbkE4eHloRlNjRVplbzVPTWx5UkJITm9FUWNxSnhDSEFMVVljczIrTW9DMGdwZ1EwQWNTNkhNRVdHdFYwSm1DQTlNaUpEWGtKZXFWRElneEpZT2NSU1hJRlNGS2lZWVp5Z0x5aHpnN2dUZ0ZhQU9za3BXREdlcVdWQVMxVmx5cGhGSHhENGJsS253VHN1OHpwSjRYbG5VSFIyWEJrTzlzRnd5bHE5TTdpZ1hOdWNJS3JVU0d0c2hMS0JlZ0JDRUlWK0VPdzRvbmxKU2ExRHVUZ2NQeUhJcGxLUUJ4Mk1oSU12R2VlbnlPZ3ZwZ1RtMHY3d2dOcUFhS2dqQm9KaFZhYUlwMUFzdndPTTlTRVhzUGJLc25RVEFNUk1oMFU1eEpPNnduQ085REpYSmQ2V0VBSlJhSEErVGVEMVRWbkc4MzBOTW4rV3JUcG9nQUdVaFlydVlSbmtGME5vNkZEUFZjZFgvTzZLbzl6Z3ZYVlhFb25nNE1jS2pYUkM0bFI2dDFWZ3Y1OUcrQ0pycWdESlZnZ016dUY4RTBLcXJNL1VWNHNRem9ZeDlMNHFWK3NUZGlaZjNNV3B2SjMya1BJN0o3WCtyM2F3WUdyemY4SExabnFmN3BXWXN4ckhRaktXTWsrNTcyVGpVYVh6MWtzejAyeVBYcmYza3NmYW1vbGl0YS9mRFhqMWR2SDlTNU9ETU5QaTJiRDkvcDUzUFg5Lzk0czlYZDQva3A3dTc5MjUrOWNmZ3M1ZnIzOSsrOC9YZzlQcTFYeGJJK0FoUDk2ZDJkNS8zTDM0NVdHLzAydktUYXkvWDN2NTI0WWlmOExhOUpCTi9yY2tueWNUL1dMOSsrQUc4K1lkZWttMjl0Vlk5RXA3aW1NR2ZLWlAvLzZxWFpGUGZvbGx2eFFuN0RaYU9sMmYzanIrZkpRZnZzSGRpWlRGRHZpOC9NK3JkOXQvNnhPblpMYk85WFV3L2J4SzQ3TXpFYklTeCtjNjM2Y09JSlhvOEwzY096K1UzajU3Ky91TzlodEw5OWpyNWU1cmVLL3JuYi9peDNkeU9MeEhOZ2YvVHJ3OEdUMjc5L1BUWmk1YVAvbmgwZlNQNXFmL0hPanZ4Y25CdzhEaUsvUlo1Y1hSMXNqa2FSbXFuL2xDYm4xSU8vMDdtbW54WG12bWxiTjZibXVrZU5Lbk1OK1lXL1BDYnpXRjZ6VnFOa1J3R3NuRjF2RG1jcE9wRWRIdGpNcHFZcllUWTBWWkNwdjczL3dMbnhlanNYUTRBQUE9PSJ9 -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["學號"],"name":[1],"type":["chr"],"align":["left"]},{"label":["hw1"],"name":[2],"type":["int"],"align":["right"]},{"label":["hw2"],"name":[3],"type":["int"],"align":["right"]},{"label":["Exercise3"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["交作業次數"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"41061d78cc","2":"NA","3":"NA","4":"NA","5":"0"},{"1":"41073df627","2":"NA","3":"NA","4":"NA","5":"0"},{"1":"4107b5677a","2":"NA","3":"NA","4":"NA","5":"0"},{"1":"4107931872","2":"NA","3":"NA","4":"NA","5":"0"},{"1":"4107cb7a72","2":"NA","3":"NA","4":"NA","5":"0"},{"1":"4107121e7a","2":"NA","3":"NA","4":"NA","5":"0"},{"1":"4107e208b5","2":"NA","3":"NA","4":"NA","5":"0"},{"1":"4107d0f108","2":"NA","3":"NA","4":"NA","5":"0"},{"1":"4107a4ca88","2":"NA","3":"NA","4":"NA","5":"0"},{"1":"4107d44b4e","2":"NA","3":"NA","4":"NA","5":"0"},{"1":"4107998201","2":"NA","3":"NA","4":"NA","5":"0"},{"1":"41071cb188","2":"NA","3":"NA","4":"NA","5":"0"},{"1":"4107be2e7e","2":"NA","3":"NA","4":"NA","5":"0"},{"1":"410750dbe4","2":"NA","3":"NA","4":"NA","5":"0"},{"1":"4107294117","2":"NA","3":"NA","4":"NA","5":"0"},{"1":"4107e4bd63","2":"NA","3":"NA","4":"NA","5":"0"},{"1":"41077183b0","2":"NA","3":"NA","4":"NA","5":"0"},{"1":"4107eb9d73","2":"NA","3":"NA","4":"NA","5":"0"},{"1":"41071b2de4","2":"NA","3":"NA","4":"NA","5":"0"},{"1":"4107cfe9cb","2":"NA","3":"NA","4":"NA","5":"0"},{"1":"4107efbcff","2":"NA","3":"NA","4":"NA","5":"0"},{"1":"4107cc2b0f","2":"NA","3":"NA","4":"NA","5":"0"},{"1":"4105cce756","2":"10","3":"10","4":"10.000000","5":"3"},{"1":"4104f355fa","2":"10","3":"10","4":"10.000000","5":"3"},{"1":"410407076f","2":"10","3":"10","4":"10.000000","5":"3"},{"1":"41040c0dfa","2":"10","3":"NA","4":"NA","5":"1"},{"1":"410746b579","2":"10","3":"10","4":"10.000000","5":"3"},{"1":"4107953430","2":"10","3":"NA","4":"NA","5":"1"},{"1":"410723db7a","2":"10","3":"NA","4":"NA","5":"1"},{"1":"4107fb49b2","2":"10","3":"NA","4":"NA","5":"1"},{"1":"4107396933","2":"10","3":"NA","4":"NA","5":"1"},{"1":"4107183f76","2":"10","3":"NA","4":"9.444444","5":"2"},{"1":"4107b64383","2":"10","3":"9","4":"9.444444","5":"3"},{"1":"410757e2af","2":"10","3":"10","4":"8.333333","5":"3"},{"1":"41075ed867","2":"10","3":"9","4":"8.888889","5":"3"},{"1":"41061e49ce","2":"10","3":"10","4":"7.777778","5":"3"},{"1":"4107808b37","2":"10","3":"9","4":"8.333333","5":"3"},{"1":"4107c4633c","2":"10","3":"9","4":"7.777778","5":"3"},{"1":"4104d245c7","2":"10","3":"10","4":"6.666667","5":"3"},{"1":"4105268758","2":"10","3":"9","4":"7.222222","5":"3"},{"1":"41078013f4","2":"10","3":"9","4":"7.222222","5":"3"},{"1":"4107b5513e","2":"10","3":"9","4":"7.222222","5":"3"},{"1":"410714d4b7","2":"10","3":"10","4":"6.111111","5":"3"},{"1":"4106062ca2","2":"10","3":"8","4":"7.777778","5":"3"},{"1":"4107d8feb8","2":"10","3":"8","4":"7.222222","5":"3"},{"1":"410705762f","2":"10","3":"7","4":"7.777778","5":"3"},{"1":"4104d2cbfe","2":"10","3":"6","4":"8.333333","5":"3"},{"1":"4107ade6d0","2":"10","3":"6","4":"8.333333","5":"3"},{"1":"41056eb3dc","2":"10","3":"8","4":"6.111111","5":"3"},{"1":"4107e51cf6","2":"10","3":"9","4":"5.000000","5":"3"},{"1":"41077bffa4","2":"10","3":"9","4":"5.000000","5":"3"},{"1":"410770aade","2":"10","3":"6","4":"7.777778","5":"3"},{"1":"41073e5bea","2":"10","3":"8","4":"5.555556","5":"3"},{"1":"410792540c","2":"10","3":"5","4":"8.333333","5":"3"},{"1":"4107e8d6bb","2":"10","3":"5","4":"8.333333","5":"3"},{"1":"4107051561","2":"10","3":"5","4":"8.333333","5":"3"},{"1":"4107d1a4cb","2":"10","3":"8","4":"5.000000","5":"3"},{"1":"4106e6f9a5","2":"10","3":"8","4":"5.000000","5":"3"},{"1":"4106bfb22c","2":"10","3":"NA","4":"5.000000","5":"2"},{"1":"41077036cb","2":"10","3":"5","4":"NA","5":"2"},{"1":"4107239472","2":"10","3":"NA","4":"5.000000","5":"2"},{"1":"4107f07a39","2":"10","3":"5","4":"7.222222","5":"3"},{"1":"4106af5bde","2":"10","3":"6","4":"5.000000","5":"3"},{"1":"410568738e","2":"10","3":"6","4":"5.000000","5":"3"},{"1":"4107fb88cd","2":"10","3":"6","4":"5.000000","5":"3"},{"1":"4107028355","2":"10","3":"6","4":"5.000000","5":"3"},{"1":"4107028355","2":"10","3":"6","4":"5.000000","5":"3"},{"1":"410772ee61","2":"10","3":"6","4":"5.000000","5":"3"},{"1":"41078991c2","2":"10","3":"5","4":"5.555556","5":"3"},{"1":"410741a5e9","2":"10","3":"5","4":"5.000000","5":"3"},{"1":"4107f4c6e3","2":"10","3":"5","4":"5.000000","5":"3"},{"1":"4107d6bde0","2":"NA","3":"7","4":"5.000000","5":"2"},{"1":"4107f828fb","2":"10","3":"0","4":"5.000000","5":"3"},{"1":"4107754b3a","2":"NA","3":"NA","4":"5.000000","5":"1"},{"1":"41077b1b58","2":"NA","3":"NA","4":"5.000000","5":"1"},{"1":"4106af5e9a","2":"NA","3":"5","4":"5.000000","5":"2"},{"1":"41071b20dc","2":"NA","3":"0","4":"9.444444","5":"2"}],"options":{"columns":{"min":{},"max":[10],"total":[5]},"rows":{"min":[10],"max":[10],"total":[77]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
@@ -263,6 +387,27 @@ The following object is masked from 愼㸱愼㸵package:base愼㸱愼㸶:
 <p>在<strong>hwGrades</strong>記算每個人的<strong>平均成績</strong>並在<strong>hwGrades</strong>新增<strong>平均成績</strong>變數來儲存結果；注意NA視同0分。(最後一行請打hwGrades，批改程式會去比對hwGrades中的<strong>平均成績</strong>欄位。)</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaHdHcmFkZXMgJT4lXG4gIHNlbGVjdChodzEsaHcyLEV4ZXJjaXNlMykgJT4lXG4gIHtyb3dTdW1zKC4sbmEucm09VCl9IC0+IOe4veaIkOe4viBcbmBgYCJ9 -->
+<pre class="r"><code>hwGrades %&gt;%
+  select(hw1,hw2,Exercise3) %&gt;%
+  {rowSums(.,na.rm=T)} -&gt; 總成績 </code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiV2FybmluZyBtZXNzYWdlOlxuSW4gc3Ryc3BsaXQoY29kZSwgXCJcXG5cIiwgZml4ZWQgPSBUUlVFKSA6XG4gIGlucHV0IHN0cmluZyAxIGlzIGludmFsaWQgaW4gdGhpcyBsb2NhbGVcbiJ9 -->
+<pre><code>Warning message:
+In strsplit(code, &quot;\n&quot;, fixed = TRUE) :
+  input string 1 is invalid in this locale</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaHdHcmFkZXMk5bmz5Z2H5oiQ57i+IDwtIOe4veaIkOe4vi8zXG5od0dyYWRlc1xuYGBgIn0= -->
+<pre class="r"><code>hwGrades$平均成績 &lt;- 總成績/3
+hwGrades</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibmNvbCI6NiwibnJvdyI6Nzd9LCJyZGYiOiJINHNJQUFBQUFBQUFCdFZZVzJnZFJSamVuRnhQc0tXMFFXcU56VWxRcENqSnp1N2M5a0c2U0VXd3BPQUZLY1VpTzdNekpwQW16VVZhQ0xRUit5UlNFQitLdnBTMnRLbXBmVkFMNXNFTGZiSDRJZ29pb2s4U3EwVVFxZzh0RldtY3paazV6ci9Kc2ZwUUlRZG12NWx2Ly9tdk0zUG1uR2QyN1kyNjkzWUhRVkFKV3R0YmdrcXI2YlpWektNbGFBdXFCUjRPZ3RZdHB0TmgyaWJUaHUyTGJveENpbkxHcGZRWUZ1ZWFSc3huQktHTVpUNlR4SWl6eUdla1lCbGtVSVFVbktXaWtBdmlNM21vVWNoOUpzTXk0NERKTVJaWUFlc0pqMElFYkVtQjRDeWhJc1hBTEJMbVFtR2ZpUktNRUloVVlaSFQyR2NZNHJFSWdZeEljZ1pra0loeXFGbHFsVWdCWm1raHRRWXlNaEtoenhBcEZTUFVZN0NPQ2RGK0RuSElRa1kxWUdTWUF4bUdxU0FzQVJrak1ZNUJGRkdjQzFnZExYQWlRQVhqaENZeGpKVEhtbEdRWjRwakRtU0lxWE1HSWlVcTU5VFBNMFVLSnhKVWg1dWxFWU5hU0V6ajJGK1pPSTh3a2I0TWlTaG5oRU05S05hZ0ZvSVFGQU5iQ09kWUFIOUNHc2tNeEo1enJRVFFIQkpHSXczOWtVSUR6Vm11YU83bm1WQWw0aHpzTDBXUTFDQ0hUR2lkQVo5Wm1CbFZvQmFLQ0FYM1lFUk03WUZtbmxNaG9NK0lVTEJUY21SMm1DOURGZFZKNXU5S0tyU0lJZ245aVNsY3oxR2NZTGpmdFFrLzlsY2R6VFFSSUFwaXloVnpFSmNXbk1zYytCeHhzK3IvbVdHUlVqQXVuaVJJQW44d3lvZ0N1MEJqU1JWWXF5WmZ1UUw3UXZPSWF4QXBJMWpFR2F3WEVtRFZGWkdxQk1pWU15RTBkUStDRGNXSk8yY2VkNk1WMXRaN2MzR3NFZHYvbHJ0bVBsaSthdVY4TFBmZHVNdTJ6cUQramR0aHgwN0dqZHU5dGpMSDJtcDM2TTB2TjM5dVljZjN0YjBPd2NZaWQwZXZGOTNPMCtzRjB3ZnJ6cGV4L1A2T2VnYVdqdSs0OWNYeEJ0WVdGazdPN3ZzbDdiL1MrL0lycis5UCszb252K2xBVXczZWpiY3RMRnl1UHZWbzJtdm5sWEhyNUpXZVAzOStzaUh2K0xJK2gwNit4OGJqME1uZnk1ZmV2VWRjWFRYUFlYbGVUeWtmam5kK05KRnZpczcrZjUzbjBPWTNzT3N0V0dlZnRHdHQzSGw5N1hFelRPK2diOTFpMEFUdmxwMG0rUzdiRDlicmVtdHl2cVhkQzhYbndxcHhNN3p2MStyazAvakZkT0RHc2NYemJ3OFYrNURzMkw0bkhUaHg2ZUZIQmo5UEI0NTlmT2JDKzlmU0FiNzAycEhwTTJuL2Q1dHZ0WFE5MWpqLyttY2ZmK0c1NGEycmNXVDN0MTkveGRMK29aRTl6KzkvTTYxOWVlSzlkMDRmU0d0V1g4M3FhK0RtRzY4ZW5mMGhyVm0vSGZaZGV1ajN5cWJadEc5azk0OXR0WnZGZWZmcC9CdS9yY0x0Tmg2SHpjNlpCMDROeVdkM2ZaLzIydkcveGZ1dC9XMVd2OE5OVVAvT1ArcTh3MGFlcTBNajdPWW5XMG8vcWR2bFdEWTlIZFIvVGp1eU84OW1za0U5bFIxUVpmRnh3emx4OC8wOXQzSVB1SHB4OGRwYko2MUk2OGdoOUhmWDNXT3JUeHhXVTNKMDJseGE3UVhqN0UvejZZZEh6aTErOUpsbHVzNWVuRDkxN3Z6bGZTV2IxYW1KUTRQT2JuR1Bxc3laeC9MeThnY0dicGVFT3ljT3pveE9qQnZSU3ZGSFFWdGRaT1U2MDJKWDdnYmJIL2I2SFhVMXJjczJ0RGFycmtPTnZ6UTY3cTc1RzQwbks0NE1IcHdhSFo5eDJUTHM5T0RNeEV3MjVoZzVNZWFZdXYzYmZ3R3JPTmdtM1JBQUFBPT0ifQ== -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["學號"],"name":[1],"type":["chr"],"align":["left"]},{"label":["hw1"],"name":[2],"type":["int"],"align":["right"]},{"label":["hw2"],"name":[3],"type":["int"],"align":["right"]},{"label":["Exercise3"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["交作業次數"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["平均成績"],"name":[6],"type":["dbl"],"align":["right"]}],"data":[{"1":"41061d78cc","2":"NA","3":"NA","4":"NA","5":"0","6":"0.000000"},{"1":"41073df627","2":"NA","3":"NA","4":"NA","5":"0","6":"0.000000"},{"1":"4107b5677a","2":"NA","3":"NA","4":"NA","5":"0","6":"0.000000"},{"1":"4107931872","2":"NA","3":"NA","4":"NA","5":"0","6":"0.000000"},{"1":"4107cb7a72","2":"NA","3":"NA","4":"NA","5":"0","6":"0.000000"},{"1":"4107121e7a","2":"NA","3":"NA","4":"NA","5":"0","6":"0.000000"},{"1":"4107e208b5","2":"NA","3":"NA","4":"NA","5":"0","6":"0.000000"},{"1":"4107d0f108","2":"NA","3":"NA","4":"NA","5":"0","6":"0.000000"},{"1":"4107a4ca88","2":"NA","3":"NA","4":"NA","5":"0","6":"0.000000"},{"1":"4107d44b4e","2":"NA","3":"NA","4":"NA","5":"0","6":"0.000000"},{"1":"4107998201","2":"NA","3":"NA","4":"NA","5":"0","6":"0.000000"},{"1":"41071cb188","2":"NA","3":"NA","4":"NA","5":"0","6":"0.000000"},{"1":"4107be2e7e","2":"NA","3":"NA","4":"NA","5":"0","6":"0.000000"},{"1":"410750dbe4","2":"NA","3":"NA","4":"NA","5":"0","6":"0.000000"},{"1":"4107294117","2":"NA","3":"NA","4":"NA","5":"0","6":"0.000000"},{"1":"4107e4bd63","2":"NA","3":"NA","4":"NA","5":"0","6":"0.000000"},{"1":"41077183b0","2":"NA","3":"NA","4":"NA","5":"0","6":"0.000000"},{"1":"4107eb9d73","2":"NA","3":"NA","4":"NA","5":"0","6":"0.000000"},{"1":"41071b2de4","2":"NA","3":"NA","4":"NA","5":"0","6":"0.000000"},{"1":"4107cfe9cb","2":"NA","3":"NA","4":"NA","5":"0","6":"0.000000"},{"1":"4107efbcff","2":"NA","3":"NA","4":"NA","5":"0","6":"0.000000"},{"1":"4107cc2b0f","2":"NA","3":"NA","4":"NA","5":"0","6":"0.000000"},{"1":"4105cce756","2":"10","3":"10","4":"10.000000","5":"3","6":"10.000000"},{"1":"4104f355fa","2":"10","3":"10","4":"10.000000","5":"3","6":"10.000000"},{"1":"410407076f","2":"10","3":"10","4":"10.000000","5":"3","6":"10.000000"},{"1":"41040c0dfa","2":"10","3":"NA","4":"NA","5":"1","6":"3.333333"},{"1":"410746b579","2":"10","3":"10","4":"10.000000","5":"3","6":"10.000000"},{"1":"4107953430","2":"10","3":"NA","4":"NA","5":"1","6":"3.333333"},{"1":"410723db7a","2":"10","3":"NA","4":"NA","5":"1","6":"3.333333"},{"1":"4107fb49b2","2":"10","3":"NA","4":"NA","5":"1","6":"3.333333"},{"1":"4107396933","2":"10","3":"NA","4":"NA","5":"1","6":"3.333333"},{"1":"4107183f76","2":"10","3":"NA","4":"9.444444","5":"2","6":"6.481481"},{"1":"4107b64383","2":"10","3":"9","4":"9.444444","5":"3","6":"9.481481"},{"1":"410757e2af","2":"10","3":"10","4":"8.333333","5":"3","6":"9.444444"},{"1":"41075ed867","2":"10","3":"9","4":"8.888889","5":"3","6":"9.296296"},{"1":"41061e49ce","2":"10","3":"10","4":"7.777778","5":"3","6":"9.259259"},{"1":"4107808b37","2":"10","3":"9","4":"8.333333","5":"3","6":"9.111111"},{"1":"4107c4633c","2":"10","3":"9","4":"7.777778","5":"3","6":"8.925926"},{"1":"4104d245c7","2":"10","3":"10","4":"6.666667","5":"3","6":"8.888889"},{"1":"4105268758","2":"10","3":"9","4":"7.222222","5":"3","6":"8.740741"},{"1":"41078013f4","2":"10","3":"9","4":"7.222222","5":"3","6":"8.740741"},{"1":"4107b5513e","2":"10","3":"9","4":"7.222222","5":"3","6":"8.740741"},{"1":"410714d4b7","2":"10","3":"10","4":"6.111111","5":"3","6":"8.703704"},{"1":"4106062ca2","2":"10","3":"8","4":"7.777778","5":"3","6":"8.592593"},{"1":"4107d8feb8","2":"10","3":"8","4":"7.222222","5":"3","6":"8.407407"},{"1":"410705762f","2":"10","3":"7","4":"7.777778","5":"3","6":"8.259259"},{"1":"4104d2cbfe","2":"10","3":"6","4":"8.333333","5":"3","6":"8.111111"},{"1":"4107ade6d0","2":"10","3":"6","4":"8.333333","5":"3","6":"8.111111"},{"1":"41056eb3dc","2":"10","3":"8","4":"6.111111","5":"3","6":"8.037037"},{"1":"4107e51cf6","2":"10","3":"9","4":"5.000000","5":"3","6":"8.000000"},{"1":"41077bffa4","2":"10","3":"9","4":"5.000000","5":"3","6":"8.000000"},{"1":"410770aade","2":"10","3":"6","4":"7.777778","5":"3","6":"7.925926"},{"1":"41073e5bea","2":"10","3":"8","4":"5.555556","5":"3","6":"7.851852"},{"1":"410792540c","2":"10","3":"5","4":"8.333333","5":"3","6":"7.777778"},{"1":"4107e8d6bb","2":"10","3":"5","4":"8.333333","5":"3","6":"7.777778"},{"1":"4107051561","2":"10","3":"5","4":"8.333333","5":"3","6":"7.777778"},{"1":"4107d1a4cb","2":"10","3":"8","4":"5.000000","5":"3","6":"7.666667"},{"1":"4106e6f9a5","2":"10","3":"8","4":"5.000000","5":"3","6":"7.666667"},{"1":"4106bfb22c","2":"10","3":"NA","4":"5.000000","5":"2","6":"5.000000"},{"1":"41077036cb","2":"10","3":"5","4":"NA","5":"2","6":"5.000000"},{"1":"4107239472","2":"10","3":"NA","4":"5.000000","5":"2","6":"5.000000"},{"1":"4107f07a39","2":"10","3":"5","4":"7.222222","5":"3","6":"7.407407"},{"1":"4106af5bde","2":"10","3":"6","4":"5.000000","5":"3","6":"7.000000"},{"1":"410568738e","2":"10","3":"6","4":"5.000000","5":"3","6":"7.000000"},{"1":"4107fb88cd","2":"10","3":"6","4":"5.000000","5":"3","6":"7.000000"},{"1":"4107028355","2":"10","3":"6","4":"5.000000","5":"3","6":"7.000000"},{"1":"4107028355","2":"10","3":"6","4":"5.000000","5":"3","6":"7.000000"},{"1":"410772ee61","2":"10","3":"6","4":"5.000000","5":"3","6":"7.000000"},{"1":"41078991c2","2":"10","3":"5","4":"5.555556","5":"3","6":"6.851852"},{"1":"410741a5e9","2":"10","3":"5","4":"5.000000","5":"3","6":"6.666667"},{"1":"4107f4c6e3","2":"10","3":"5","4":"5.000000","5":"3","6":"6.666667"},{"1":"4107d6bde0","2":"NA","3":"7","4":"5.000000","5":"2","6":"4.000000"},{"1":"4107f828fb","2":"10","3":"0","4":"5.000000","5":"3","6":"5.000000"},{"1":"4107754b3a","2":"NA","3":"NA","4":"5.000000","5":"1","6":"1.666667"},{"1":"41077b1b58","2":"NA","3":"NA","4":"5.000000","5":"1","6":"1.666667"},{"1":"4106af5e9a","2":"NA","3":"5","4":"5.000000","5":"2","6":"3.333333"},{"1":"41071b20dc","2":"NA","3":"0","4":"9.444444","5":"2","6":"3.148148"}],"options":{"columns":{"min":{},"max":[10],"total":[6]},"rows":{"min":[10],"max":[10],"total":[77]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
@@ -271,6 +416,17 @@ The following object is masked from 愼㸱愼㸵package:base愼㸱愼㸶:
 <p>從<strong>hwGrades</strong>資料中選出那些<strong>學號</strong>有出現在<strong>classSurvey</strong>資料<strong>學號</strong>中的子樣本。（結果必需是個dataframe，它有和<strong>hwGrades</strong>一樣的column數目，但row只包含那些符合條件的觀測樣本；row個數會縮小。）(hint: 要判斷物件A的每一個元素是否有出現在物件B的元素中，可使用<code>A %in% B</code>. 可用<code>?match</code>查詢<code>%in%</code>的使用方法。)</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaHdHcmFkZXMk5a246JmfICVpbiUgY2xhc3NTdXJ2ZXkk5a246JmfIC0+IGlzU3VydmV5ZWRcbmBgYCJ9 -->
+<pre class="r"><code>hwGrades$學號 %in% classSurvey$學號 -&gt; isSurveyed</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiV2FybmluZyBtZXNzYWdlOlxuSW4gc3Ryc3BsaXQoY29kZSwgXCJcXG5cIiwgZml4ZWQgPSBUUlVFKSA6XG4gIGlucHV0IHN0cmluZyAxIGlzIGludmFsaWQgaW4gdGhpcyBsb2NhbGVcbiJ9 -->
+<pre><code>Warning message:
+In strsplit(code, &quot;\n&quot;, fixed = TRUE) :
+  input string 1 is invalid in this locale</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaHdHcmFkZXNTdWJzYW1wbGUgPC0gaHdHcmFkZXNbaXNTdXJ2ZXllZCxdXG5gYGAifQ== -->
+<pre class="r"><code>hwGradesSubsample &lt;- hwGrades[isSurveyed,]</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <blockquote>
@@ -282,6 +438,22 @@ The following object is masked from 愼㸱愼㸵package:base愼㸱愼㸶:
 <p>由於<strong>hwGradesSubsample</strong>裡沒有性別變數，但<strong>classSurvey</strong>裡有性別。請利用<code>%in%</code>來判斷<strong>hwGradesSubsample</strong>裡那些人是女性，並在<strong>hwGradesSubsample</strong>創造一個名稱為<strong>女性</strong>的變數，其為T/F logical vector, TRUE為女性。(最後一行請打hwGradesSubsample，批改程式會去比對hwGradesSubsample中的<strong>女性</strong>欄位。)</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-output-begin eyJkYXRhIjoiSW4gc3Ryc3BsaXQoY29kZSwgXCJcXG5cIiwgZml4ZWQgPSBUUlVFKSA6XG4gIGlucHV0IHN0cmluZyAxIGlzIGludmFsaWQgaW4gdGhpcyBsb2NhbGVcbiJ9 -->
+<pre><code>In strsplit(code, &quot;\n&quot;, fixed = TRUE) :
+  input string 1 is invalid in this locale</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaHdHcmFkZXNTdWJzYW1wbGUk5aWz5oCnIDwtIGh3R3JhZGVzU3Vic2FtcGxlJOWtuOiZnyAlaW4lIOWls+aAp+WtuOiZn1wiXG4wLGh3R3JhZGVzU3Vic2FtcGxlXG5cblxuYGBgIn0= -->
+<pre class="r"><code>hwGradesSubsample$女性 &lt;- hwGradesSubsample$學號 %in% 女性學號&quot;
+0,hwGradesSubsample
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibmNvbCI6NywibnJvdyI6NjB9LCJyZGYiOiJINHNJQUFBQUFBQUFCdFZYWFdnY1JSemYzRjJTdThPV1VJdlVHcHZMb1VoUkx2c3hIN3RRNlNJVndXTEJENlFVaSt6TTduakJlTmZjbmJRUWFDUDJTYVFnUG9pK2xGcmIxTlMrU01FOGFLVWdsdlpCRUVSRW55UldpeUJVSDFvcTBqaWJtem5udnlFZjBoWjBZZlkzODl2Ly9ML21QN3V6eit6WTdaWjNseTNMeWxuNS9qNHJsNWZkUWs3ZStxeUNWVXJ4Z0dYbDc1YWRRZG1HWk51bUhwU1JZMU9HQ2FXUnlRU2U0MVBYWkJ6WFNhQk00dG8rd3lZVDI4S3hmWk9KRUk5OHdNUUlNWlFBUFlqRnhETVo2dmdlczRHTVlGd0lrK0hjWmJiSllNNFRpb25CSU9GaExFeWZrVTF0U29BZVJCaW1BWWdkZThnRDFsMHZaakIyd1ZEQVFINjhnQVFlaUVJR0lTZ0JlU2JJODRFTWxsbU1nRDg0aVgxQ0RZWTRDUW80eUpndkUrOVJrQTFFUEkrYmtjWXV3dHlVd1M3eEtmYWhIc2NUQ0ZZQ2RqeGd5MEV4WXNBZm03ZzhBckhibUJKWFFPdWNDYUFuaWhNU20xbkZKR0Zlek1FcVk0Y0xrREhLaElpQWg5U09wQ3FRK1FTekJGYXZpNUVOTmZzeFlRejY3R0RpbUhFbFJBU1JXYytFQ2VhNkhGWkNnT0MrRURJMHo2d2ZFZ25Nb0llQytUNlBnWFhYbDdXNU1rUGRKQUVlVWo4SUhBNnNJeWZDQ2FoZWdUaEpRSTNKeU9NRTFMUHdYVjh3bUdlSGdkcElvMGdDa0ZXSHViWmNMOHRhbDc0L3B1VnRyUzNWOEg5cTJ1ZE1ETGNjOXpJeUpmWGN4R3hmajR0Vzl4MCtvRnJSZUs3SC9VWXJHbmI2alhsbU0rVlQzYVo4ZXExUDR6NTBOZTBPdm4rN01YeWdhMlE1WEhWK2RmN0kxaHRmSGVsaFpYYjI2TlNlWDhQUkM4T3Z2dmJtM25Ca2VQTGJBYWZWNC9WNDgrenMrZEtUajRURGFsNFdOMDFlMlBqWEwwLzA1TE42TkdxNWpjcHZqVnIrSG4vK283dlk1U1h6TkdibmFkUitMUGM4aTlyT1d1VTFxcnpwZGJidTBCVVdWOGJ0VjFmR2NJMTYvdk5vWmZCMjY4M2tNMnZQdXRQcnZNcCtEc3V6NlhWNldiejN0OUxrMCtqRnNIcnQ4TnlwOThiUytzUmJ0K3dLcSsrY2Zlamgyc1d3ZXZpejQ2Yy92aEpXL2ZrM0RyYVBoNlBmYjdqUlYzeTB0OTlIcHg1NzRibW5OaTNGK3M3dnZ2bWFocU5qOVYzUDczMDdyQ2c5RmFXbmh4dXV2WDVvNnNld292elZPSEwyd1Q5eVExUGhTSDNuVDRYSzlYUi9mejd6MXU5TGNJdUtJN3ZQN2o4MnhwL2Q4VU00ck1hcjRYM0t6bWFsVCtNUTFMdjl6MHorU21OMWV2MWNldFpQdnhmWmRlN0w5TTJXbFZ0cnN6SjRxM1Avalo1c1RGYm14NmVmVDBUdHR0WDk2ZEZrT1k0NlVVMjBvbGVTckhoRGNscGNmZ3VuRjcrcmw4L01YWG4zcUJMSjEvYzcvM1QxYWF6MCtJR2t4Y2ZiOHVpbFB0WW5mcDRKUHpsNGN1N1RMeFZUUEhGbTV0akpVK2YzcUhIaGc1Yy92SlN4WDJvMTk5ZTBEK2w1SXpjdGJ3c0xDMTlJdUprUkhtenU2NHczRzFJMGx5NTNvU3V5dU93NkpldFVmNXZSSCt5cXlTK29NQXRLM1VEU2VHbThvUSt1NjZVbmk0N1U5clhHR3gyZE9jbTJhNTFtSjVyUURHOU9hS1pyLytiZjRUYklpSThPQUFBPSJ9 -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["學號"],"name":[1],"type":["chr"],"align":["left"]},{"label":["hw1"],"name":[2],"type":["int"],"align":["right"]},{"label":["hw2"],"name":[3],"type":["int"],"align":["right"]},{"label":["Exercise3"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["交作業次數"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["平均成績"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["女性"],"name":[7],"type":["lgl"],"align":["right"]}],"data":[{"1":"4107b5677a","2":"NA","3":"NA","4":"NA","5":"0","6":"0.000000","7":"FALSE"},{"1":"4107931872","2":"NA","3":"NA","4":"NA","5":"0","6":"0.000000","7":"FALSE"},{"1":"4107121e7a","2":"NA","3":"NA","4":"NA","5":"0","6":"0.000000","7":"FALSE"},{"1":"4107e208b5","2":"NA","3":"NA","4":"NA","5":"0","6":"0.000000","7":"TRUE"},{"1":"4107d0f108","2":"NA","3":"NA","4":"NA","5":"0","6":"0.000000","7":"FALSE"},{"1":"4107a4ca88","2":"NA","3":"NA","4":"NA","5":"0","6":"0.000000","7":"FALSE"},{"1":"4107d44b4e","2":"NA","3":"NA","4":"NA","5":"0","6":"0.000000","7":"TRUE"},{"1":"4107e4bd63","2":"NA","3":"NA","4":"NA","5":"0","6":"0.000000","7":"TRUE"},{"1":"41077183b0","2":"NA","3":"NA","4":"NA","5":"0","6":"0.000000","7":"TRUE"},{"1":"4107efbcff","2":"NA","3":"NA","4":"NA","5":"0","6":"0.000000","7":"TRUE"},{"1":"4107cc2b0f","2":"NA","3":"NA","4":"NA","5":"0","6":"0.000000","7":"FALSE"},{"1":"4105cce756","2":"10","3":"10","4":"10.000000","5":"3","6":"10.000000","7":"FALSE"},{"1":"4104f355fa","2":"10","3":"10","4":"10.000000","5":"3","6":"10.000000","7":"FALSE"},{"1":"410407076f","2":"10","3":"10","4":"10.000000","5":"3","6":"10.000000","7":"TRUE"},{"1":"410746b579","2":"10","3":"10","4":"10.000000","5":"3","6":"10.000000","7":"TRUE"},{"1":"4107953430","2":"10","3":"NA","4":"NA","5":"1","6":"3.333333","7":"TRUE"},{"1":"410723db7a","2":"10","3":"NA","4":"NA","5":"1","6":"3.333333","7":"TRUE"},{"1":"4107fb49b2","2":"10","3":"NA","4":"NA","5":"1","6":"3.333333","7":"TRUE"},{"1":"4107396933","2":"10","3":"NA","4":"NA","5":"1","6":"3.333333","7":"TRUE"},{"1":"4107183f76","2":"10","3":"NA","4":"9.444444","5":"2","6":"6.481481","7":"TRUE"},{"1":"4107b64383","2":"10","3":"9","4":"9.444444","5":"3","6":"9.481481","7":"TRUE"},{"1":"410757e2af","2":"10","3":"10","4":"8.333333","5":"3","6":"9.444444","7":"TRUE"},{"1":"41075ed867","2":"10","3":"9","4":"8.888889","5":"3","6":"9.296296","7":"TRUE"},{"1":"41061e49ce","2":"10","3":"10","4":"7.777778","5":"3","6":"9.259259","7":"TRUE"},{"1":"4107808b37","2":"10","3":"9","4":"8.333333","5":"3","6":"9.111111","7":"FALSE"},{"1":"4107c4633c","2":"10","3":"9","4":"7.777778","5":"3","6":"8.925926","7":"TRUE"},{"1":"4104d245c7","2":"10","3":"10","4":"6.666667","5":"3","6":"8.888889","7":"FALSE"},{"1":"4105268758","2":"10","3":"9","4":"7.222222","5":"3","6":"8.740741","7":"TRUE"},{"1":"41078013f4","2":"10","3":"9","4":"7.222222","5":"3","6":"8.740741","7":"TRUE"},{"1":"4107b5513e","2":"10","3":"9","4":"7.222222","5":"3","6":"8.740741","7":"TRUE"},{"1":"410714d4b7","2":"10","3":"10","4":"6.111111","5":"3","6":"8.703704","7":"TRUE"},{"1":"4106062ca2","2":"10","3":"8","4":"7.777778","5":"3","6":"8.592593","7":"TRUE"},{"1":"410705762f","2":"10","3":"7","4":"7.777778","5":"3","6":"8.259259","7":"TRUE"},{"1":"4104d2cbfe","2":"10","3":"6","4":"8.333333","5":"3","6":"8.111111","7":"TRUE"},{"1":"4107ade6d0","2":"10","3":"6","4":"8.333333","5":"3","6":"8.111111","7":"TRUE"},{"1":"41056eb3dc","2":"10","3":"8","4":"6.111111","5":"3","6":"8.037037","7":"TRUE"},{"1":"4107e51cf6","2":"10","3":"9","4":"5.000000","5":"3","6":"8.000000","7":"TRUE"},{"1":"41077bffa4","2":"10","3":"9","4":"5.000000","5":"3","6":"8.000000","7":"TRUE"},{"1":"410770aade","2":"10","3":"6","4":"7.777778","5":"3","6":"7.925926","7":"TRUE"},{"1":"41073e5bea","2":"10","3":"8","4":"5.555556","5":"3","6":"7.851852","7":"FALSE"},{"1":"410792540c","2":"10","3":"5","4":"8.333333","5":"3","6":"7.777778","7":"TRUE"},{"1":"4107e8d6bb","2":"10","3":"5","4":"8.333333","5":"3","6":"7.777778","7":"FALSE"},{"1":"4107051561","2":"10","3":"5","4":"8.333333","5":"3","6":"7.777778","7":"TRUE"},{"1":"4106e6f9a5","2":"10","3":"8","4":"5.000000","5":"3","6":"7.666667","7":"TRUE"},{"1":"4106bfb22c","2":"10","3":"NA","4":"5.000000","5":"2","6":"5.000000","7":"FALSE"},{"1":"4107239472","2":"10","3":"NA","4":"5.000000","5":"2","6":"5.000000","7":"TRUE"},{"1":"4107f07a39","2":"10","3":"5","4":"7.222222","5":"3","6":"7.407407","7":"TRUE"},{"1":"4106af5bde","2":"10","3":"6","4":"5.000000","5":"3","6":"7.000000","7":"TRUE"},{"1":"4107fb88cd","2":"10","3":"6","4":"5.000000","5":"3","6":"7.000000","7":"TRUE"},{"1":"4107028355","2":"10","3":"6","4":"5.000000","5":"3","6":"7.000000","7":"TRUE"},{"1":"4107028355","2":"10","3":"6","4":"5.000000","5":"3","6":"7.000000","7":"TRUE"},{"1":"410772ee61","2":"10","3":"6","4":"5.000000","5":"3","6":"7.000000","7":"TRUE"},{"1":"41078991c2","2":"10","3":"5","4":"5.555556","5":"3","6":"6.851852","7":"TRUE"},{"1":"410741a5e9","2":"10","3":"5","4":"5.000000","5":"3","6":"6.666667","7":"TRUE"},{"1":"4107f4c6e3","2":"10","3":"5","4":"5.000000","5":"3","6":"6.666667","7":"TRUE"},{"1":"4107d6bde0","2":"NA","3":"7","4":"5.000000","5":"2","6":"4.000000","7":"FALSE"},{"1":"4107f828fb","2":"10","3":"0","4":"5.000000","5":"3","6":"5.000000","7":"TRUE"},{"1":"41077b1b58","2":"NA","3":"NA","4":"5.000000","5":"1","6":"1.666667","7":"FALSE"},{"1":"4106af5e9a","2":"NA","3":"5","4":"5.000000","5":"2","6":"3.333333","7":"FALSE"},{"1":"41071b20dc","2":"NA","3":"0","4":"9.444444","5":"2","6":"3.148148","7":"FALSE"}],"options":{"columns":{"min":{},"max":[10],"total":[7]},"rows":{"min":[10],"max":[10],"total":[60]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
@@ -290,6 +462,21 @@ The following object is masked from 愼㸱愼㸵package:base愼㸱愼㸶:
 <p>依<strong>hwGradesSubsample</strong>的<strong>平均成績</strong>及<strong>女性</strong>變數來記算出男性的「平均」<strong>平均成績</strong>。(最後一行必需出現此平均值)</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaHdHcmFkZXNTdWJzYW1wbGUk5bmz5Z2H5oiQ57i+Wyhod0dyYWRlc1N1YnNhbXBsZSTlpbPmgKc9PUYpXSAlPiVcbiAgbWVhblxuYGBgIn0= -->
+<pre class="r"><code>hwGradesSubsample$平均成績[(hwGradesSubsample$女性==F)] %&gt;%
+  mean</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDQuMTYzMzk5XG4ifQ== -->
+<pre><code>[1] 4.163399</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiV2FybmluZyBtZXNzYWdlOlxuSW4gc3Ryc3BsaXQoY29kZSwgXCJcXG5cIiwgZml4ZWQgPSBUUlVFKSA6XG4gIGlucHV0IHN0cmluZyAxIGlzIGludmFsaWQgaW4gdGhpcyBsb2NhbGVcbiJ9 -->
+<pre><code>Warning message:
+In strsplit(code, &quot;\n&quot;, fixed = TRUE) :
+  input string 1 is invalid in this locale</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI2h3R3JhZGVzU3Vic2FtcGxlWyhod0dyYWRlc1N1YnNhbXBsZSTlpbPmgKc9PUYpXSTlubPlnYfmiJDnuL5cbmBgYCJ9 -->
+<pre class="r"><code>#hwGradesSubsample[(hwGradesSubsample$女性==F)]$平均成績</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
@@ -297,6 +484,18 @@ The following object is masked from 愼㸱愼㸵package:base愼㸱愼㸶:
 <h2>女性學業表現</h2>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaHdHcmFkZXNTdWJzYW1wbGUk5bmz5Z2H5oiQ57i+Wyhod0dyYWRlc1N1YnNhbXBsZSTlpbPmgKc9PVQpXSAlPiVcbiAgbWVhblxuYGBgIn0= -->
+<pre class="r"><code>hwGradesSubsample$平均成績[(hwGradesSubsample$女性==T)] %&gt;%
+  mean</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDYuNTU4MTRcbiJ9 -->
+<pre><code>[1] 6.55814</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiV2FybmluZyBtZXNzYWdlOlxuSW4gc3Ryc3BsaXQoY29kZSwgXCJcXG5cIiwgZml4ZWQgPSBUUlVFKSA6XG4gIGlucHV0IHN0cmluZyAxIGlzIGludmFsaWQgaW4gdGhpcyBsb2NhbGVcbiJ9 -->
+<pre><code>Warning message:
+In strsplit(code, &quot;\n&quot;, fixed = TRUE) :
+  input string 1 is invalid in this locale</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <blockquote>
@@ -308,10 +507,44 @@ The following object is masked from 愼㸱愼㸵package:base愼㸱愼㸶:
 <p>請由<strong>hwGradesSubsample</strong>中計算女性「有參與」團隊活動的平均<strong>平均成績</strong>值。(最後一行必需出現此平均值) (hint: 可參考1.7來確認<strong>hwGradesSubsample</strong>有誰有參與團隊活動)</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2xhc3NTdXJ2ZXkk5a246JmfW2hhc0dyb3VwQWN0aXZpdHldIC0+IOacieWcmOmaiueahOWtuOiZn1xuYGBgIn0= -->
+<pre class="r"><code>classSurvey$學號[hasGroupActivity] -&gt; 有團隊的學號</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiV2FybmluZyBtZXNzYWdlOlxuSW4gc3Ryc3BsaXQoY29kZSwgXCJcXG5cIiwgZml4ZWQgPSBUUlVFKSA6XG4gIGlucHV0IHN0cmluZyAxIGlzIGludmFsaWQgaW4gdGhpcyBsb2NhbGVcbiJ9 -->
+<pre><code>Warning message:
+In strsplit(code, &quot;\n&quot;, fixed = TRUE) :
+  input string 1 is invalid in this locale</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaHdHcmFkZXNTdWJzYW1wbGUk5pyJ5ZyY5rS7IDwtIGh3R3JhZGVzU3Vic2FtcGxlJOWtuOiZnyAlaW4lIOacieWcmOmaiueahOWtuOiZn1xuaHdHcmFkZXNTdWJzYW1wbGUk5bmz5Z2H5oiQ57i+Wyhod0dyYWRlc1N1YnNhbXBsZSTlpbPmgKc9PVQgJiBod0dyYWRlc1N1YnNhbXBsZSTmnInlnJjmtLs9PVQpXSAlPiVcbiAgbWVhbiAtPiBtZWFuR3JhZGVGZW1hbGVXaXRoQWN0XG5tZWFuR3JhZGVGZW1hbGVXaXRoQWN0XG5gYGAifQ== -->
+<pre class="r"><code>hwGradesSubsample$有團活 &lt;- hwGradesSubsample$學號 %in% 有團隊的學號
+hwGradesSubsample$平均成績[(hwGradesSubsample$女性==T &amp; hwGradesSubsample$有團活==T)] %&gt;%
+  mean -&gt; meanGradeFemaleWithAct
+meanGradeFemaleWithAct</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDUuOTA4NjQyXG4ifQ== -->
+<pre><code>[1] 5.908642</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2xhc3NTdXJ2ZXkk5a246JmfW2hhc0dyb3VwQWN0aXZpdHldIC0+IOacieWcmOmaiueahOWtuOiZn1xuYGBgIn0= -->
+<pre class="r"><code>classSurvey$學號[hasGroupActivity] -&gt; 有團隊的學號</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiV2FybmluZyBtZXNzYWdlOlxuSW4gc3Ryc3BsaXQoY29kZSwgXCJcXG5cIiwgZml4ZWQgPSBUUlVFKSA6XG4gIGlucHV0IHN0cmluZyAxIGlzIGludmFsaWQgaW4gdGhpcyBsb2NhbGVcbiJ9 -->
+<pre><code>Warning message:
+In strsplit(code, &quot;\n&quot;, fixed = TRUE) :
+  input string 1 is invalid in this locale</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaHdHcmFkZXNTdWJzYW1wbGUk5pyJ5ZyY5rS7IDwtIGh3R3JhZGVzU3Vic2FtcGxlJOWtuOiZnyAlaW4lIOacieWcmOmaiueahOWtuOiZn1xuaHdHcmFkZXNTdWJzYW1wbGUk5bmz5Z2H5oiQ57i+Wyhod0dyYWRlc1N1YnNhbXBsZSTlpbPmgKc9PVQgJiBod0dyYWRlc1N1YnNhbXBsZSTmnInlnJjmtLs9PUYpXSAlPiVcbiAgbWVhbiAtPiBtZWFuR3JhZGVGZW1hbGVXaXRoTm9BY3Rcbm1lYW5HcmFkZUZlbWFsZVdpdGhOb0FjdFxuYGBgIn0= -->
+<pre class="r"><code>hwGradesSubsample$有團活 &lt;- hwGradesSubsample$學號 %in% 有團隊的學號
+hwGradesSubsample$平均成績[(hwGradesSubsample$女性==T &amp; hwGradesSubsample$有團活==F)] %&gt;%
+  mean -&gt; meanGradeFemaleWithNoAct
+meanGradeFemaleWithNoAct</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDguMDU2OThcbiJ9 -->
+<pre><code>[1] 8.05698</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <blockquote>
@@ -322,6 +555,23 @@ The following object is masked from 愼㸱愼㸵package:base愼㸱愼㸶:
 <h2>男性有參與團隊活動的學業表現</h2>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaHdHcmFkZXNTdWJzYW1wbGUk5bmz5Z2H5oiQ57i+Wyhod0dyYWRlc1N1YnNhbXBsZSTlpbPmgKc9PUYgJiBod0dyYWRlc1N1YnNhbXBsZSTmnInlnJjmtLs9PVQpXSAlPiVcbiAgbWVhbiAtPiBtZWFuR3JhZGVNYWxlV2l0aEFjdFxuYGBgIn0= -->
+<pre class="r"><code>hwGradesSubsample$平均成績[(hwGradesSubsample$女性==F &amp; hwGradesSubsample$有團活==T)] %&gt;%
+  mean -&gt; meanGradeMaleWithAct</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiV2FybmluZyBtZXNzYWdlOlxuSW4gc3Ryc3BsaXQoY29kZSwgXCJcXG5cIiwgZml4ZWQgPSBUUlVFKSA6XG4gIGlucHV0IHN0cmluZyAxIGlzIGludmFsaWQgaW4gdGhpcyBsb2NhbGVcbiJ9 -->
+<pre><code>Warning message:
+In strsplit(code, &quot;\n&quot;, fixed = TRUE) :
+  input string 1 is invalid in this locale</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaHdHcmFkZXNTdWJzYW1wbGUk5bmz5Z2H5oiQ57i+Wyhod0dyYWRlc1N1YnNhbXBsZSTlpbPmgKc9PUYgJiBod0dyYWRlc1N1YnNhbXBsZSTmnInlnJjmtLs9PUYpXSAlPiVcbiAgbWVhbiAtPiBtZWFuR3JhZGVNYWxlV2l0aE5vQWN0XG5tZWFuR3JhZGVNYWxlV2l0aE5vQWN0LW1lYW5HcmFkZU1hbGVXaXRoQWN0XG5gYGAifQ== -->
+<pre class="r"><code>hwGradesSubsample$平均成績[(hwGradesSubsample$女性==F &amp; hwGradesSubsample$有團活==F)] %&gt;%
+  mean -&gt; meanGradeMaleWithNoAct
+meanGradeMaleWithNoAct-meanGradeMaleWithAct</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDEuNzQxMzU4XG4ifQ== -->
+<pre><code>[1] 1.741358</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
@@ -331,6 +581,18 @@ The following object is masked from 愼㸱愼㸵package:base愼㸱愼㸶:
 <p>誰先執行以下資料引入：</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaHdTdWJtaXQgPC0gcmVhZF9jc3YoXCJodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vdHBlbWFydGluL2dpdGh1Yi1kYXRhL21hc3Rlci9od1N1Ym1pdC5jc3ZcIilcbmBgYCJ9 -->
+<pre class="r"><code>hwSubmit &lt;- read_csv(&quot;https://raw.githubusercontent.com/tpemartin/github-data/master/hwSubmit.csv&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiUGFyc2VkIHdpdGggY29sdW1uIHNwZWNpZmljYXRpb246XG5jb2xzKFxuICBUaW1lc3RhbXAgPSBjb2xfZGF0ZXRpbWUoZm9ybWF0ID0gXCJcIiksXG4gIL7HuLkgPSBjb2xfY2hhcmFjdGVyKCksXG4gIKdAt36lTr1YID0gY29sX2NoYXJhY3RlcigpLFxuICCka6nKID0gY29sX2xvZ2ljYWwoKVxuKVxuIn0= -->
+<pre><code>Parsed with column specification:
+cols(
+  Timestamp = col_datetime(format = &quot;&quot;),
+  戼㹥Ǹ戼㸹 = col_character(),
+  愼㸷@戼㸷~愼㸵N戼㹤X = col_character(),
+  愼㸴k愼㸹挼㹡 = col_logical()
+)</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <div id="class" class="section level2">
@@ -338,6 +600,19 @@ The following object is masked from 愼㸱愼㸵package:base愼㸱愼㸶:
 <p>請將<strong>hwSubmit</strong>的所有變數調整成正確的class，其中<strong>Timestamp</strong>為UTC時區，請將它轉成台灣Asia/Taipei時區。（最後一行請打hwSubmit, 程式將檢查裡面所有變數的class是否正確。）</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaHdTdWJtaXQgJT4lXG4gIG11dGF0ZShcbiAgICBUaW1lc3RhbXA9eW1kX2htcyhUaW1lc3RhbXApLFxuICAgIFRpbWVzdGFtcD13aXRoX3R6KFRpbWVzdGFtcCx0em9uZT1cIkFzaWEvVGFpcGVpXCIpLFxuICAgIOWtuOiZnz1hcy5jaGFyYWN0ZXIo5a246JmfKVxuICApIC0+IGh3U3VibWl0XG5gYGAifQ== -->
+<pre class="r"><code>hwSubmit %&gt;%
+  mutate(
+    Timestamp=ymd_hms(Timestamp),
+    Timestamp=with_tz(Timestamp,tzone=&quot;Asia/Taipei&quot;),
+    學號=as.character(學號)
+  ) -&gt; hwSubmit</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiV2FybmluZyBtZXNzYWdlOlxuSW4gc3Ryc3BsaXQoY29kZSwgXCJcXG5cIiwgZml4ZWQgPSBUUlVFKSA6XG4gIGlucHV0IHN0cmluZyAxIGlzIGludmFsaWQgaW4gdGhpcyBsb2NhbGVcbiJ9 -->
+<pre><code>Warning message:
+In strsplit(code, &quot;\n&quot;, fixed = TRUE) :
+  input string 1 is invalid in this locale</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
@@ -346,6 +621,22 @@ The following object is masked from 愼㸱愼㸵package:base愼㸱愼㸶:
 <p>取出<strong>hwSubmit</strong>中<strong>作業代碼</strong>為Exercise3的子樣本，稱它為<strong>hwSubmit3</strong>。Exercise3的截止時日是台灣時間2018-11-06 00:00:00，請計算每個人該作業離截止時日還有多少小時。（請於<strong>hwSubmit3</strong>中創一個新變數<strong>截止時差</strong>存入每個人的時差小時值，程式最後一行請打hwSubmit3，程式將檢查裡面的<strong>截止時差</strong>是否正確。）</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGVhZGxpbmUzIDwtIHltZF9obXMoXCIyMDE4LTExLTA2IDAwOjAwOjAwXCIsdHo9XCJBc2lhL1RhaXBlaVwiKVxuYGBgIn0= -->
+<pre class="r"><code>deadline3 &lt;- ymd_hms(&quot;2018-11-06 00:00:00&quot;,tz=&quot;Asia/Taipei&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiV2FybmluZyBtZXNzYWdlOlxuSW4gc3Ryc3BsaXQoY29kZSwgXCJcXG5cIiwgZml4ZWQgPSBUUlVFKSA6XG4gIGlucHV0IHN0cmluZyAxIGlzIGludmFsaWQgaW4gdGhpcyBsb2NhbGVcbiJ9 -->
+<pre><code>Warning message:
+In strsplit(code, &quot;\n&quot;, fixed = TRUE) :
+  input string 1 is invalid in this locale</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaHdTdWJtaXQzIDwtIGh3U3VibWl0W2h3U3VibWl0JOS9nOalreS7o+eivD09XCJFeGVyY2lzZTNcIixdXG5od1N1Ym1pdDMgJT4lXG4gIG11dGF0ZShcbiAgICDmiKrmraLmmYLlt649ZGlmZnRpbWUoZGVhZGxpbmUzLFRpbWVzdGFtcCx1bml0cz1cImhvdXJzXCIpXG4gICkgLT4gXG4gIGh3U3VibWl0M1xuYGBgIn0= -->
+<pre class="r"><code>hwSubmit3 &lt;- hwSubmit[hwSubmit$作業代碼==&quot;Exercise3&quot;,]
+hwSubmit3 %&gt;%
+  mutate(
+    截止時差=difftime(deadline3,Timestamp,units=&quot;hours&quot;)
+  ) -&gt; 
+  hwSubmit3</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
@@ -354,14 +645,76 @@ The following object is masked from 愼㸱愼㸵package:base愼㸱愼㸶:
 <p><strong>hwSubmit3</strong>中, 女性「平均」截止時差比男性多多少小時呢？（最後一行答案必須女生減去男性的值。）</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaHdTdWJtaXQzJOaIquatouaZguW3rltod1N1Ym1pdDMk5aWz5oCnPT1UXSAlPiUgbWVhbiAtPiBGZW1hbGVUaW1lXG5gYGAifQ== -->
+<pre class="r"><code>hwSubmit3$截止時差[hwSubmit3$女性==T] %&gt;% mean -&gt; FemaleTime</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiV2FybmluZyBtZXNzYWdlOlxuSW4gc3Ryc3BsaXQoY29kZSwgXCJcXG5cIiwgZml4ZWQgPSBUUlVFKSA6XG4gIGlucHV0IHN0cmluZyAxIGlzIGludmFsaWQgaW4gdGhpcyBsb2NhbGVcbiJ9 -->
+<pre><code>Warning message:
+In strsplit(code, &quot;\n&quot;, fixed = TRUE) :
+  input string 1 is invalid in this locale</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaHdTdWJtaXQzJOaIquatouaZguW3rltod1N1Ym1pdDMk5aWz5oCnPT1GXSAlPiUgbWVhbiAtPiBNYWxlVGltZVxuRmVtYWxlVGltZS1NYWxlVGltZSAtPiBkZnRpbWUxXG5kZnRpbWUxXG5gYGAifQ== -->
+<pre class="r"><code>hwSubmit3$截止時差[hwSubmit3$女性==F] %&gt;% mean -&gt; MaleTime
+FemaleTime-MaleTime -&gt; dftime1
+dftime1</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiVGltZSBkaWZmZXJlbmNlIG9mIC0yOS4xMDAxNiBob3Vyc1xuIn0= -->
+<pre><code>Time difference of -29.10016 hours</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGVhZGxpbmUyIDwtIHltZF9obXMoXCIyMDE4LTEwLTI5IDAwOjAwOjAwXCIsdHo9XCJBc2lhL1RhaXBlaVwiKVxuYGBgIn0= -->
+<pre class="r"><code>deadline2 &lt;- ymd_hms(&quot;2018-10-29 00:00:00&quot;,tz=&quot;Asia/Taipei&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiV2FybmluZyBtZXNzYWdlOlxuSW4gc3Ryc3BsaXQoY29kZSwgXCJcXG5cIiwgZml4ZWQgPSBUUlVFKSA6XG4gIGlucHV0IHN0cmluZyAxIGlzIGludmFsaWQgaW4gdGhpcyBsb2NhbGVcbiJ9 -->
+<pre><code>Warning message:
+In strsplit(code, &quot;\n&quot;, fixed = TRUE) :
+  input string 1 is invalid in this locale</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaHdTdWJtaXQyIDwtIGh3U3VibWl0W2h3U3VibWl0JOS9nOalreS7o+eivD09XCJodzJcIixdXG5od1N1Ym1pdDIgJT4lXG4gIG11dGF0ZShcbiAgICDmiKrmraLmmYLlt649ZGlmZnRpbWUoZGVhZGxpbmUyLFRpbWVzdGFtcCx1bml0cz1cImhvdXJzXCIpXG4gICkgLT4gXG4gIGh3U3VibWl0MlxuaHdTdWJtaXQyJOaIquatouaZguW3rltod1N1Ym1pdDIk5aWz5oCnPT1UXSAlPiUgbWVhbiAtPiBGZW1hbGVUaW1lXG5od1N1Ym1pdDIk5oiq5q2i5pmC5beuW2h3U3VibWl0MiTlpbPmgKc9PUZdICU+JSBtZWFuIC0+IE1hbGVUaW1lXG5GZW1hbGVUaW1lLU1hbGVUaW1lIC0+IGRmdGltZTJcbmRmdGltZTJcbmBgYCJ9 -->
+<pre class="r"><code>hwSubmit2 &lt;- hwSubmit[hwSubmit$作業代碼==&quot;hw2&quot;,]
+hwSubmit2 %&gt;%
+  mutate(
+    截止時差=difftime(deadline2,Timestamp,units=&quot;hours&quot;)
+  ) -&gt; 
+  hwSubmit2
+hwSubmit2$截止時差[hwSubmit2$女性==T] %&gt;% mean -&gt; FemaleTime
+hwSubmit2$截止時差[hwSubmit2$女性==F] %&gt;% mean -&gt; MaleTime
+FemaleTime-MaleTime -&gt; dftime2
+dftime2</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiVGltZSBkaWZmZXJlbmNlIG9mIC0zNS41MDMyOCBob3Vyc1xuIn0= -->
+<pre><code>Time difference of -35.50328 hours</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGVhZGxpbmUxIDwtIHltZF9obXMoXCIyMDE4LTEwLTI0IDAwOjAwOjAwXCIsdHo9XCJBc2lhL1RhaXBlaVwiKVxuYGBgIn0= -->
+<pre class="r"><code>deadline1 &lt;- ymd_hms(&quot;2018-10-24 00:00:00&quot;,tz=&quot;Asia/Taipei&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiV2FybmluZyBtZXNzYWdlOlxuSW4gc3Ryc3BsaXQoY29kZSwgXCJcXG5cIiwgZml4ZWQgPSBUUlVFKSA6XG4gIGlucHV0IHN0cmluZyAxIGlzIGludmFsaWQgaW4gdGhpcyBsb2NhbGVcbiJ9 -->
+<pre><code>Warning message:
+In strsplit(code, &quot;\n&quot;, fixed = TRUE) :
+  input string 1 is invalid in this locale</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaHdTdWJtaXQxIDwtIGh3U3VibWl0W2h3U3VibWl0JOS9nOalreS7o+eivD09XCJodzFcIixdXG5od1N1Ym1pdDEgJT4lXG4gIG11dGF0ZShcbiAgICDmiKrmraLmmYLlt649ZGlmZnRpbWUoZGVhZGxpbmUxLFRpbWVzdGFtcCx1bml0cz1cImhvdXJzXCIpXG4gICkgLT4gXG4gIGh3U3VibWl0MVxuaHdTdWJtaXQxJOaIquatouaZguW3rltod1N1Ym1pdDEk5aWz5oCnPT1UXSAlPiUgbWVhbiAtPiBGZW1hbGVUaW1lXG5od1N1Ym1pdDEk5oiq5q2i5pmC5beuW2h3U3VibWl0MSTlpbPmgKc9PUZdICU+JSBtZWFuIC0+IE1hbGVUaW1lXG5GZW1hbGVUaW1lLU1hbGVUaW1lIC0+IGRmdGltZTFcbmRmdGltZTFcbmBgYCJ9 -->
+<pre class="r"><code>hwSubmit1 &lt;- hwSubmit[hwSubmit$作業代碼==&quot;hw1&quot;,]
+hwSubmit1 %&gt;%
+  mutate(
+    截止時差=difftime(deadline1,Timestamp,units=&quot;hours&quot;)
+  ) -&gt; 
+  hwSubmit1
+hwSubmit1$截止時差[hwSubmit1$女性==T] %&gt;% mean -&gt; FemaleTime
+hwSubmit1$截止時差[hwSubmit1$女性==F] %&gt;% mean -&gt; MaleTime
+FemaleTime-MaleTime -&gt; dftime1
+dftime1</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiVGltZSBkaWZmZXJlbmNlIG9mIC03LjU1MzUwMSBob3Vyc1xuIn0= -->
+<pre><code>Time difference of -7.553501 hours</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <blockquote>
@@ -371,7 +724,7 @@ The following object is masked from 愼㸱愼㸵package:base愼㸱愼㸶:
 </div>
 </div>
 
-<div id="rmd-source-code">LS0tDQpkYXRlOiAiMjAxOC0xMS0xNCINCm91dHB1dDogaHRtbF9ub3RlYm9vaw0KLS0tDQoNCmBgYHtyfQ0KbGlicmFyeShyZWFkcik7IGxpYnJhcnkoZHBseXIpOyBsaWJyYXJ5KHN0cmluZ3IpOyBsaWJyYXJ5KGx1YnJpZGF0ZSkNCmBgYA0KDQojIDEuIOaAp+WIpeW3rueVsA0K6Kqw5YWI5Z+36KGM5Lul5LiL6LOH5paZ5byV5YWl77yaDQpgYGB7cn0NCmNsYXNzU3VydmV5IDwtIHJlYWRfY3N2KCJjbGFzc1N1cnZleS5jc3YiKQ0KaHdHcmFkZXMgPC0gcmVhZF9jc3YoImh3R3JhZGVzLmNzdiIpDQpgYGANCg0KIyMgMS4xIOeUt+Wls+aAp+avlOS+iw0K5b6eKipjbGFzc1N1cnZleSoq5Lit57Wx6KiI5pys54+t55S35aWz5q+U5L6L44CCKGhpbnQ6IOS9v+eUqGB0YWJsZSgpYOS5i+W+jOWGjemZpOS7pemBqeeVtueahOaVuOWtlykNCmBgYHtyIGFuczExfQ0KY2xhc3NTdXJ2ZXkk5oCn5YilICU+JSB0YWJsZSgpICU+JQ0KICB7Li9zdW0oLil9IC0+IHRiU2V4DQp0YlNleA0KYGBgDQoNCiMjIDEuMiDlj4PliqDjgIzlnJjpmormtLvli5XjgI3nmoTkurrmlbgNCuaJv+S4iumhjOOAguW+nioqY2xhc3NTdXJ2ZXkqKuijoeeahCoq6Kqy5aSW5rS75YuVKirorormlbjoqIjnrpfmnInlpJrlsJHkurrli77pgbjmnInlj4PoiIci5ZyY6ZqK5rS75YuVIuOAgg0KYGBge3IgYW5zMTJ9DQpjbGFzc1N1cnZleSToqrLlpJbmtLvli5UgJT4lDQogIHN0cl9kZXRlY3QoIuWcmOmaiua0u+WLlSIpIC0+IGhhc0dyb3VwQWN0aXZpdHkNCmhhc0dyb3VwQWN0aXZpdHkgJT4lICBzdW0NCmBgYA0KDQojIyAxLjMg5aWz5oCn55qE44CM5ZyY6ZqK5rS75YuV44CN5Y+D6IiH5oSP6aGYDQrmib/kuIrpoYzjgILlpbPlkIzlrbjoo6HmnInlpJrlsJHmr5TkvovmnInlj4PliqAi5ZyY6ZqK5rS75YuVIu+8iOe1kOaenOW/hemcgOaYr251bWVyaWMgdmVjdG9y5ZCr5pyJ44CM5pyJ5Y+D5Yqg44CN5Y+K44CM5rKS5pyJ5Y+D5Yqg44CN55qE5q+U5L6L5YC877yJDQpgYGB7ciBhbnMxM30NCmNsYXNzU3VydmV5JOaAp+WIpSAlPiUgDQogIHsuID09ICLlpbMifSAtPiBpc0ZlbWFsZQ0KY2xhc3NTdXJ2ZXkk6Kqy5aSW5rS75YuVW2lzRmVtYWxlXSAlPiUgI+WPqumBuOWls+aAp+eci+WlueWAkeeahOiqsuWklua0u+WLlQ0KICBzdHJfZGV0ZWN0KCLlnJjpmormtLvli5UiKSAlPiUgI+aJvuWHuuacieWcmOmaiua0u+WLleeahA0KICB0YWJsZSguKS9zdW0oaXNGZW1hbGUpLT50YkZlbWFsZQ0KdGJGZW1hbGUNCmBgYA0KDQpgYGB7ciBhbnMxMy0xfQ0KY2xhc3NTdXJ2ZXkk6Kqy5aSW5rS75YuVWyFpc0ZlbWFsZV0gJT4lDQogIHN0cl9kZXRlY3QoIuWcmOmaiua0u+WLlSIpICU+JQ0KICB0YWJsZSguKS9zdW0oIWlzRmVtYWxlKS0+dGJNYWxlDQp0Yk1hbGUNCmBgYA0KDQpgYGB7ciBhbnMxMy0yfQ0KdGJGZW1hbGVbIlRSVUUiXS90YkZlbWFsZVsiRkFMU0UiXQ0KdGJNYWxlWyJUUlVFIl0vdGJNYWxlWyJGQUxTRSJdDQpgYGANCg0KPiDlsI/nn6XorZjvvJrlnKjos4fmlpnkuK3vvIzmnIDlvozlpbPmgKfjgIzmnInlj4PoiIfjgI3lnJjpmormtLvli5XnmoTkurrmlbjmmK/lpbPmgKfjgIzmspLmnInlj4PoiIfjgI3nmoQyLjA35YCN77yb6ICM55S35oCn5YmH5pivMi405YCN44CCDQoNCiMjIDEuNCDkuqTkvZzmpa3mrKHmlbggIA0K5ZyoKipod0dyYWRlcyoq5Lit6KiY566X5q+P5YCL5Lq655qEKirkuqTkvZzmpa3mrKHmlbgqKuS4puWcqCoqaHdHcmFkZXMqKuaWsOWinioq5Lqk5L2c5qWt5qyh5pW4KirorormlbjkvoblhLLlrZjntZDmnpzjgIIo5pyA5b6M5LiA6KGM6KuL5omTaHdHcmFkZXPpoa/npLrkvaDnmoTlhajpg6hkYXRhZnJhbWXvvIzmibnmlLnnqIvlvI/mnIPljrvmr5TlsI1od0dyYWRlc+S4reeahCoq5Lqk5L2c5qWt5qyh5pW4KirmrITkvY3jgIIpIChoaW50OiBgZHBseXI6OnNlbGVjdCgpYOmBuOWHuuS9nOalreashO+8jOmBqeeVtuS9v+eUqGBkcGx5cjo6bXV0YXRlX2FsbCgpYOWPimBpcy5uYSgpYOS+hueUoueUn+avj+asoeS9nOalreaYr+WQpuOAjOaykuacieS6pOOAjeeahFQvRiBsb2dpY2FsIHZlY3Rvcu+8jOiLpeimgeaYr+OAjOacieS6pOOAjeiri+S9v+eUqGAhaXMubmEoKWDvvJvlho3kvb/nlKhgcm93U3VtcygpYOOAgikNCmBgYHtyIGFuczE0fQ0KaHdHcmFkZXMgJT4lDQogIHNlbGVjdChjKDI6NCkpICU+JQ0KICBtdXRhdGVfYWxsKA0KICAgIGZ1bnMoDQogICAgICAhaXMubmEoLikNCiAgICApDQogICkgLT4gaHdHcmFkZXMyDQpod0dyYWRlczIgJT4lIHJvd1N1bXMoKSAtPiBod0dyYWRlcyTkuqTkvZzmpa3mrKHmlbgNCmh3R3JhZGVzDQpgYGANCg0KIyMgMS41IOioiOeul+W5s+Wdh+aIkOe4viAgDQrlnKgqKmh3R3JhZGVzKiroqJjnrpfmr4/lgIvkurrnmoQqKuW5s+Wdh+aIkOe4vioq5Lim5ZyoKipod0dyYWRlcyoq5paw5aKeKirlubPlnYfmiJDnuL4qKuiuiuaVuOS+huWEsuWtmOe1kOaenO+8m+azqOaEj05B6KaW5ZCMMOWIhuOAgijmnIDlvozkuIDooYzoq4vmiZNod0dyYWRlc++8jOaJueaUueeoi+W8j+acg+WOu+avlOWwjWh3R3JhZGVz5Lit55qEKirlubPlnYfmiJDnuL4qKuashOS9jeOAgikNCg0KYGBge3IgYW5zMTV9DQpod0dyYWRlcyAlPiUNCiAgc2VsZWN0KGh3MSxodzIsRXhlcmNpc2UzKSAlPiUNCiAge3Jvd1N1bXMoLixuYS5ybT1UKX0gLT4g57i95oiQ57i+IA0KaHdHcmFkZXMk5bmz5Z2H5oiQ57i+IDwtIOe4veaIkOe4vi8zDQpod0dyYWRlcw0KYGBgDQoNCiMjIDEuNiDoqrDloavkuobllY/ljbfvvJ8NCuW+nioqaHdHcmFkZXMqKuizh+aWmeS4remBuOWHuumCo+S6myoq5a246JmfKirmnInlh7rnj77lnKgqKmNsYXNzU3VydmV5Kiros4fmlpkqKuWtuOiZnyoq5Lit55qE5a2Q5qij5pys44CC77yI57WQ5p6c5b+F6ZyA5piv5YCLZGF0YWZyYW1l77yM5a6D5pyJ5ZKMKipod0dyYWRlcyoq5LiA5qij55qEY29sdW1u5pW455uu77yM5L2Gcm935Y+q5YyF5ZCr6YKj5Lqb56ym5ZCI5qKd5Lu255qE6KeA5ris5qij5pys77ybcm935YCL5pW45pyD57iu5bCP44CC77yJKGhpbnQ6IOimgeWIpOaWt+eJqeS7tkHnmoTmr4/kuIDlgIvlhYPntKDmmK/lkKbmnInlh7rnj77lnKjnianku7ZC55qE5YWD57Sg5Lit77yM5Y+v5L2/55SoYEEgJWluJSBCYC4g5Y+v55SoYD9tYXRjaGDmn6XoqaJgJWluJWDnmoTkvb/nlKjmlrnms5XjgIIpDQoNCmBgYHtyIGFuczE2fQ0KaHdHcmFkZXMk5a246JmfICVpbiUgY2xhc3NTdXJ2ZXkk5a246JmfIC0+IGlzU3VydmV5ZWQNCmh3R3JhZGVzU3Vic2FtcGxlIDwtIGh3R3JhZGVzW2lzU3VydmV5ZWQsXQ0KYGBgDQoNCj4g5Lul5LiL5ZCE6aGM5Z2H5Lul44CM5pyJ5aGr44CNY2xhc3NTdXJ2ZXnnmoTkurrngrrkuLvvvIzljbNod0dyYWRlc+eahOe4ruWwj+WtkOaoo+acrO+8jOaIkeWAkeeoseatpOWtkOaoo+acrOeCumh3R3JhZGVTdWJzYW1wbGXvvIjkvaDkuI3kuIDlrpropoHnlKjpgJnlgIvlkI3nqLHvvIzkvYblvozpnaLlkITpoYzoq4vmiopod0dyYWRlU3Vic2FtcGxl5pu/5o+b5oiQ5L2g55So55qEZGF0YWZyYW1l5ZCN56ix77yJ44CCDQoNCiMjIDEuNyDmgKfliKXpgo/ovK/orormlbgNCueUseaWvCoqaHdHcmFkZXNTdWJzYW1wbGUqKuijoeaykuacieaAp+WIpeiuiuaVuO+8jOS9hioqY2xhc3NTdXJ2ZXkqKuijoeacieaAp+WIpeOAguiri+WIqeeUqGAlaW4lYOS+huWIpOaWtyoqaHdHcmFkZXNTdWJzYW1wbGUqKuijoemCo+S6m+S6uuaYr+Wls+aAp++8jOS4puWcqCoqaHdHcmFkZXNTdWJzYW1wbGUqKuWJtemAoOS4gOWAi+WQjeeoseeCuioq5aWz5oCnKirnmoTorormlbjvvIzlhbbngrpUL0YgbG9naWNhbCB2ZWN0b3IsIFRSVUXngrrlpbPmgKfjgIIo5pyA5b6M5LiA6KGM6KuL5omTaHdHcmFkZXNTdWJzYW1wbGXvvIzmibnmlLnnqIvlvI/mnIPljrvmr5TlsI1od0dyYWRlc1N1YnNhbXBsZeS4reeahCoq5aWz5oCnKirmrITkvY3jgIIpDQoNCmBgYHtyIGFuczE3fQ0KY2xhc3NTdXJ2ZXkk5a246JmfW2lzRmVtYWxlXSAtPiDlpbPmgKflrbjomZ8NCmh3R3JhZGVzU3Vic2FtcGxlJOWls+aApyA8LSBod0dyYWRlc1N1YnNhbXBsZSTlrbjomZ8gJWluJSDlpbPmgKflrbjomZ8NCmh3R3JhZGVzU3Vic2FtcGxlDQpgYGANCg0KIyMgMS44IOaAp+WIpeiIh+WtuOalreihqOePvu+8mueUt+aApw0K5L6dKipod0dyYWRlc1N1YnNhbXBsZSoq55qEKirlubPlnYfmiJDnuL4qKuWPiioq5aWz5oCnKirorormlbjkvoboqJjnrpflh7rnlLfmgKfnmoTjgIzlubPlnYfjgI0qKuW5s+Wdh+aIkOe4vioq44CCKOacgOW+jOS4gOihjOW/hemcgOWHuuePvuatpOW5s+Wdh+WAvCkNCmBgYHtyIGFuczE4fQ0KaHdHcmFkZXNTdWJzYW1wbGUk5bmz5Z2H5oiQ57i+Wyhod0dyYWRlc1N1YnNhbXBsZSTlpbPmgKc9PUYpXSAlPiUNCiAgbWVhbg0KYGBgDQoNCg0KIyMg5aWz5oCn5a245qWt6KGo54++DQpgYGB7ciBhbnMxOC0xfQ0KaHdHcmFkZXNTdWJzYW1wbGUk5bmz5Z2H5oiQ57i+Wyhod0dyYWRlc1N1YnNhbXBsZSTlpbPmgKc9PVQpXSAlPiUNCiAgbWVhbg0KYGBgDQoNCj4g5bCP55+l6K2Y77ya6LOH5paZ5Lit5aWz5oCn5bmz5Z2H5oiQ57i+6KGo54++6auY5pa855S35oCn6L+RMi4zOeWIhu+8iOa7v+WIhjEw5YiG77yJDQoNCiMjIDEuOSDlnJjpmormtLvli5XoiIflrbjmpa3ooajnj77vvJrlpbPmgKcNCuiri+eUsSoqaHdHcmFkZXNTdWJzYW1wbGUqKuS4reioiOeul+Wls+aAp+OAjOacieWPg+iIh+OAjeWcmOmaiua0u+WLleeahOW5s+Wdhyoq5bmz5Z2H5oiQ57i+KirlgLzjgIIo5pyA5b6M5LiA6KGM5b+F6ZyA5Ye654++5q2k5bmz5Z2H5YC8KSAoaGludDog5Y+v5Y+D6ICDMS435L6G56K66KqNKipod0dyYWRlc1N1YnNhbXBsZSoq5pyJ6Kqw5pyJ5Y+D6IiH5ZyY6ZqK5rS75YuVKQ0KYGBge3IgYW5zMTl9DQpjbGFzc1N1cnZleSTlrbjomZ9baGFzR3JvdXBBY3Rpdml0eV0gLT4g5pyJ5ZyY6ZqK55qE5a246JmfDQpod0dyYWRlc1N1YnNhbXBsZSTmnInlnJjmtLsgPC0gaHdHcmFkZXNTdWJzYW1wbGUk5a246JmfICVpbiUg5pyJ5ZyY6ZqK55qE5a246JmfDQpod0dyYWRlc1N1YnNhbXBsZSTlubPlnYfmiJDnuL5bKGh3R3JhZGVzU3Vic2FtcGxlJOWls+aApz09VCAmIGh3R3JhZGVzU3Vic2FtcGxlJOacieWcmOa0uz09VCldICU+JQ0KICBtZWFuIC0+IG1lYW5HcmFkZUZlbWFsZVdpdGhBY3QNCm1lYW5HcmFkZUZlbWFsZVdpdGhBY3QNCmBgYA0KDQpgYGB7ciBhbnMxOS0yfQ0KY2xhc3NTdXJ2ZXkk5a246JmfW2hhc0dyb3VwQWN0aXZpdHldIC0+IOacieWcmOmaiueahOWtuOiZnw0KaHdHcmFkZXNTdWJzYW1wbGUk5pyJ5ZyY5rS7IDwtIGh3R3JhZGVzU3Vic2FtcGxlJOWtuOiZnyAlaW4lIOacieWcmOmaiueahOWtuOiZnw0KaHdHcmFkZXNTdWJzYW1wbGUk5bmz5Z2H5oiQ57i+Wyhod0dyYWRlc1N1YnNhbXBsZSTlpbPmgKc9PVQgJiBod0dyYWRlc1N1YnNhbXBsZSTmnInlnJjmtLs9PUYpXSAlPiUNCiAgbWVhbiAtPiBtZWFuR3JhZGVGZW1hbGVXaXRoTm9BY3QNCm1lYW5HcmFkZUZlbWFsZVdpdGhOb0FjdA0KYGBgDQoNCj4g5bCP55+l6K2Y77ya6LOH5paZ5Lit5aWz5oCn44CM5rKS5pyJ5Y+D6IiH44CN5ZyY6ZqK5rS75YuV55qE5oiQ57i+6KGo54++5bmz5Z2H6auY5pa844CM5pyJ5Y+D6IiH44CN55qE5aWz5oCn57SEMi4xNOWIhu+8m+iAjOmAmeW3rui3neWcqOeUt+eUn+S4reWPquaciee0hDEuNzTliIbjgIINCg0KDQojIyDnlLfmgKfmnInlj4PoiIflnJjpmormtLvli5XnmoTlrbjmpa3ooajnj74NCmBgYHtyIGFuczE5LTN9DQpod0dyYWRlc1N1YnNhbXBsZSTlubPlnYfmiJDnuL5bKGh3R3JhZGVzU3Vic2FtcGxlJOWls+aApz09RiAmIGh3R3JhZGVzU3Vic2FtcGxlJOacieWcmOa0uz09VCldICU+JQ0KICBtZWFuIC0+IG1lYW5HcmFkZU1hbGVXaXRoQWN0DQpod0dyYWRlc1N1YnNhbXBsZSTlubPlnYfmiJDnuL5bKGh3R3JhZGVzU3Vic2FtcGxlJOWls+aApz09RiAmIGh3R3JhZGVzU3Vic2FtcGxlJOacieWcmOa0uz09RildICU+JQ0KICBtZWFuIC0+IG1lYW5HcmFkZU1hbGVXaXRoTm9BY3QNCm1lYW5HcmFkZU1hbGVXaXRoTm9BY3QtbWVhbkdyYWRlTWFsZVdpdGhBY3QNCmBgYA0KDQoNCiMgMi4g6Kqw5pyD5ouW77yfDQroqrDlhYjln7fooYzku6XkuIvos4fmlpnlvJXlhaXvvJoNCmBgYHtyfQ0KaHdTdWJtaXQgPC0gcmVhZC5jc3YoImRhdGEvaHdTdWJtaXQuY3N2IikNCmBgYA0KDQojIyAyLjEgY2xhc3PmqqLmn6UNCuiri+WwhyoqaHdTdWJtaXQqKueahOaJgOacieiuiuaVuOiqv+aVtOaIkOato+eiuueahGNsYXNz77yM5YW25LitKipUaW1lc3RhbXAqKueCulVUQ+aZguWNgO+8jOiri+Wwh+Wug+i9ieaIkOWPsOeBo0FzaWEvVGFpcGVp5pmC5Y2A44CC77yI5pyA5b6M5LiA6KGM6KuL5omTaHdTdWJtaXQsIOeoi+W8j+Wwh+aqouafpeijoemdouaJgOacieiuiuaVuOeahGNsYXNz5piv5ZCm5q2j56K644CC77yJDQpgYGB7ciBhbnMyMX0NCmh3U3VibWl0ICU+JQ0KICBtdXRhdGUoDQogICAgVGltZXN0YW1wPXltZF9obXMoVGltZXN0YW1wKSwNCiAgICBUaW1lc3RhbXA9d2l0aF90eihUaW1lc3RhbXAsdHpvbmU9IkFzaWEvVGFpcGVpIiksDQogICAg5a246JmfPWFzLmNoYXJhY3RlcijlrbjomZ8pDQogICkgLT4gaHdTdWJtaXQNCmBgYA0KDQojIyAyLjIg5Lqk5L2c5qWt5pmC6ZaTOiBFeGVyY2lzZTMNCuWPluWHuioqaHdTdWJtaXQqKuS4rSoq5L2c5qWt5Luj56K8KirngrpFeGVyY2lzZTPnmoTlrZDmqKPmnKzvvIznqLHlroPngroqKmh3U3VibWl0Myoq44CCRXhlcmNpc2Uz55qE5oiq5q2i5pmC5pel5piv5Y+w54Gj5pmC6ZaTMjAxOC0xMS0wNiAwMDowMDowMO+8jOiri+ioiOeul+avj+WAi+S6uuipsuS9nOalrembouaIquatouaZguaXpemChOacieWkmuWwkeWwj+aZguOAgu+8iOiri+aWvCoqaHdTdWJtaXQzKirkuK3libXkuIDlgIvmlrDorormlbgqKuaIquatouaZguW3rioq5a2Y5YWl5q+P5YCL5Lq655qE5pmC5beu5bCP5pmC5YC877yM56iL5byP5pyA5b6M5LiA6KGM6KuL5omTaHdTdWJtaXQz77yM56iL5byP5bCH5qqi5p+l6KOh6Z2i55qEKirmiKrmraLmmYLlt64qKuaYr+WQpuato+eiuuOAgu+8iQ0KYGBge3IgYW5zMjJ9DQpkZWFkbGluZTMgPC0geW1kX2htcygiMjAxOC0xMS0wNiAwMDowMDowMCIsdHo9IkFzaWEvVGFpcGVpIikNCmh3U3VibWl0MyA8LSBod1N1Ym1pdFtod1N1Ym1pdCTkvZzmpa3ku6Pnorw9PSJFeGVyY2lzZTMiLF0NCmh3U3VibWl0MyAlPiUNCiAgbXV0YXRlKA0KICAgIOaIquatouaZguW3rj1kaWZmdGltZShkZWFkbGluZTMsVGltZXN0YW1wLHVuaXRzPSJob3VycyIpDQogICkgLT4gDQogIGh3U3VibWl0Mw0KYGBgDQoNCiMjIDIuMyDmgKfliKXlt67nlbANCioqaHdTdWJtaXQzKirkuK0sIOWls+aAp+OAjOW5s+Wdh+OAjeaIquatouaZguW3ruavlOeUt+aAp+WkmuWkmuWwkeWwj+aZguWRou+8n++8iOacgOW+jOS4gOihjOetlOahiOW/hemgiOWls+eUn+a4m+WOu+eUt+aAp+eahOWAvOOAgu+8iQ0KDQpgYGB7ciBhbnMyM30NCmh3U3VibWl0MyTmiKrmraLmmYLlt65baHdTdWJtaXQzJOWls+aApz09VF0gJT4lIG1lYW4gLT4gRmVtYWxlVGltZQ0KaHdTdWJtaXQzJOaIquatouaZguW3rltod1N1Ym1pdDMk5aWz5oCnPT1GXSAlPiUgbWVhbiAtPiBNYWxlVGltZQ0KRmVtYWxlVGltZS1NYWxlVGltZSAtPiBkZnRpbWUxDQpkZnRpbWUxDQpgYGANCg0KYGBge3IgYW5zMjMtMX0NCmRlYWRsaW5lMiA8LSB5bWRfaG1zKCIyMDE4LTEwLTI5IDAwOjAwOjAwIix0ej0iQXNpYS9UYWlwZWkiKQ0KaHdTdWJtaXQyIDwtIGh3U3VibWl0W2h3U3VibWl0JOS9nOalreS7o+eivD09Imh3MiIsXQ0KaHdTdWJtaXQyICU+JQ0KICBtdXRhdGUoDQogICAg5oiq5q2i5pmC5beuPWRpZmZ0aW1lKGRlYWRsaW5lMixUaW1lc3RhbXAsdW5pdHM9ImhvdXJzIikNCiAgKSAtPiANCiAgaHdTdWJtaXQyDQpod1N1Ym1pdDIk5oiq5q2i5pmC5beuW2h3U3VibWl0MiTlpbPmgKc9PVRdICU+JSBtZWFuIC0+IEZlbWFsZVRpbWUNCmh3U3VibWl0MiTmiKrmraLmmYLlt65baHdTdWJtaXQyJOWls+aApz09Rl0gJT4lIG1lYW4gLT4gTWFsZVRpbWUNCkZlbWFsZVRpbWUtTWFsZVRpbWUgLT4gZGZ0aW1lMg0KZGZ0aW1lMg0KYGBgDQoNCg0KYGBge3IgYW5zMjMtMn0NCmRlYWRsaW5lMSA8LSB5bWRfaG1zKCIyMDE4LTEwLTI0IDAwOjAwOjAwIix0ej0iQXNpYS9UYWlwZWkiKQ0KaHdTdWJtaXQxIDwtIGh3U3VibWl0W2h3U3VibWl0JOS9nOalreS7o+eivD09Imh3MSIsXQ0KaHdTdWJtaXQxICU+JQ0KICBtdXRhdGUoDQogICAg5oiq5q2i5pmC5beuPWRpZmZ0aW1lKGRlYWRsaW5lMSxUaW1lc3RhbXAsdW5pdHM9ImhvdXJzIikNCiAgKSAtPiANCiAgaHdTdWJtaXQxDQpod1N1Ym1pdDEk5oiq5q2i5pmC5beuW2h3U3VibWl0MSTlpbPmgKc9PVRdICU+JSBtZWFuIC0+IEZlbWFsZVRpbWUNCmh3U3VibWl0MSTmiKrmraLmmYLlt65baHdTdWJtaXQxJOWls+aApz09Rl0gJT4lIG1lYW4gLT4gTWFsZVRpbWUNCkZlbWFsZVRpbWUtTWFsZVRpbWUgLT4gZGZ0aW1lMQ0KZGZ0aW1lMQ0KYGBgDQoNCj4g5bCP55+l6K2Y77ya56ys5LiA5qyh5L2c5qWt5aWz5oCn5bmz5Z2H5q+U55S35oCn5pmaNy415bCP5pmC5Lqk77yM56ys5LqM5qyh5L2c5qWt5pmaMzUuNeWwj+aZguOAgg0K</div>
+<div id="rmd-source-code">LS0tDQpkYXRlOiAiMjAxOC0xMS0xNCINCm91dHB1dDogaHRtbF9ub3RlYm9vaw0KLS0tDQoNCmBgYHtyfQ0KbGlicmFyeShyZWFkcik7IGxpYnJhcnkoZHBseXIpOyBsaWJyYXJ5KHN0cmluZ3IpOyBsaWJyYXJ5KGx1YnJpZGF0ZSkNCmBgYA0KDQojIDEuIOaAp+WIpeW3rueVsA0K6Kqw5YWI5Z+36KGM5Lul5LiL6LOH5paZ5byV5YWl77yaDQpgYGB7cn0NCmNsYXNzU3VydmV5IDwtIHJlYWRfY3N2KCJjbGFzc1N1cnZleS5jc3YiKQ0KaHdHcmFkZXMgPC0gcmVhZF9jc3YoImh3R3JhZGVzLmNzdiIpDQpgYGANCg0KIyMgMS4xIOeUt+Wls+aAp+avlOS+iw0K5b6eKipjbGFzc1N1cnZleSoq5Lit57Wx6KiI5pys54+t55S35aWz5q+U5L6L44CCKGhpbnQ6IOS9v+eUqGB0YWJsZSgpYOS5i+W+jOWGjemZpOS7pemBqeeVtueahOaVuOWtlykNCmBgYHtyIGFuczExfQ0KY2xhc3NTdXJ2ZXkk5oCn5YilICU+JSB0YWJsZSgpICU+JQ0KICB7Li9zdW0oLil9IC0+IHRiU2V4DQp0YlNleA0KYGBgDQoNCiMjIDEuMiDlj4PliqDjgIzlnJjpmormtLvli5XjgI3nmoTkurrmlbgNCuaJv+S4iumhjOOAguW+nioqY2xhc3NTdXJ2ZXkqKuijoeeahCoq6Kqy5aSW5rS75YuVKirorormlbjoqIjnrpfmnInlpJrlsJHkurrli77pgbjmnInlj4PoiIci5ZyY6ZqK5rS75YuVIuOAgg0KYGBge3IgYW5zMTJ9DQpjbGFzc1N1cnZleSToqrLlpJbmtLvli5UgJT4lDQogIHN0cl9kZXRlY3QoIuWcmOmaiua0u+WLlSIpIC0+IGhhc0dyb3VwQWN0aXZpdHkNCmhhc0dyb3VwQWN0aXZpdHkgJT4lICBzdW0NCmBgYA0KDQojIyAxLjMg5aWz5oCn55qE44CM5ZyY6ZqK5rS75YuV44CN5Y+D6IiH5oSP6aGYDQrmib/kuIrpoYzjgILlpbPlkIzlrbjoo6HmnInlpJrlsJHmr5TkvovmnInlj4PliqAi5ZyY6ZqK5rS75YuVIu+8iOe1kOaenOW/hemcgOaYr251bWVyaWMgdmVjdG9y5ZCr5pyJ44CM5pyJ5Y+D5Yqg44CN5Y+K44CM5rKS5pyJ5Y+D5Yqg44CN55qE5q+U5L6L5YC877yJDQpgYGB7ciBhbnMxM30NCmNsYXNzU3VydmV5JOaAp+WIpSAlPiUgDQogIHsuID09ICLlpbMifSAtPiBpc0ZlbWFsZQ0KY2xhc3NTdXJ2ZXkk6Kqy5aSW5rS75YuVW2lzRmVtYWxlXSAlPiUgI+WPqumBuOWls+aAp+eci+WlueWAkeeahOiqsuWklua0u+WLlQ0KICBzdHJfZGV0ZWN0KCLlnJjpmormtLvli5UiKSAlPiUgI+aJvuWHuuacieWcmOmaiua0u+WLleeahA0KICB0YWJsZSguKS9zdW0oaXNGZW1hbGUpLT50YkZlbWFsZQ0KdGJGZW1hbGUNCmBgYA0KDQpgYGB7ciBhbnMxMy0xfQ0KY2xhc3NTdXJ2ZXkk6Kqy5aSW5rS75YuVWyFpc0ZlbWFsZV0gJT4lDQogIHN0cl9kZXRlY3QoIuWcmOmaiua0u+WLlSIpICU+JQ0KICB0YWJsZSguKS9zdW0oIWlzRmVtYWxlKS0+dGJNYWxlDQp0Yk1hbGUNCmBgYA0KDQpgYGB7ciBhbnMxMy0yfQ0KdGJGZW1hbGVbIlRSVUUiXS90YkZlbWFsZVsiRkFMU0UiXQ0KdGJNYWxlWyJUUlVFIl0vdGJNYWxlWyJGQUxTRSJdDQpgYGANCg0KPiDlsI/nn6XorZjvvJrlnKjos4fmlpnkuK3vvIzmnIDlvozlpbPmgKfjgIzmnInlj4PoiIfjgI3lnJjpmormtLvli5XnmoTkurrmlbjmmK/lpbPmgKfjgIzmspLmnInlj4PoiIfjgI3nmoQyLjA35YCN77yb6ICM55S35oCn5YmH5pivMi405YCN44CCDQoNCiMjIDEuNCDkuqTkvZzmpa3mrKHmlbggIA0K5ZyoKipod0dyYWRlcyoq5Lit6KiY566X5q+P5YCL5Lq655qEKirkuqTkvZzmpa3mrKHmlbgqKuS4puWcqCoqaHdHcmFkZXMqKuaWsOWinioq5Lqk5L2c5qWt5qyh5pW4KirorormlbjkvoblhLLlrZjntZDmnpzjgIIo5pyA5b6M5LiA6KGM6KuL5omTaHdHcmFkZXPpoa/npLrkvaDnmoTlhajpg6hkYXRhZnJhbWXvvIzmibnmlLnnqIvlvI/mnIPljrvmr5TlsI1od0dyYWRlc+S4reeahCoq5Lqk5L2c5qWt5qyh5pW4KirmrITkvY3jgIIpIChoaW50OiBgZHBseXI6OnNlbGVjdCgpYOmBuOWHuuS9nOalreashO+8jOmBqeeVtuS9v+eUqGBkcGx5cjo6bXV0YXRlX2FsbCgpYOWPimBpcy5uYSgpYOS+hueUoueUn+avj+asoeS9nOalreaYr+WQpuOAjOaykuacieS6pOOAjeeahFQvRiBsb2dpY2FsIHZlY3Rvcu+8jOiLpeimgeaYr+OAjOacieS6pOOAjeiri+S9v+eUqGAhaXMubmEoKWDvvJvlho3kvb/nlKhgcm93U3VtcygpYOOAgikNCmBgYHtyIGFuczE0fQ0KaHdHcmFkZXMgJT4lDQogIHNlbGVjdChjKDI6NCkpICU+JQ0KICBtdXRhdGVfYWxsKA0KICAgIGZ1bnMoDQogICAgICAhaXMubmEoLikNCiAgICApDQogICkgLT4gaHdHcmFkZXMyDQpod0dyYWRlczIgJT4lIHJvd1N1bXMoKSAtPiBod0dyYWRlcyTkuqTkvZzmpa3mrKHmlbgNCmh3R3JhZGVzDQpgYGANCg0KIyMgMS41IOioiOeul+W5s+Wdh+aIkOe4viAgDQrlnKgqKmh3R3JhZGVzKiroqJjnrpfmr4/lgIvkurrnmoQqKuW5s+Wdh+aIkOe4vioq5Lim5ZyoKipod0dyYWRlcyoq5paw5aKeKirlubPlnYfmiJDnuL4qKuiuiuaVuOS+huWEsuWtmOe1kOaenO+8m+azqOaEj05B6KaW5ZCMMOWIhuOAgijmnIDlvozkuIDooYzoq4vmiZNod0dyYWRlc++8jOaJueaUueeoi+W8j+acg+WOu+avlOWwjWh3R3JhZGVz5Lit55qEKirlubPlnYfmiJDnuL4qKuashOS9jeOAgikNCg0KYGBge3IgYW5zMTV9DQpod0dyYWRlcyAlPiUNCiAgc2VsZWN0KGh3MSxodzIsRXhlcmNpc2UzKSAlPiUNCiAge3Jvd1N1bXMoLixuYS5ybT1UKX0gLT4g57i95oiQ57i+IA0KaHdHcmFkZXMk5bmz5Z2H5oiQ57i+IDwtIOe4veaIkOe4vi8zDQpod0dyYWRlcw0KYGBgDQoNCiMjIDEuNiDoqrDloavkuobllY/ljbfvvJ8NCuW+nioqaHdHcmFkZXMqKuizh+aWmeS4remBuOWHuumCo+S6myoq5a246JmfKirmnInlh7rnj77lnKgqKmNsYXNzU3VydmV5Kiros4fmlpkqKuWtuOiZnyoq5Lit55qE5a2Q5qij5pys44CC77yI57WQ5p6c5b+F6ZyA5piv5YCLZGF0YWZyYW1l77yM5a6D5pyJ5ZKMKipod0dyYWRlcyoq5LiA5qij55qEY29sdW1u5pW455uu77yM5L2Gcm935Y+q5YyF5ZCr6YKj5Lqb56ym5ZCI5qKd5Lu255qE6KeA5ris5qij5pys77ybcm935YCL5pW45pyD57iu5bCP44CC77yJKGhpbnQ6IOimgeWIpOaWt+eJqeS7tkHnmoTmr4/kuIDlgIvlhYPntKDmmK/lkKbmnInlh7rnj77lnKjnianku7ZC55qE5YWD57Sg5Lit77yM5Y+v5L2/55SoYEEgJWluJSBCYC4g5Y+v55SoYD9tYXRjaGDmn6XoqaJgJWluJWDnmoTkvb/nlKjmlrnms5XjgIIpDQoNCmBgYHtyIGFuczE2fQ0KaHdHcmFkZXMk5a246JmfICVpbiUgY2xhc3NTdXJ2ZXkk5a246JmfIC0+IGlzU3VydmV5ZWQNCmh3R3JhZGVzU3Vic2FtcGxlIDwtIGh3R3JhZGVzW2lzU3VydmV5ZWQsXQ0KYGBgDQoNCj4g5Lul5LiL5ZCE6aGM5Z2H5Lul44CM5pyJ5aGr44CNY2xhc3NTdXJ2ZXnnmoTkurrngrrkuLvvvIzljbNod0dyYWRlc+eahOe4ruWwj+WtkOaoo+acrO+8jOaIkeWAkeeoseatpOWtkOaoo+acrOeCumh3R3JhZGVTdWJzYW1wbGXvvIjkvaDkuI3kuIDlrpropoHnlKjpgJnlgIvlkI3nqLHvvIzkvYblvozpnaLlkITpoYzoq4vmiopod0dyYWRlU3Vic2FtcGxl5pu/5o+b5oiQ5L2g55So55qEZGF0YWZyYW1l5ZCN56ix77yJ44CCDQoNCiMjIDEuNyDmgKfliKXpgo/ovK/orormlbgNCueUseaWvCoqaHdHcmFkZXNTdWJzYW1wbGUqKuijoeaykuacieaAp+WIpeiuiuaVuO+8jOS9hioqY2xhc3NTdXJ2ZXkqKuijoeacieaAp+WIpeOAguiri+WIqeeUqGAlaW4lYOS+huWIpOaWtyoqaHdHcmFkZXNTdWJzYW1wbGUqKuijoemCo+S6m+S6uuaYr+Wls+aAp++8jOS4puWcqCoqaHdHcmFkZXNTdWJzYW1wbGUqKuWJtemAoOS4gOWAi+WQjeeoseeCuioq5aWz5oCnKirnmoTorormlbjvvIzlhbbngrpUL0YgbG9naWNhbCB2ZWN0b3IsIFRSVUXngrrlpbPmgKfjgIIo5pyA5b6M5LiA6KGM6KuL5omTaHdHcmFkZXNTdWJzYW1wbGXvvIzmibnmlLnnqIvlvI/mnIPljrvmr5TlsI1od0dyYWRlc1N1YnNhbXBsZeS4reeahCoq5aWz5oCnKirmrITkvY3jgIIpDQoNCmBgYHtyIGFuczE3fQ0KY2xhc3NTdXJ2ZXkk5a246JmfW2lzRmVtYWxlXSAtPiDlpbPmgKflrbjomZ8NCmh3R3JhZGVzU3Vic2FtcGxlJOWls+aApyA8LSBod0dyYWRlc1N1YnNhbXBsZSTlrbjomZ8gJWluJSDlpbPmgKflrbjomZ8NCmh3R3JhZGVzU3Vic2FtcGxlDQpgYGANCg0KIyMgMS44IOaAp+WIpeiIh+WtuOalreihqOePvu+8mueUt+aApw0K5L6dKipod0dyYWRlc1N1YnNhbXBsZSoq55qEKirlubPlnYfmiJDnuL4qKuWPiioq5aWz5oCnKirorormlbjkvoboqJjnrpflh7rnlLfmgKfnmoTjgIzlubPlnYfjgI0qKuW5s+Wdh+aIkOe4vioq44CCKOacgOW+jOS4gOihjOW/hemcgOWHuuePvuatpOW5s+Wdh+WAvCkNCmBgYHtyIGFuczE4fQ0KaHdHcmFkZXNTdWJzYW1wbGUk5bmz5Z2H5oiQ57i+Wyhod0dyYWRlc1N1YnNhbXBsZSTlpbPmgKc9PUYpXSAlPiUNCiAgbWVhbg0KI2h3R3JhZGVzU3Vic2FtcGxlWyhod0dyYWRlc1N1YnNhbXBsZSTlpbPmgKc9PUYpXSTlubPlnYfmiJDnuL4NCmBgYA0KDQoNCiMjIOWls+aAp+WtuOalreihqOePvg0KYGBge3IgYW5zMTgtMX0NCmh3R3JhZGVzU3Vic2FtcGxlJOW5s+Wdh+aIkOe4vlsoaHdHcmFkZXNTdWJzYW1wbGUk5aWz5oCnPT1UKV0gJT4lDQogIG1lYW4NCmBgYA0KDQo+IOWwj+efpeitmO+8muizh+aWmeS4reWls+aAp+W5s+Wdh+aIkOe4vuihqOePvumrmOaWvOeUt+aAp+i/kTIuMznliIbvvIjmu7/liIYxMOWIhu+8iQ0KDQojIyAxLjkg5ZyY6ZqK5rS75YuV6IiH5a245qWt6KGo54++77ya5aWz5oCnDQroq4vnlLEqKmh3R3JhZGVzU3Vic2FtcGxlKirkuK3oqIjnrpflpbPmgKfjgIzmnInlj4PoiIfjgI3lnJjpmormtLvli5XnmoTlubPlnYcqKuW5s+Wdh+aIkOe4vioq5YC844CCKOacgOW+jOS4gOihjOW/hemcgOWHuuePvuatpOW5s+Wdh+WAvCkgKGhpbnQ6IOWPr+WPg+iAgzEuN+S+hueiuuiqjSoqaHdHcmFkZXNTdWJzYW1wbGUqKuacieiqsOacieWPg+iIh+WcmOmaiua0u+WLlSkNCmBgYHtyIGFuczE5fQ0KY2xhc3NTdXJ2ZXkk5a246JmfW2hhc0dyb3VwQWN0aXZpdHldIC0+IOacieWcmOmaiueahOWtuOiZnw0KaHdHcmFkZXNTdWJzYW1wbGUk5pyJ5ZyY5rS7IDwtIGh3R3JhZGVzU3Vic2FtcGxlJOWtuOiZnyAlaW4lIOacieWcmOmaiueahOWtuOiZnw0KaHdHcmFkZXNTdWJzYW1wbGUk5bmz5Z2H5oiQ57i+Wyhod0dyYWRlc1N1YnNhbXBsZSTlpbPmgKc9PVQgJiBod0dyYWRlc1N1YnNhbXBsZSTmnInlnJjmtLs9PVQpXSAlPiUNCiAgbWVhbiAtPiBtZWFuR3JhZGVGZW1hbGVXaXRoQWN0DQptZWFuR3JhZGVGZW1hbGVXaXRoQWN0DQpgYGANCg0KYGBge3IgYW5zMTktMn0NCmNsYXNzU3VydmV5JOWtuOiZn1toYXNHcm91cEFjdGl2aXR5XSAtPiDmnInlnJjpmornmoTlrbjomZ8NCmh3R3JhZGVzU3Vic2FtcGxlJOacieWcmOa0uyA8LSBod0dyYWRlc1N1YnNhbXBsZSTlrbjomZ8gJWluJSDmnInlnJjpmornmoTlrbjomZ8NCmh3R3JhZGVzU3Vic2FtcGxlJOW5s+Wdh+aIkOe4vlsoaHdHcmFkZXNTdWJzYW1wbGUk5aWz5oCnPT1UICYgaHdHcmFkZXNTdWJzYW1wbGUk5pyJ5ZyY5rS7PT1GKV0gJT4lDQogIG1lYW4gLT4gbWVhbkdyYWRlRmVtYWxlV2l0aE5vQWN0DQptZWFuR3JhZGVGZW1hbGVXaXRoTm9BY3QNCmBgYA0KDQo+IOWwj+efpeitmO+8muizh+aWmeS4reWls+aAp+OAjOaykuacieWPg+iIh+OAjeWcmOmaiua0u+WLleeahOaIkOe4vuihqOePvuW5s+Wdh+mrmOaWvOOAjOacieWPg+iIh+OAjeeahOWls+aAp+e0hDIuMTTliIbvvJvogIzpgJnlt67ot53lnKjnlLfnlJ/kuK3lj6rmnInntIQxLjc05YiG44CCDQoNCg0KIyMg55S35oCn5pyJ5Y+D6IiH5ZyY6ZqK5rS75YuV55qE5a245qWt6KGo54++DQpgYGB7ciBhbnMxOS0zfQ0KaHdHcmFkZXNTdWJzYW1wbGUk5bmz5Z2H5oiQ57i+Wyhod0dyYWRlc1N1YnNhbXBsZSTlpbPmgKc9PUYgJiBod0dyYWRlc1N1YnNhbXBsZSTmnInlnJjmtLs9PVQpXSAlPiUNCiAgbWVhbiAtPiBtZWFuR3JhZGVNYWxlV2l0aEFjdA0KaHdHcmFkZXNTdWJzYW1wbGUk5bmz5Z2H5oiQ57i+Wyhod0dyYWRlc1N1YnNhbXBsZSTlpbPmgKc9PUYgJiBod0dyYWRlc1N1YnNhbXBsZSTmnInlnJjmtLs9PUYpXSAlPiUNCiAgbWVhbiAtPiBtZWFuR3JhZGVNYWxlV2l0aE5vQWN0DQptZWFuR3JhZGVNYWxlV2l0aE5vQWN0LW1lYW5HcmFkZU1hbGVXaXRoQWN0DQpgYGANCg0KDQojIDIuIOiqsOacg+aLlu+8nw0K6Kqw5YWI5Z+36KGM5Lul5LiL6LOH5paZ5byV5YWl77yaDQpgYGB7cn0NCmh3U3VibWl0IDwtIHJlYWRfY3N2KCJodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vdHBlbWFydGluL2dpdGh1Yi1kYXRhL21hc3Rlci9od1N1Ym1pdC5jc3YiKQ0KYGBgDQoNCiMjIDIuMSBjbGFzc+aqouafpQ0K6KuL5bCHKipod1N1Ym1pdCoq55qE5omA5pyJ6K6K5pW46Kq/5pW05oiQ5q2j56K655qEY2xhc3PvvIzlhbbkuK0qKlRpbWVzdGFtcCoq54K6VVRD5pmC5Y2A77yM6KuL5bCH5a6D6L2J5oiQ5Y+w54GjQXNpYS9UYWlwZWnmmYLljYDjgILvvIjmnIDlvozkuIDooYzoq4vmiZNod1N1Ym1pdCwg56iL5byP5bCH5qqi5p+l6KOh6Z2i5omA5pyJ6K6K5pW455qEY2xhc3PmmK/lkKbmraPnorrjgILvvIkNCmBgYHtyIGFuczIxfQ0KaHdTdWJtaXQgJT4lDQogIG11dGF0ZSgNCiAgICBUaW1lc3RhbXA9eW1kX2htcyhUaW1lc3RhbXApLA0KICAgIFRpbWVzdGFtcD13aXRoX3R6KFRpbWVzdGFtcCx0em9uZT0iQXNpYS9UYWlwZWkiKSwNCiAgICDlrbjomZ89YXMuY2hhcmFjdGVyKOWtuOiZnykNCiAgKSAtPiBod1N1Ym1pdA0KYGBgDQoNCiMjIDIuMiDkuqTkvZzmpa3mmYLplpM6IEV4ZXJjaXNlMw0K5Y+W5Ye6Kipod1N1Ym1pdCoq5LitKirkvZzmpa3ku6PnorwqKueCukV4ZXJjaXNlM+eahOWtkOaoo+acrO+8jOeoseWug+eCuioqaHdTdWJtaXQzKirjgIJFeGVyY2lzZTPnmoTmiKrmraLmmYLml6XmmK/lj7DngaPmmYLplpMyMDE4LTExLTA2IDAwOjAwOjAw77yM6KuL6KiI566X5q+P5YCL5Lq66Kmy5L2c5qWt6Zui5oiq5q2i5pmC5pel6YKE5pyJ5aSa5bCR5bCP5pmC44CC77yI6KuL5pa8Kipod1N1Ym1pdDMqKuS4reWJteS4gOWAi+aWsOiuiuaVuCoq5oiq5q2i5pmC5beuKirlrZjlhaXmr4/lgIvkurrnmoTmmYLlt67lsI/mmYLlgLzvvIznqIvlvI/mnIDlvozkuIDooYzoq4vmiZNod1N1Ym1pdDPvvIznqIvlvI/lsIfmqqLmn6Xoo6HpnaLnmoQqKuaIquatouaZguW3rioq5piv5ZCm5q2j56K644CC77yJDQpgYGB7ciBhbnMyMn0NCmRlYWRsaW5lMyA8LSB5bWRfaG1zKCIyMDE4LTExLTA2IDAwOjAwOjAwIix0ej0iQXNpYS9UYWlwZWkiKQ0KaHdTdWJtaXQzIDwtIGh3U3VibWl0W2h3U3VibWl0JOS9nOalreS7o+eivD09IkV4ZXJjaXNlMyIsXQ0KaHdTdWJtaXQzICU+JQ0KICBtdXRhdGUoDQogICAg5oiq5q2i5pmC5beuPWRpZmZ0aW1lKGRlYWRsaW5lMyxUaW1lc3RhbXAsdW5pdHM9ImhvdXJzIikNCiAgKSAtPiANCiAgaHdTdWJtaXQzDQpgYGANCg0KIyMgMi4zIOaAp+WIpeW3rueVsA0KKipod1N1Ym1pdDMqKuS4rSwg5aWz5oCn44CM5bmz5Z2H44CN5oiq5q2i5pmC5beu5q+U55S35oCn5aSa5aSa5bCR5bCP5pmC5ZGi77yf77yI5pyA5b6M5LiA6KGM562U5qGI5b+F6aCI5aWz55Sf5rib5Y6755S35oCn55qE5YC844CC77yJDQoNCmBgYHtyIGFuczIzfQ0KaHdTdWJtaXQzJOaIquatouaZguW3rltod1N1Ym1pdDMk5aWz5oCnPT1UXSAlPiUgbWVhbiAtPiBGZW1hbGVUaW1lDQpod1N1Ym1pdDMk5oiq5q2i5pmC5beuW2h3U3VibWl0MyTlpbPmgKc9PUZdICU+JSBtZWFuIC0+IE1hbGVUaW1lDQpGZW1hbGVUaW1lLU1hbGVUaW1lIC0+IGRmdGltZTENCmRmdGltZTENCmBgYA0KDQpgYGB7ciBhbnMyMy0xfQ0KZGVhZGxpbmUyIDwtIHltZF9obXMoIjIwMTgtMTAtMjkgMDA6MDA6MDAiLHR6PSJBc2lhL1RhaXBlaSIpDQpod1N1Ym1pdDIgPC0gaHdTdWJtaXRbaHdTdWJtaXQk5L2c5qWt5Luj56K8PT0iaHcyIixdDQpod1N1Ym1pdDIgJT4lDQogIG11dGF0ZSgNCiAgICDmiKrmraLmmYLlt649ZGlmZnRpbWUoZGVhZGxpbmUyLFRpbWVzdGFtcCx1bml0cz0iaG91cnMiKQ0KICApIC0+IA0KICBod1N1Ym1pdDINCmh3U3VibWl0MiTmiKrmraLmmYLlt65baHdTdWJtaXQyJOWls+aApz09VF0gJT4lIG1lYW4gLT4gRmVtYWxlVGltZQ0KaHdTdWJtaXQyJOaIquatouaZguW3rltod1N1Ym1pdDIk5aWz5oCnPT1GXSAlPiUgbWVhbiAtPiBNYWxlVGltZQ0KRmVtYWxlVGltZS1NYWxlVGltZSAtPiBkZnRpbWUyDQpkZnRpbWUyDQpgYGANCg0KDQpgYGB7ciBhbnMyMy0yfQ0KZGVhZGxpbmUxIDwtIHltZF9obXMoIjIwMTgtMTAtMjQgMDA6MDA6MDAiLHR6PSJBc2lhL1RhaXBlaSIpDQpod1N1Ym1pdDEgPC0gaHdTdWJtaXRbaHdTdWJtaXQk5L2c5qWt5Luj56K8PT0iaHcxIixdDQpod1N1Ym1pdDEgJT4lDQogIG11dGF0ZSgNCiAgICDmiKrmraLmmYLlt649ZGlmZnRpbWUoZGVhZGxpbmUxLFRpbWVzdGFtcCx1bml0cz0iaG91cnMiKQ0KICApIC0+IA0KICBod1N1Ym1pdDENCmh3U3VibWl0MSTmiKrmraLmmYLlt65baHdTdWJtaXQxJOWls+aApz09VF0gJT4lIG1lYW4gLT4gRmVtYWxlVGltZQ0KaHdTdWJtaXQxJOaIquatouaZguW3rltod1N1Ym1pdDEk5aWz5oCnPT1GXSAlPiUgbWVhbiAtPiBNYWxlVGltZQ0KRmVtYWxlVGltZS1NYWxlVGltZSAtPiBkZnRpbWUxDQpkZnRpbWUxDQpgYGANCg0KPiDlsI/nn6XorZjvvJrnrKzkuIDmrKHkvZzmpa3lpbPmgKflubPlnYfmr5TnlLfmgKfmmZo3LjXlsI/mmYLkuqTvvIznrKzkuozmrKHkvZzmpa3mmZozNS415bCP5pmC44CCDQo=</div>
 
 
 

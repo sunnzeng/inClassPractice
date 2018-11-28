@@ -104,6 +104,7 @@ hwGradesSubsample
 ```{r ans18}
 hwGradesSubsample$平均成績[(hwGradesSubsample$女性==F)] %>%
   mean
+#hwGradesSubsample[(hwGradesSubsample$女性==F)]$平均成績
 ```
 
 
@@ -149,7 +150,7 @@ meanGradeMaleWithNoAct-meanGradeMaleWithAct
 # 2. 誰會拖？
 誰先執行以下資料引入：
 ```{r}
-hwSubmit <- read.csv("data/hwSubmit.csv")
+hwSubmit <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/master/hwSubmit.csv")
 ```
 
 ## 2.1 class檢查
