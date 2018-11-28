@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1543392287441.000,
+    "dirty" : true,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "E73057FF",
+    "lastKnownWriteTime" : 1543392308,
+    "last_content_update" : 1543395716498,
+    "path" : "C:/inClassPractice/midterm.Rmd",
+    "project_path" : "midterm.Rmd",
+    "properties" : {
+        "chunk_output_type" : "inline",
+        "cursorPosition" : "167,198",
+        "scrollLine" : "165"
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

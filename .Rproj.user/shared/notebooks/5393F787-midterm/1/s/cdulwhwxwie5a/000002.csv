@@ -1,0 +1,3 @@
+"0","classSurvey <- read_csv(""data/classSurvey.csv"")"
+"2","Error: 'data/classSurvey.csv' does not exist in current working directory ('C:/inClassPractice').
+"

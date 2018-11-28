@@ -1,0 +1,14 @@
+"0","hwGradesSubsample$平均成績[(hwGradesSubsample$女性==F)] %>%"
+"0","  mean"
+"1","[1]"
+"1"," 4.163399"
+"1","
+"
+"2","Warning message:
+"
+"2","In strsplit(code, ""\n"", fixed = TRUE) :"
+"2","
+ "
+"2"," input string 1 is invalid in this locale
+"
+"0","#hwGradesSubsample[(hwGradesSubsample$女性==F)]$平均成績"

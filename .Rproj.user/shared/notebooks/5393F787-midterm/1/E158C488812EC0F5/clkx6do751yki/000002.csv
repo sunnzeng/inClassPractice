@@ -1,0 +1,21 @@
+"0","classSurvey$課外活動[!isFemale] %>%"
+"0","  str_detect(""團隊活動"") %>%"
+"0","  table(.)/sum(!isFemale)->tbMale"
+"2","Warning message:
+"
+"2","In strsplit(code, ""\n"", fixed = TRUE) :"
+"2","
+ "
+"2"," input string 1 is invalid in this locale
+"
+"0","tbMale"
+"1",".
+"
+"1","    FALSE "
+"1","     TRUE "
+"1","
+"
+"1","0.2941176 "
+"1","0.7058824 "
+"1","
+"

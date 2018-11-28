@@ -1,0 +1,20 @@
+"0","classSurvey$性別 %>% table() %>%"
+"0","  {./sum(.)} -> tbSex"
+"2","Warning message:
+"
+"2","In strsplit(code, ""\n"", fixed = TRUE) :"
+"2","
+ "
+"2"," input string 1 is invalid in this locale
+"
+"0","tbSex"
+"1",".
+"
+"1","       女 "
+"1","       男 "
+"1","
+"
+"1","0.7166667 "
+"1","0.2833333 "
+"1","
+"

@@ -1,0 +1,17 @@
+"0","hwSubmit3$截止時差[hwSubmit3$女性==T] %>% mean -> FemaleTime"
+"2","Warning message:
+"
+"2","In strsplit(code, ""\n"", fixed = TRUE) :"
+"2","
+ "
+"2"," input string 1 is invalid in this locale
+"
+"0","hwSubmit3$截止時差[hwSubmit3$女性==F] %>% mean -> MaleTime"
+"0","FemaleTime-MaleTime -> dftime1"
+"0","dftime1"
+"1","Time difference of "
+"1","-29.10016"
+"1"," "
+"1","hours"
+"1","
+"

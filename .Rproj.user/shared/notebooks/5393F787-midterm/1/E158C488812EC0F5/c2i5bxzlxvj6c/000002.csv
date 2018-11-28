@@ -1,0 +1,23 @@
+"0","classSurvey$性別 %>% "
+"0","  {. == ""女""} -> isFemale"
+"2","Warning message:
+"
+"2","In strsplit(code, ""\n"", fixed = TRUE) :"
+"2","
+ "
+"2"," input string 1 is invalid in this locale
+"
+"0","classSurvey$課外活動[isFemale] %>% #只選女性看她們的課外活動"
+"0","  str_detect(""團隊活動"") %>% #找出有團隊活動的"
+"0","  table(.)/sum(isFemale)->tbFemale"
+"0","tbFemale"
+"1",".
+"
+"1","    FALSE "
+"1","     TRUE "
+"1","
+"
+"1","0.3255814 "
+"1","0.6744186 "
+"1","
+"

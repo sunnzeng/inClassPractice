@@ -1,0 +1,16 @@
+"0","hwGrades %>%"
+"0","  select(c(2:4)) %>%"
+"0","  mutate_all("
+"0","    funs("
+"0","      !is.na(.)"
+"0","    )"
+"0","  ) -> hwGrades2"
+"2","Warning message:
+"
+"2","In strsplit(code, ""\n"", fixed = TRUE) :"
+"2","
+ "
+"2"," input string 1 is invalid in this locale
+"
+"0","hwGrades2 %>% rowSums() -> hwGrades$交作業次數"
+"0","hwGrades"

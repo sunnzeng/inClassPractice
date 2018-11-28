@@ -1,0 +1,10 @@
+"0","classSurvey$學號[isFemale] -> 女性學號"
+"2","Warning message:
+"
+"2","In strsplit(code, ""\n"", fixed = TRUE) :"
+"2","
+ "
+"2"," input string 1 is invalid in this locale
+"
+"0","hwGradesSubsample$女性 <- hwGradesSubsample$學號 %in% 女性學號"
+"0","hwGradesSubsample"

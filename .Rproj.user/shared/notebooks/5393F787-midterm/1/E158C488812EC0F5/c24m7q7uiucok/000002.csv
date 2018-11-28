@@ -1,0 +1,14 @@
+"0","deadline3 <- ymd_hms(""2018-11-06 00:00:00"",tz=""Asia/Taipei"")"
+"2","Warning message:
+"
+"2","In strsplit(code, ""\n"", fixed = TRUE) :"
+"2","
+ "
+"2"," input string 1 is invalid in this locale
+"
+"0","hwSubmit3 <- hwSubmit[hwSubmit$作業代碼==""Exercise3"",]"
+"0","hwSubmit3 %>%"
+"0","  mutate("
+"0","    截止時差=difftime(deadline3,Timestamp,units=""hours"")"
+"0","  ) -> "
+"0","  hwSubmit3"
