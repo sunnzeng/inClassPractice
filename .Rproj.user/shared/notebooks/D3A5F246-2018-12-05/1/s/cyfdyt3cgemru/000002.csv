@@ -1,0 +1,10 @@
+"0","minMaxFun3(libraryData$""讀者借閱冊數"") -> a1"
+"2","Warning message:
+"
+"2","In strsplit(code, ""\n"", fixed = TRUE) :"
+"2","
+ "
+"2"," input string 1 is invalid in this locale
+"
+"0","minMaxFun3(libraryData$""入學年"") -> a2"
+"0","minMaxFun3(libraryData$""書籍上架年月"") -> a3"

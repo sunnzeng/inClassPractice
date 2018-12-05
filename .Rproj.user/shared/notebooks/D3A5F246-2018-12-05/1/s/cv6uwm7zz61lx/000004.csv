@@ -1,0 +1,7 @@
+"0","library(summarytools)"
+"0","libraryData %>%"
+"0","  select_if("
+"0","    is.numeric"
+"0","  ) %>% "
+"0","  dfSummary() %>% "
+"0","  view(.)"

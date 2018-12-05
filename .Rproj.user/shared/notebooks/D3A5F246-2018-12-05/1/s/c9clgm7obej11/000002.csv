@@ -1,0 +1,20 @@
+"0","minMaxFun4 <- function(x){"
+"0","  max(x) -> maxNumber"
+"0","  min(x) -> minNumber"
+"0","  print(paste0(""最大值："",maxNumber,""最小值："",minNumber))"
+"0","  return(maxNumber)"
+"0","}"
+"2","Warning messages:
+"
+"2","1: "
+"2","In scan(file = file, what = what, sep = sep, quote = quote, dec = dec,  :"
+"2","
+ "
+"2"," EOF within quoted string
+"
+"2","2: "
+"2","In strsplit(code, ""\n"", fixed = TRUE) :"
+"2","
+ "
+"2"," input string 1 is invalid in this locale
+"

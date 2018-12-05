@@ -1,0 +1,5 @@
+"0","not_numeric <- function(x){"
+"0","  !is.numeric(x) ->result"
+"0","  print(result)"
+"0","  return(result)"
+"0","}"
