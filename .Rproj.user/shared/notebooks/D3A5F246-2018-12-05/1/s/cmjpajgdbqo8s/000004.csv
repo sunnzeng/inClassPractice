@@ -1,3 +1,0 @@
-"0","(libraryData$""書籍出版日期"" == 1199)%>% #創造符合1199與否的logicla vector"
-"0","  which(.)%>%"
-"0","  libraryData[.,]"
