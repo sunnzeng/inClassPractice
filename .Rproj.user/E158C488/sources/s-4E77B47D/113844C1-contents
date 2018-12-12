@@ -1,0 +1,210 @@
+---
+title: "2018-12-12"
+output: html_notebook
+---
+```{r}
+knitr::opts_chunk$set(echo = TRUE)
+library(readr); library(dplyr); library(stringr); library(lubridate)
+```
+
+```{r}
+library(readr)
+libraryData <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/master/library100_102.csv")
+```
+
+```{r}
+libraryData$"書籍館藏地" <- as.factor(libraryData$"書籍館藏地")
+storageLocations <-levels(libraryData$"書籍館藏地")
+```
+
+```{r}
+libraryData$"書籍館藏地" %>% as.factor() %>% levels() -> storageLocations
+```
+
+```{r}
+i <- 1
+# 1
+storageLocation_i <- storageLocations[i] 
+# 2
+numericalIndexForSubsample<-which(libraryData$"書籍館藏地" == storageLocation_i)
+subsample_i <- libraryData[numericalIndexForSubsample,]
+# 3
+borrowCount_i <- nrow(subsample_i)
+```
+
+```{r}
+# 0
+allBorrowCount <- vector("numeric",18)
+```
+
+```{r}
+i<-3
+  # 1
+  storageLocation_i <- storageLocations[i] 
+  # 2
+  numericalIndexForSubsample<-which(libraryData$"書籍館藏地" == storageLocation_i)
+  subsample_i <- libraryData[numericalIndexForSubsample,]
+  # 3
+  borrowCount_i <- nrow(subsample_i)
+  # 4
+  allBorrowCount[[i]]<-borrowCount_i
+```
+
+```{r}
+# 0
+allBorrowCount <- vector("numeric",18)
+for(i in c(1:18)){
+  # 1
+  storageLocation_i <- storageLocations[i] 
+  # 2
+  numericalIndexForSubsample<-which(libraryData$"書籍館藏地"==storageLocation_i)
+  subsample_i <- libraryData[numericalIndexForSubsample,]
+  # 3
+  borrowCount_i <- nrow(subsample_i)
+  # 4
+  allBorrowCount[[i]]<-borrowCount_i  
+}
+```
+
+##每個學院借書量
+```{r}
+#先看有幾個學院
+CollegeBorrow <- libraryData$"學院" %>% as.factor() %>% levels() 
+#設定vector有幾個(i)
+allCollegeBorrowCount <- vector("numeric",6)
+#6可用length(collegeBorrow)
+#計算
+for (i in c(1:6)) {
+  #找出一個要計算的學院
+  CollegeBorrow_i <- CollegeBorrow[i]
+  #從原資料中找出有幾個屬於該學院
+  CollegeBorrowSubsample <- which(libraryData$"學院" == CollegeBorrow_i)
+  #將上面的資料取出
+  CollegeBorrowSubsample_i <- libraryData[CollegeBorrowSubsample,]
+  #算出該學院借書量
+  CollegeBorrowCount_i <- nrow(CollegeBorrowSubsample_i)
+  #儲存至每個學院資料
+  allCollegeBorrowCount[[i]] <- CollegeBorrowCount_i
+}
+```
+
+##每個學生的借閱次數
+```{r}
+StudentBorrow <- libraryData$"學號" %>% as.factor() %>% levels()
+#StudentBorrow <- libraryData$"學號" %>% unique()
+allStudentBorrowCount <- vector("numeric",length(StudentBorrow))
+for (i in c(1:length(StudentBorrow))) {
+  StudentBorrow_i <- StudentBorrow[i]
+  StudentBorrowSubsample <- which(libraryData$"學號" == StudentBorrow_i)
+  StudentBorrowSubsample_i <- libraryData[StudentBorrowSubsample,]
+  StudentBorrowCount_i <- nrow(StudentBorrowSubsample_i)
+  allStudentBorrowCount[[i]] <- StudentBorrowCount_i
+ }
+```
+
+```{r}
+libraryData %>%
+  group_by(書籍館藏地) %>%
+  #分好18個
+  summarise(
+    borrowCount=length(學號)
+  ) %>%
+  ungroup -> result
+result
+```
+```{r}
+# 0
+allBorrowCount <- vector("numeric",18)
+for(i in c(1:18)){
+  # 1
+  storageLocation_i <- storageLocations[i] 
+  # 2
+  numericalIndexForSubsample<-which(libraryData$書籍館藏地==storageLocation_i)
+  subsample_i <- libraryData[numericalIndexForSubsample,]
+  # 3
+  borrowCount_i <- length(subsample_i$學號)
+  # 4
+  allBorrowCount[[i]]<-borrowCount_i  
+}
+```
+```{r}
+libraryData %>%
+  mutate(
+    學系 = str_sub(學號,5,6)
+    ##相當於 libraryData$學系 <- str_sub(libraryData$學號,5,6)
+  )
+```
+
+```{r}
+libraryData %>%
+  group_by(學院,入學年) %>%
+  summarise(
+    borrowCount=length(學號)
+  ) %>%
+  ungroup -> result2
+result2
+```
+
+```{r}
+#0 container
+a <- length(libraryData$"學院" %>% unique())
+b <- length(libraryData$"入學年" %>% unique())
+CollegeEntranceYearBorrow <- a*b
+for (i in seq_along(College)) {
+  for (j in seq_along(EntranceYear)) {
+    #1
+    
+    #2
+    
+    #3
+    
+    #4
+    
+  }
+}
+```
+
+#找出每個學生的第一筆借閱時間
+```{r}
+libraryData$"借閱時間" <- ymd_hms(libraryData$"借閱時間",tz = "Asia/Taipei")
+libraryData %>%
+  group_by(學號) %>%
+  summarise(
+    第一筆借閱時間=min(借閱時間)
+  ) %>%
+  ungroup -> result3
+result3
+```
+
+
+```{r}
+libraryData %>%
+  mutate(
+    借閱時間 = ymd_hms(借閱時間,tz="Asia/Taipei")
+  ) %>%
+  group_by(學號) %>%
+  summarise(
+    第一筆借閱時間=min(借閱時間)
+  ) %>%
+  ungroup -> result3
+result3
+```
+
+
+
+
+
+###
+
+$$\sum_{i=1}^{10} i$$
+
+```{r}
+ans<-0
+for(i in 1:10){
+  newlyAdded<-i
+  ans<-ans+newlyAdded
+}
+```
+
+
+
