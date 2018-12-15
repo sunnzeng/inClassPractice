@@ -5,18 +5,18 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "3157602395",
+    "hash" : "0",
     "id" : "DDDA374C",
-    "lastKnownWriteTime" : 1544452492,
-    "last_content_update" : 1544452492633,
+    "lastKnownWriteTime" : 1544860980,
+    "last_content_update" : 1544860980789,
     "path" : "C:/inClassPractice/Exercise5-410773017.Rmd",
     "project_path" : "Exercise5-410773017.Rmd",
     "properties" : {
-        "cursorPosition" : "36,13",
-        "last_setup_crc32" : "4E77B47D7e323608",
-        "scrollLine" : "24"
+        "cursorPosition" : "83,12",
+        "last_setup_crc32" : "C3E6FEF37e323608",
+        "scrollLine" : "78"
     },
-    "relative_order" : 2,
+    "relative_order" : 1,
     "source_on_save" : false,
     "source_window" : "",
     "type" : "r_markdown"

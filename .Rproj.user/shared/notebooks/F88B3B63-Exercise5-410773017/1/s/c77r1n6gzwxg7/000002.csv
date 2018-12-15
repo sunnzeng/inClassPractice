@@ -1,8 +1,4 @@
-"0",",```
-"
-"2","Error: unexpected ',' in "",""
-"
-"2","In addition: "
+"0","subsample <- transcriptData[transcriptData$""學號"" == ""edfeQ7fb8"",]"
 "2","Warning message:
 "
 "2","In strsplit(code, ""\n"", fixed = TRUE) :"

@@ -1,0 +1,13 @@
+"0","libraryData$""???Њ??U?n"" <- as.factor(libraryData$""???Њ??U?n"")"
+"2","Unknown or uninitialised column: '???<U+040A>??U?n'."
+"2","Error in `$<-.data.frame`(`*tmp*`, ""???<U+040A>??U?n"", value = integer(0)) : 
+  replacement has 0 rows, data has 102495
+"
+"2","In addition: "
+"2","Warning message:
+"
+"2","In strsplit(code, ""\n"", fixed = TRUE) :"
+"2","
+ "
+"2"," input string 1 is invalid in this locale
+"

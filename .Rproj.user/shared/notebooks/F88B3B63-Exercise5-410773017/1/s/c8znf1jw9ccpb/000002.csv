@@ -1,0 +1,10 @@
+"0","subsample$學期成績 >= 60 -> subsample$及格 # 1"
+"2","Warning message:
+"
+"2","In strsplit(code, ""\n"", fixed = TRUE) :"
+"2","
+ "
+"2"," input string 1 is invalid in this locale
+"
+"0","總修習學分數=sum(subsample$學分數) # 2"
+"0","總實得學分數=sum(subsample$學分數[subsample$及格]) #3"

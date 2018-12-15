@@ -1,12 +1,12 @@
 {
     "collab_server" : "",
     "contents" : "",
-    "created" : 1544451648999.000,
+    "created" : 1544705618026.000,
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
     "hash" : "0",
-    "id" : "D5239815",
+    "id" : "DBBC01AA",
     "lastKnownWriteTime" : 1544000669,
     "last_content_update" : 1544000669,
     "path" : "C:/inClassPractice/2018-12-05.Rmd",
@@ -14,7 +14,7 @@
     "properties" : {
         "chunk_output_type" : "inline",
         "cursorPosition" : "58,20",
-        "scrollLine" : "47",
+        "scrollLine" : "17",
         "tempName" : "Untitled1"
     },
     "relative_order" : 3,
