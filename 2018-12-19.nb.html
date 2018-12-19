@@ -177,8 +177,153 @@ $(document).ready(function () {
 
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShyZWFkcilcbmxpYnJhcnlEYXRhIDwtIHJlYWRfY3N2KFwiaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3RwZW1hcnRpbi9naXRodWItZGF0YS9tYXN0ZXIvbGlicmFyeTEwMF8xMDIuY3N2XCIpXG5gYGAifQ== -->
+<pre class="r"><code>library(readr)
+libraryData &lt;- read_csv(&quot;https://raw.githubusercontent.com/tpemartin/github-data/master/library100_102.csv&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeURhdGEgJT4lXG4gIGZpbHRlcijlhaXlrbjlubQ9PTEwMCwg5a246ZmiPT1cIuekvuacg+enkeWtuOmZolwiKVxuYGBgIn0= -->
+<pre class="r"><code>libraryData %&gt;%
+  filter(入學年==100, 學院==&quot;社會科學院&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeURhdGEgJT4lXG4gIGZpbHRlcihiZXR3ZWVuKOWFpeWtuOW5tCwxMDAsMTAyKSwg5a246ZmiPT1cIuekvuacg+enkeWtuOmZolwiKVxuI2JldHdlZW7kuZ/og73nlKjlnKjmmYLplpNcbmBgYCJ9 -->
+<pre class="r"><code>libraryData %&gt;%
+  filter(between(入學年,100,102), 學院==&quot;社會科學院&quot;)
+#between也能用在時間</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeURhdGEgJT4lXG4gIGZpbHRlcijlhaXlrbjlubQgJT4lIGJldHdlZW4oMTAwLDEwMiksIOWtuOmZoj09XCLnpL7mnIPnp5HlrbjpmaJcIilcbmBgYCJ9 -->
+<pre class="r"><code>libraryData %&gt;%
+  filter(入學年 %&gt;% between(100,102), 學院==&quot;社會科學院&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<div id="chapter8" class="section level2">
+<h2>Chapter8</h2>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYTwtYygxOjEwKVxudHlwZW9mKGEpXG5gYGAifQ== -->
+<pre class="r"><code>a&lt;-c(1:10)
+typeof(a)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiaW50ZWdlclwiXG4ifQ== -->
+<pre><code>[1] &quot;integer&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYjwtbGlzdChcImFcIixcImJcIiwxOjEwKVxudHlwZW9mKGIpXG5gYGAifQ== -->
+<pre class="r"><code>b&lt;-list(&quot;a&quot;,&quot;b&quot;,1:10)
+typeof(b)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwibGlzdFwiXG4ifQ== -->
+<pre><code>[1] &quot;list&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYjI8LWxpc3QoXCJhXCIsXCJiXCIsMToxMCxcbiAgICAgICAgbGlzdChcbiAgICAgICAgICBcIk1yIFNtaXRoXCIsXG4gICAgICAgICAgZGF0YS5mcmFtZShcbiAgICAgICAgICAgIHYxPWMoMSwyKSxcbiAgICAgICAgICAgIHYyPWMoXCJhYVwiLFwiYmJcIiksXG4gICAgICAgICAgICBzdHJpbmdzQXNGYWN0b3JzID0gRlxuICAgICAgICAgIClcbiAgICAgICAgKSlcbmBgYCJ9 -->
+<pre class="r"><code>b2&lt;-list(&quot;a&quot;,&quot;b&quot;,1:10,
+        list(
+          &quot;Mr Smith&quot;,
+          data.frame(
+            v1=c(1,2),
+            v2=c(&quot;aa&quot;,&quot;bb&quot;),
+            stringsAsFactors = F
+          )
+        ))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShyZWFkcilcbmZpbG1Wb3RpbmdEYXRhIDwtIHJlYWRfY3N2KFwiaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3RwZW1hcnRpbi9jb3Vyc2UtMTA3LTEtcHJvZ3JhbW1pbmctZm9yLWRhdGEtc2NpZW5jZS9tYXN0ZXIvZGF0YS8lRTclQUMlQUMlRTQlQjglODklRTUlQjElODYlRTclQjYlOTMlRTYlQkYlOUYlRTYlOTIlQUQlRTUlQUUlQTIlRTclQUIlQjYlRTglQjMlQkQlRTUlOEYlODMlRTglQjMlQkQlRTQlQkQlOUMlRTUlOTMlODElRTYlOEElOTUlRTclQTUlQTglRTclQjUlOTAlRTYlOUUlOUMlRTYlQTglQTMlRTYlOUMlQUMlMjAtJTIwU2hlZXQxLmNzdlwiKVxuYGBgIn0= -->
+<pre class="r"><code>library(readr)
+filmVotingData &lt;- read_csv(&quot;https://raw.githubusercontent.com/tpemartin/course-107-1-programming-for-data-science/master/data/%E7%AC%AC%E4%B8%89%E5%B1%86%E7%B6%93%E6%BF%9F%E6%92%AD%E5%AE%A2%E7%AB%B6%E8%B3%BD%E5%8F%83%E8%B3%BD%E4%BD%9C%E5%93%81%E6%8A%95%E7%A5%A8%E7%B5%90%E6%9E%9C%E6%A8%A3%E6%9C%AC%20-%20Sheet1.csv&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiUGFyc2VkIHdpdGggY29sdW1uIHNwZWNpZmljYXRpb246XG5jb2xzKFxuICBUaW1lc3RhbXAgPSBjb2xfY2hhcmFjdGVyKCksXG4gIGClWKXNpuikuKZ+pOuk6aFdxefD0qW7pEilzqFeYCA9IGNvbF9jaGFyYWN0ZXIoKSxcbiAgvdC/777cp0GzzLPfxXequrx2pPmkR7OhID0gY29sX2NoYXJhY3RlcigpXG4pXG4ifQ== -->
+<pre><code>Parsed with column specification:
+cols(
+  Timestamp = col_character(),
+  `愼㸵X愼㸵ͦ褸愼㸶~愼㸴攼㹢愼㸴攼㸹愼㸱]挼㸵攼㸷挼㸳ҥ戼㹢愼㸴H愼㸵Ρ^` = col_character(),
+  戼㹤п攼㹦戼㹥ܧA戼㸳̳搼㹦挼㸵w愼㹡戼㹡戼㹣v愼㸴昼㸹愼㸴G戼㸳愼㸱 = col_character()
+)</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZmlsbVZvdGluZ0RhdGEk6KuL6YG45pOH5L2g5pyA5Zac5q2h55qE5b2x54mH5LqM6YOoICU+JVxuICBzdHJfc3BsaXQoXCIsICg/IShieSkpXCIpIC0+IGZpbG1Wb3RpbmdSZXN1bHRcbmZpbG1Wb3RpbmdSZXN1bHRcblxuIyg/IShieSkp5piv5LiN5bC+6ZqoYnnnmoRcbmBgYCJ9 -->
+<pre class="r"><code>filmVotingData$請選擇你最喜歡的影片二部 %&gt;%
+  str_split(&quot;, (?!(by))&quot;) -&gt; filmVotingResult
+filmVotingResult
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIjIwMTgtMTItMTkiDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0K</div>
+#(?!(by))是不尾隨by的</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucGxhc3RpY0NvbnRhaW5lciA8LSBsaXN0KFxuICBncmVlbkJveD1jKFwicGFwZXJcIixcInNjaXNzb3JcIiksICAgICAjIGxvY2F0aW9uIDFcbiAgcmVkQm94PWMoMUwsM0wsMi41KSwgICAgICAgICAgICAgICAjIGxvY2F0aW9uIDJcbiAgYmx1ZUJveD1jKFRSVUUsRkFMU0UsVFJVRSxUUlVFKSAgICAjIGxvY2F0aW9uIDNcbilcbmBgYCJ9 -->
+<pre class="r"><code>plasticContainer &lt;- list(
+  greenBox=c(&quot;paper&quot;,&quot;scissor&quot;),     # location 1
+  redBox=c(1L,3L,2.5),               # location 2
+  blueBox=c(TRUE,FALSE,TRUE,TRUE)    # location 3
+)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucGxhc3RpY0NvbnRhaW5lcltjKFwiZ3JlZW5Cb3hcIixcInJlZEJveFwiKV0gIyBvciBwbGFzdGljQ29udGFpbmVyW2MoMSwyKV1cbiNbXeS/neeVmeavjeWxpOe1kOani1xuYGBgIn0= -->
+<pre class="r"><code>plasticContainer[c(&quot;greenBox&quot;,&quot;redBox&quot;)] # or plasticContainer[c(1,2)]
+#[]保留母層結構</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucGxhc3RpY0NvbnRhaW5lcltjKFwiZ3JlZW5Cb3hcIildICMgb3IgcGxhc3RpY0NvbnRhaW5lcltjKDEsMildXG5jbGFzcyhwbGFzdGljQ29udGFpbmVyW2MoXCJncmVlbkJveFwiKV0pICNsaXN0XG5gYGAifQ== -->
+<pre class="r"><code>plasticContainer[c(&quot;greenBox&quot;)] # or plasticContainer[c(1,2)]
+class(plasticContainer[c(&quot;greenBox&quot;)]) #list</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucGxhc3RpY0NvbnRhaW5lcltbXCJncmVlbkJveFwiXV0gIyBvciBwbGFzdGljQ29udGFpbmVyW1sxXV1cbiNbW11d5Y+q5Y+W6KaB55qE77yM5L2G5Y+q6IO955So5LiA5YCL44CC5LiN5L+d55WZ5q+N5bGk57WQ5qeLXG5gYGAifQ== -->
+<pre class="r"><code>plasticContainer[[&quot;greenBox&quot;]] # or plasticContainer[[1]]
+#[[]]只取要的，但只能用一個。不保留母層結構</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucGxhc3RpY0NvbnRhaW5lciRncmVlbkJveFxuI+S4jeS/neeVmeavjeWxpOe1kOani1xuYGBgIn0= -->
+<pre class="r"><code>plasticContainer$greenBox
+#不保留母層結構</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+</div>
+
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIjIwMTgtMTItMTkiDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KYGBge3Igc2V0dXAsIGluY2x1ZGU9RkFMU0V9DQprbml0cjo6b3B0c19jaHVuayRzZXQoZWNobyA9IFRSVUUpDQpsaWJyYXJ5KGRwbHlyKTsgbGlicmFyeShzdHJpbmdyKTsgbGlicmFyeShsdWJyaWRhdGUpOyBsaWJyYXJ5KHB1cnJyKQ0KYGBgDQoNCmBgYHtyfQ0KbGlicmFyeShyZWFkcikNCmxpYnJhcnlEYXRhIDwtIHJlYWRfY3N2KCJodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vdHBlbWFydGluL2dpdGh1Yi1kYXRhL21hc3Rlci9saWJyYXJ5MTAwXzEwMi5jc3YiKQ0KYGBgDQoNCmBgYHtyfQ0KbGlicmFyeURhdGEgJT4lDQogIGZpbHRlcijlhaXlrbjlubQ9PTEwMCwg5a246ZmiPT0i56S+5pyD56eR5a246ZmiIikNCmBgYA0KDQpgYGB7cn0NCmxpYnJhcnlEYXRhICU+JQ0KICBmaWx0ZXIoYmV0d2VlbijlhaXlrbjlubQsMTAwLDEwMiksIOWtuOmZoj09Iuekvuacg+enkeWtuOmZoiIpDQojYmV0d2VlbuS5n+iDveeUqOWcqOaZgumWkw0KYGBgDQoNCmBgYHtyfQ0KbGlicmFyeURhdGEgJT4lDQogIGZpbHRlcijlhaXlrbjlubQgJT4lIGJldHdlZW4oMTAwLDEwMiksIOWtuOmZoj09Iuekvuacg+enkeWtuOmZoiIpDQpgYGANCg0KIyNDaGFwdGVyOA0KYGBge3J9DQphPC1jKDE6MTApDQp0eXBlb2YoYSkNCmBgYA0KDQpgYGB7cn0NCmI8LWxpc3QoImEiLCJiIiwxOjEwKQ0KdHlwZW9mKGIpDQpgYGANCg0KYGBge3J9DQpiMjwtbGlzdCgiYSIsImIiLDE6MTAsDQogICAgICAgIGxpc3QoDQogICAgICAgICAgIk1yIFNtaXRoIiwNCiAgICAgICAgICBkYXRhLmZyYW1lKA0KICAgICAgICAgICAgdjE9YygxLDIpLA0KICAgICAgICAgICAgdjI9YygiYWEiLCJiYiIpLA0KICAgICAgICAgICAgc3RyaW5nc0FzRmFjdG9ycyA9IEYNCiAgICAgICAgICApDQogICAgICAgICkpDQojUmVjdXJzaXZlIG9iamVjdDrmnrbmp4vlj6/ku6XkuI3lgZznlZnlnKjkuIDlgIvlsaTmrKHogIzkuI3mlrfliqDmt7ENCmBgYA0KDQpgYGB7cn0NCmxpYnJhcnkocmVhZHIpDQpmaWxtVm90aW5nRGF0YSA8LSByZWFkX2NzdigiaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3RwZW1hcnRpbi9jb3Vyc2UtMTA3LTEtcHJvZ3JhbW1pbmctZm9yLWRhdGEtc2NpZW5jZS9tYXN0ZXIvZGF0YS8lRTclQUMlQUMlRTQlQjglODklRTUlQjElODYlRTclQjYlOTMlRTYlQkYlOUYlRTYlOTIlQUQlRTUlQUUlQTIlRTclQUIlQjYlRTglQjMlQkQlRTUlOEYlODMlRTglQjMlQkQlRTQlQkQlOUMlRTUlOTMlODElRTYlOEElOTUlRTclQTUlQTglRTclQjUlOTAlRTYlOUUlOUMlRTYlQTglQTMlRTYlOUMlQUMlMjAtJTIwU2hlZXQxLmNzdiIpDQpgYGANCg0KYGBge3J9DQpmaWxtVm90aW5nRGF0YSToq4vpgbjmk4fkvaDmnIDllpzmraHnmoTlvbHniYfkuozpg6ggJT4lDQogIHN0cl9zcGxpdCgiLCAoPyEoYnkpKSIpIC0+IGZpbG1Wb3RpbmdSZXN1bHQNCmZpbG1Wb3RpbmdSZXN1bHQNCg0KIyg/IShieSkp5piv5LiN5bC+6ZqoYnnnmoQNCmBgYA0KDQpgYGB7cn0NCnBsYXN0aWNDb250YWluZXIgPC0gbGlzdCgNCiAgZ3JlZW5Cb3g9YygicGFwZXIiLCJzY2lzc29yIiksICAgICAjIGxvY2F0aW9uIDENCiAgcmVkQm94PWMoMUwsM0wsMi41KSwgICAgICAgICAgICAgICAjIGxvY2F0aW9uIDINCiAgYmx1ZUJveD1jKFRSVUUsRkFMU0UsVFJVRSxUUlVFKSAgICAjIGxvY2F0aW9uIDMNCikNCmBgYA0KDQpgYGB7cn0NCnBsYXN0aWNDb250YWluZXJbYygiZ3JlZW5Cb3giLCJyZWRCb3giKV0gIyBvciBwbGFzdGljQ29udGFpbmVyW2MoMSwyKV0NCiNbXeS/neeVmeavjeWxpOe1kOaniw0KYGBgDQoNCmBgYHtyfQ0KcGxhc3RpY0NvbnRhaW5lcltjKCJncmVlbkJveCIpXSAjIG9yIHBsYXN0aWNDb250YWluZXJbYygxLDIpXQ0KY2xhc3MocGxhc3RpY0NvbnRhaW5lcltjKCJncmVlbkJveCIpXSkgI2xpc3QNCmBgYA0KDQpgYGB7cn0NCnBsYXN0aWNDb250YWluZXJbWyJncmVlbkJveCJdXSAjIG9yIHBsYXN0aWNDb250YWluZXJbWzFdXQ0KI1tbXV3lj6rlj5bopoHnmoTvvIzkvYblj6rog73nlKjkuIDlgIvjgILkuI3kv53nlZnmr43lsaTntZDmp4sNCmBgYA0KDQpgYGB7cn0NCnBsYXN0aWNDb250YWluZXIkZ3JlZW5Cb3gNCiPkuI3kv53nlZnmr43lsaTntZDmp4sNCmBgYA0KDQo=</div>
 
 
 
