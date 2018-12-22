@@ -1,0 +1,11 @@
+"0","hwGrades <- hwGrades %>%"
+"0","  mutate("
+"0","    作業平均成績 = (hw1+hw2+Exercise3)/3"
+"0","  )"
+"2","Warning message:
+"
+"2","In strsplit(code, ""\n"", fixed = TRUE) :"
+"2","
+ "
+"2"," input string 1 is invalid in this locale
+"

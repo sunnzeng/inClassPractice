@@ -1,0 +1,13 @@
+"0","classSurvey <- mutate("
+"0","  classSurvey,"
+"0","  性別 = as.factor(性別),"
+"0","  入學年 = str_sub(學號,2,4),"
+"0","  團隊活動 = str_detect(課外活動,""團隊活動"")"
+"0",")"
+"2","Warning message:
+"
+"2","In strsplit(code, ""\n"", fixed = TRUE) :"
+"2","
+ "
+"2"," input string 1 is invalid in this locale
+"

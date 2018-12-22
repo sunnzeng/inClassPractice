@@ -1,0 +1,15 @@
+"0","classSurvey %>%"
+"0","  group_by(性別)%>%"
+"0","  summarise("
+"0","    ""人數"" = n(),"
+"0","    ""參加團隊活動人數"" = sum(團隊活動),"
+"0","    ""參加團隊活動比例"" = 參加團隊活動人數/人數"
+"0","  ) -> result"
+"2","Warning message:
+"
+"2","In strsplit(code, ""\n"", fixed = TRUE) :"
+"2","
+ "
+"2"," input string 1 is invalid in this locale
+"
+"0","result"
