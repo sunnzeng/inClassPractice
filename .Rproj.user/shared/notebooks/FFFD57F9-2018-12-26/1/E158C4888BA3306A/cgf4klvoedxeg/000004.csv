@@ -1,0 +1,4 @@
+"0","plotly_4070_neda$x$layout$shapes[[1]]$opacity<-0.8"
+"2","Error in plotly_4070_neda$x$layout$shapes[[1]]$opacity <- 0.8 : 
+  object 'plotly_4070_neda' not found
+"
