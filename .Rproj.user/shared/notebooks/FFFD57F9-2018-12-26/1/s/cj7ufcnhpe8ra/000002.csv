@@ -1,0 +1,20 @@
+"0","library(readr)"
+"0","library(tidyr)"
+"0","libraryData <- read_csv(""https://raw.githubusercontent.com/tpemartin/github-data/master/libraryData2.csv"")"
+"2","Parsed with column specification:
+cols(
+  學號 = col_character(),
+  書籍類別 = col_character(),
+  書籍名稱 = col_character(),
+  書籍出版日期 = col_integer(),
+  書籍館藏地 = col_character(),
+  書籍上架年月 = col_date(format = """"),
+  入學年 = col_integer(),
+  讀者年級 = col_integer(),
+  學院 = col_character(),
+  借閱時間 = col_datetime(format = """"),
+  學期 = col_integer(),
+  學年 = col_integer(),
+  學系 = col_character()
+)
+"
