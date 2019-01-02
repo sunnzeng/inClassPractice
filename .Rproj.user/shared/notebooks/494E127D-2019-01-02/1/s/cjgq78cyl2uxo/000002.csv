@@ -1,0 +1,5 @@
+"0","i<-3"
+"0","totalCreditsOfStudent_i<-function(i){"
+"0","  allStudentID[i] %>% totalCredits"
+"0","}"
+"0","answerList<-map(seq_along(allStudentID),totalCreditsOfStudent_i)"

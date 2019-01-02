@@ -1,0 +1,13 @@
+"0","classSurvey %>%"
+"0","  mutate("
+"0","    性別=as.factor(性別),"
+"0","    入學年=str_sub(學號,2,4),"
+"0","    團隊活動=(課外活動==""團隊活動"")#只有完全只參加團隊活動的會是T"
+"0","  ) -> classSurvey1; classSurvey1"
+"2","Warning message:
+"
+"2","In strsplit(code, ""\n"", fixed = TRUE) :"
+"2","
+ "
+"2"," input string 1 is invalid in this locale
+"

@@ -1,0 +1,6 @@
+"0","examplefun2 <- function(a,b){"
+"0","  a+b"
+"0","}"
+"0","examplefun2(10,b)"
+"2","Error in a + b : non-numeric argument to binary operator
+"
