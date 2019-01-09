@@ -1,0 +1,14 @@
+"0","transcriptData[transcriptData$學年==104&"
+"0","                 transcriptData$學期==1&"
+"0","                 transcriptData$科目名稱==""ZT13"",]$系別%>%shannon1()"
+"1","[1]"
+"1"," 2.418119"
+"1","
+"
+"2","Warning message:
+"
+"2","In strsplit(code, ""\n"", fixed = TRUE) :"
+"2","
+ "
+"2"," input string 1 is invalid in this locale
+"

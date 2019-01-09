@@ -1,0 +1,285 @@
+---
+title: "finalPractice"
+output: html_notebook
+---
+```{r}
+library(readr); library(dplyr); library(stringr); library(lubridate)
+```
+
+
+```{r}
+library(readr)
+libraryData <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/master/library100_102.csv")
+```
+
+```{r}
+libraryData%>%
+  mutate(
+    學院=as.factor(學院),
+    書籍館藏地=as.factor(書籍館藏地),
+    書籍類別=as.factor(書籍類別),
+    借閱時間=ymd_hms(借閱時間,tz="Asia/Taipei")
+  )->libraryData
+```
+
+```{r}
+## 1
+max(libraryData$讀者借閱冊數)-> maxNumber
+min(libraryData$讀者借閱冊數)-> minNumber
+paste0("最大值： ",maxNumber, " 最小值： ",minNumber)
+
+## 2
+max(libraryData$入學年)-> maxNumber
+min(libraryData$入學年)-> minNumber
+paste0("最大值： ",maxNumber, " 最小值： ",minNumber)
+
+## 3
+max(libraryData$書籍上架年月)-> maxNumber
+min(libraryData$書籍上架年月)-> minNumber
+paste0("最大值： ",maxNumber, " 最小值： ",minNumber)
+```
+
+```{r}
+minMaxFun <- function(x){
+  max(x)->maxNumber
+  min(x)->minNumber
+  paste0("最大值：",maxNumber,"最小值：",minNumber)
+  
+}
+```
+
+```{r}
+minMaxFun(libraryData$讀者借閱冊數)
+
+minMaxFun(libraryData$入學年)
+
+minMaxFun(libraryData$書籍上架年月)
+```
+
+###
+
+```{r}
+libraryData %>%
+  select(讀者借閱冊數,書籍出版日期) 
+```
+```{r}
+libraryData %>%
+  select(讀者借閱冊數,書籍出版日期) %>%
+  summarise(
+    讀者平均借閱冊數=mean(讀者借閱冊數),
+    最小書籍出版日期=min(書籍出版日期,na.rm=T),
+    最大書籍出版日期=max(書籍出版日期,na.rm=T)
+  )
+```
+
+```{r}
+library(summarytools)
+libraryData %>%
+  select_if(
+    is.numeric
+  ) %>% summarytools::dfSummary() %>% summarytools::view(.)
+```
+
+```{r}
+(libraryData$書籍出版日期==9999) -> logiIndex # 回傳每筆書籍出版日期是否為9999
+ libraryData$書籍出版日期[logiIndex] <-  # 選出為9999的樣本
+   NA # 將它換成NA
+```
+
+```{r}
+(libraryData$書籍出版日期==9999) -> logiIndex # 回傳每筆書籍出版日期是否為9999
+ libraryData$書籍出版日期[which(logiIndex)] <-  # 選出為9999的樣本
+   NA # 將它換成NA
+```
+
+####Chapter7
+```{r}
+library(readr)
+libraryData <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/master/library100_102.csv")
+```
+```{r}
+libraryData$書籍館藏地%>%
+  as.factor()%>%
+  levels()->storageLocations
+storageLocations
+```
+
+```{r}
+i<-1
+# 1第i個館藏地的值是什麼？
+storageLocation_i <- storageLocations[i] 
+# 2如何選出符合i館藏地要求的資料？
+numericalIndexForSubsample<-which(libraryData$書籍館藏地==storageLocation_i)
+subsample_i <- libraryData[numericalIndexForSubsample,]
+# 3選出上述的子樣本後要如何算出
+borrowCount_i <- nrow(subsample_i)
+```
+
+```{r}
+# 0
+allBorrowCount <- vector("numeric",18)
+i<-1
+  # 1
+  storageLocation_i <- storageLocations[i] 
+  # 2
+  numericalIndexForSubsample<-which(libraryData$書籍館藏地==storageLocation_i)
+  subsample_i <- libraryData[numericalIndexForSubsample,]
+  # 3
+  borrowCount_i <- nrow(subsample_i)
+  # 4
+  allBorrowCount[[i]]<-borrowCount_i
+```
+
+```{r}
+allBorrowCount <- vector("numeric",18)
+for (i in seq_along(storageLocations)) {
+  # 1
+   storageLocation_i <- storageLocations[i] 
+  # 2
+  numericalIndexForSubsample<-which(libraryData$書籍館藏地==storageLocation_i)
+  subsample_i <- libraryData[numericalIndexForSubsample,]
+  # 3
+  borrowCount_i <- nrow(subsample_i)
+  # 4
+  allBorrowCount[[i]]<-borrowCount_i
+}
+```
+#每院借書量
+```{r}
+libraryData$學院 %>%
+  as.factor()%>%
+  levels()->borrow
+allBorrowCount1 <- vector("numeric",6)
+for (i in c(1:6)) {
+  borrowCollege_i <- borrow[i]
+  collegesubsample <- which(libraryData$學院 == borrowCollege_i)
+  collegesubsample_i <- libraryData[collegesubsample,]
+  collegeCount_i <- nrow(collegesubsample_i)
+  allBorrowCount1[[i]] <- collegeCount_i
+}
+
+```
+
+```{r}
+libraryData %>%
+  group_by(書籍館藏地) %>% # 依書籍館藏地不同形成不同subsample_i
+  summarise(
+    borrowCount=n() #每個subsample_i計算 borrowCount=nrow(subsample_i)
+  ) -> result
+result 
+```
+
+```{r}
+libraryData%>%
+  group_by(學院)%>%
+  summarise(
+    borrowCountCollege=n()
+  )->result1
+result1
+```
+
+```{r}
+libraryData %>%
+  group_by(學院,入學年) %>%
+  summarise(
+    borrowCount=length(學號)
+  ) -> result2
+result2
+```
+
+```{r}
+libraryData%>%
+  group_by(學號)%>%
+  summarise(
+    borrowCount=n()
+  )->result3
+result3
+```
+
+```{r}
+libraryData %>%
+  filter(入學年==100, 學院=="社會科學院")
+```
+
+```{r}
+libraryData %>%
+  filter(between(入學年,100,102), 學院=="社會科學院")
+```
+
+####Chapter8
+```{r}
+a<-c(1:10)
+typeof(a)
+```
+
+```{r}
+b<-list("a","b",1:10)
+typeof(b)
+```
+
+```{r}
+b2<-list("a","b",1:10,
+        list(
+          "Mr Smith",
+          data.frame(
+            v1=c(1,2),
+            v2=c("aa","bb"),
+            stringsAsFactors = F
+          )
+        ))
+```
+
+```{r}
+library(readr)
+filmVotingData <- read_csv("https://raw.githubusercontent.com/tpemartin/course-107-1-programming-for-data-science/master/data/%E7%AC%AC%E4%B8%89%E5%B1%86%E7%B6%93%E6%BF%9F%E6%92%AD%E5%AE%A2%E7%AB%B6%E8%B3%BD%E5%8F%83%E8%B3%BD%E4%BD%9C%E5%93%81%E6%8A%95%E7%A5%A8%E7%B5%90%E6%9E%9C%E6%A8%A3%E6%9C%AC%20-%20Sheet1.csv")
+```
+
+```{r}
+filmVotingData$請選擇你最喜歡的影片二部 %>%
+  str_split(", (?!(by))") -> filmVotingResult
+#filmVotingResult
+#(?!a)是文字處理的規則，指得是「不尾隨a這個字」
+```
+
+```{r}
+filmVotingResult %>% unlist 
+```
+
+```{r}
+plasticContainer <- list(
+  greenBox=c("paper","scissor"),     # location 1
+  redBox=c(1L,3L,2.5),               # location 2
+  blueBox=c(TRUE,FALSE,TRUE,TRUE)    # location 3
+)
+```
+
+```{r}
+plasticContainer[c("greenBox","redBox")] # or plasticContainer[c(1,2)]
+```
+
+```{r}
+plasticContainer[c("greenBox")]# or plasticContainer[c(1,2)]
+plasticContainer[c("greenBox")]$greenBox[1]
+```
+
+```{r}
+plasticContainer[["greenBox"]] # or plasticContainer[[1]]
+plasticContainer[["greenBox"]][1]
+```
+
+```{r}
+plasticContainer$greenBox
+plasticContainer$greenBox[1]
+```
+
+##[]: 可取多個內容元素，但會保留原本資料母層結構關係。
+##[[]],$: 只可取「一個」元素，不會保留母層結構關係。
+
+
+```{r}
+download.file("https://github.com/tpemartin/github-data/blob/master/plotly_4070_neda.Rda?raw=true",destfile = "plotly_4070_neda.Rda")
+load("plotly_4070_neda.Rda")
+library(plotly)
+plotly_4070_neda
+```
+

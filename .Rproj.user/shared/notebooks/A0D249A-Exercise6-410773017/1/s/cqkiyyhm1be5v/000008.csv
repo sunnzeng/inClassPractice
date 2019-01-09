@@ -1,0 +1,6 @@
+"0","hwGrades %>%"
+"0","  mutate("
+"0","    hw1=na2zero(hw1),"
+"0","    hw2=na2zero(hw2),"
+"0","    Exercise3=na2zero(Exercise3)"
+"0","  ) -> hwGrades; hwGrades"

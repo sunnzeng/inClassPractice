@@ -1,4 +1,0 @@
-"0","shannon <- function(x){"
-"0","  table(x)/length(x)%>%"
-"0","    -sum(.*log(.))"
-"0","}"

@@ -1,0 +1,10 @@
+"0","(libraryData$書籍出版日期==9999) -> logiIndex # 回傳每筆書籍出版日期是否為9999"
+"2","Warning message:
+"
+"2","In strsplit(code, ""\n"", fixed = TRUE) :"
+"2","
+ "
+"2"," input string 1 is invalid in this locale
+"
+"0"," libraryData$書籍出版日期[logiIndex] <-  # 選出為9999的樣本"
+"0","   NA # 將它換成NA"

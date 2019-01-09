@@ -1,0 +1,13 @@
+"0","libraryData %>%"
+"0","  group_by(書籍館藏地) %>% # 依書籍館藏地不同形成不同subsample_i"
+"0","  summarise("
+"0","    borrowCount=n() #每個subsample_i計算 borrowCount=nrow(subsample_i)"
+"0","  ) -> result"
+"2","Warning message:
+"
+"2","In strsplit(code, ""\n"", fixed = TRUE) :"
+"2","
+ "
+"2"," input string 1 is invalid in this locale
+"
+"0","result "

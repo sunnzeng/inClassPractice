@@ -1,0 +1,6 @@
+"0","shannon<-function(x){"
+"0","  x %>% table %>%"
+"0","    {./sum(.)} -> p"
+"0","  -sum(p*log(p)) -> ShannonIndex   "
+"0","  return(ShannonIndex)"
+"0","}"

@@ -1,0 +1,7 @@
+"0","hwGrades %>%"
+"0","  mutate_if("
+"0","    is.numeric,"
+"0","    funs("
+"0","      na2zero"
+"0","    )"
+"0","  ) -> hwGrades; hwGrades"

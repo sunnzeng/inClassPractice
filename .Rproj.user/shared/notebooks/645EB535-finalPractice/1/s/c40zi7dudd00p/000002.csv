@@ -1,0 +1,6 @@
+"0","libraryData%>%"
+"0","  group_by(學院)%>%"
+"0","  summarise("
+"0","    borrowCountCollege=n()"
+"0","  )->result1"
+"0","result1"

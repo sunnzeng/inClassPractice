@@ -1,0 +1,5 @@
+"0","shannon3 <- function(x){"
+"0","  table(x)/length(x)%>%"
+"0","    -sum(.*log(.))->shannonIndex3"
+"0","  return(shannonIndex3)"
+"0","}"

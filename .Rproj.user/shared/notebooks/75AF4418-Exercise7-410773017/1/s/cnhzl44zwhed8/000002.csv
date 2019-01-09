@@ -1,0 +1,16 @@
+"0","grade4Years %>%"
+"0","  mutate("
+"0","    PR差異abs=abs(學屆PR-學屆PR不含通識)"
+"0","  ) %>% #View"
+"0","  group_by(學系) %>%"
+"0","  summarise("
+"0","    PR差異中位數=median(PR差異abs)"
+"0","  ) -> PRdiffEachDepartment"
+"2","Warning message:
+"
+"2","In strsplit(code, ""\n"", fixed = TRUE) :"
+"2","
+ "
+"2"," input string 1 is invalid in this locale
+"
+"0","PRdiffEachDepartment"

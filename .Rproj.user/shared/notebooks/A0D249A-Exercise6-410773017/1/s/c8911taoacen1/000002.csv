@@ -1,0 +1,16 @@
+"0","hwGrades %>%"
+"0","  group_by(性別) %>%"
+"0","  mutate("
+"0","    作業平均成績=(hw1+hw2+Exercise3)/3"
+"0","  ) -> hwGrades; hwGrades"
+"2","Error in grouped_df_impl(data, unname(vars), drop) : 
+  Column `性別` is unknown
+"
+"2","In addition: "
+"2","Warning message:
+"
+"2","In strsplit(code, ""\n"", fixed = TRUE) :"
+"2","
+ "
+"2"," input string 1 is invalid in this locale
+"

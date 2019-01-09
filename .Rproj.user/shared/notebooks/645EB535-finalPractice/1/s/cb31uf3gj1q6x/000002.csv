@@ -1,0 +1,18 @@
+"0","libraryData$學院 %>%"
+"0","  as.factor()%>%"
+"0","  levels()->borrow"
+"2","Warning message:
+"
+"2","In grepl(""|||"", what, fixed = TRUE) :"
+"2","
+ "
+"2"," input string 1 is invalid in this locale
+"
+"0","allBorrowCount1 <- vector(""numeric"",6)"
+"0","for (i in c(1:6)) {"
+"0","  borrowCollege_i <- borrow[i]"
+"0","  collegesubsample <- which(libraryData$學院 == borrowCollege_i)"
+"0","  collegesubsample_i <- libraryData[collegesubsample,]"
+"0","  collegeCount_i <- nrow(collegesubsample_i)"
+"0","  allBorrowCount1[[i]] <- collegeCount_i"
+"0","}"

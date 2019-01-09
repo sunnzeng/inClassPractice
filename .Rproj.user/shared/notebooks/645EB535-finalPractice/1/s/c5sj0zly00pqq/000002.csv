@@ -1,0 +1,15 @@
+"0","i<-1"
+"2","Warning message:
+"
+"2","In strsplit(code, ""\n"", fixed = TRUE) :"
+"2","
+ "
+"2"," input string 1 is invalid in this locale
+"
+"0","# 1第i個館藏地的值是什麼？"
+"0","storageLocation_i <- storageLocations[i] "
+"0","# 2如何選出符合i館藏地要求的資料？"
+"0","numericalIndexForSubsample<-which(libraryData$書籍館藏地==storageLocation_i)"
+"0","subsample_i <- libraryData[numericalIndexForSubsample,]"
+"0","# 3選出上述的子樣本後要如何算出"
+"0","borrowCount_i <- nrow(subsample_i)"

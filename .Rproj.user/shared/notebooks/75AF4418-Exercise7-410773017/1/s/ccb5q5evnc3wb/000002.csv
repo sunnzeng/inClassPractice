@@ -1,0 +1,13 @@
+"0","gradeEachYear1 <- gradeEachYear1 %>%"
+"0","  group_by(學屆,學系,學年)%>%"
+"0","  mutate("
+"0","    學年PR=percent_rank(學年平均成績)*100"
+"0","  )%>%"
+"0","  ungroup()"
+"2","Warning message:
+"
+"2","In strsplit(code, ""\n"", fixed = TRUE) :"
+"2","
+ "
+"2"," input string 1 is invalid in this locale
+"

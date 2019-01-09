@@ -1,0 +1,11 @@
+"0","(transcriptData$學年==100 & "
+"0","   transcriptData$學期==1 &"
+"0","   transcriptData$`必選修類別（必∕選∕通）`==""通"") -> filteredLogiIndex"
+"2","Warning message:
+"
+"2","In strsplit(code, ""\n"", fixed = TRUE) :"
+"2","
+ "
+"2"," input string 1 is invalid in this locale
+"
+"0","transcriptData[filteredLogiIndex,]$科目名稱 %>% unique -> 通識科目總表"

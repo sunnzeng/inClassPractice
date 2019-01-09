@@ -1,0 +1,210 @@
+---
+title: "2018-12-12"
+output: html_notebook
+---
+```{r}
+knitr::opts_chunk$set(echo = TRUE)
+library(readr); library(dplyr); library(stringr); library(lubridate)
+```
+
+```{r}
+library(readr)
+libraryData <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/master/library100_102.csv")
+```
+
+```{r}
+libraryData$"???Њ??U?n" <- as.factor(libraryData$"???Њ??U?n")
+storageLocations <-levels(libraryData$"???Њ??U?n")
+```
+
+```{r}
+libraryData$"???Њ??U?n" %>% as.factor() %>% levels() -> storageLocations
+```
+
+```{r}
+i <- 1
+# 1
+storageLocation_i <- storageLocations[i] 
+# 2
+numericalIndexForSubsample<-which(libraryData$"???Њ??U?n" == storageLocation_i)
+subsample_i <- libraryData[numericalIndexForSubsample,]
+# 3
+borrowCount_i <- nrow(subsample_i)
+```
+
+```{r}
+# 0
+allBorrowCount <- vector("numeric",18)
+```
+
+```{r}
+i<-3
+  # 1
+  storageLocation_i <- storageLocations[i] 
+  # 2
+  numericalIndexForSubsample<-which(libraryData$"???Њ??U?n" == storageLocation_i)
+  subsample_i <- libraryData[numericalIndexForSubsample,]
+  # 3
+  borrowCount_i <- nrow(subsample_i)
+  # 4
+  allBorrowCount[[i]]<-borrowCount_i
+```
+
+```{r}
+# 0
+allBorrowCount <- vector("numeric",18)
+for(i in c(1:18)){
+  # 1
+  storageLocation_i <- storageLocations[i] 
+  # 2
+  numericalIndexForSubsample<-which(libraryData$"???Њ??U?n"==storageLocation_i)
+  subsample_i <- libraryData[numericalIndexForSubsample,]
+  # 3
+  borrowCount_i <- nrow(subsample_i)
+  # 4
+  allBorrowCount[[i]]<-borrowCount_i  
+}
+```
+
+##????{?@?؏???
+```{r}
+#???ŗL???{?@
+CollegeBorrow <- libraryData$"?{?@" %>% as.factor() %>% levels() 
+#?ݒ?vector?L????(i)
+allCollegeBorrowCount <- vector("numeric",6)
+#6?plength(collegeBorrow)
+#?v?Z
+for (i in c(1:6)) {
+  #?Q?o???v?v?Z?I?{?@
+  CollegeBorrow_i <- CollegeBorrow[i]
+  #?n?????????Q?o?L???????Y?{?@
+  CollegeBorrowSubsample <- which(libraryData$"?{?@" == CollegeBorrow_i)
+  #?????ʓI???????o
+  CollegeBorrowSubsample_i <- libraryData[CollegeBorrowSubsample,]
+  #?Z?o?Y?{?@?؏???
+  CollegeBorrowCount_i <- nrow(CollegeBorrowSubsample_i)
+  #?ב???????{?@????
+  allCollegeBorrowCount[[i]] <- CollegeBorrowCount_i
+}
+```
+
+##????{???I?????????
+```{r}
+StudentBorrow <- libraryData$"?{?j" %>% as.factor() %>% levels()
+#StudentBorrow <- libraryData$"?{?j" %>% unique()
+allStudentBorrowCount <- vector("numeric",length(StudentBorrow))
+for (i in c(1:length(StudentBorrow))) {
+  StudentBorrow_i <- StudentBorrow[i]
+  StudentBorrowSubsample <- which(libraryData$"?{?j" == StudentBorrow_i)
+  StudentBorrowSubsample_i <- libraryData[StudentBorrowSubsample,]
+  StudentBorrowCount_i <- nrow(StudentBorrowSubsample_i)
+  allStudentBorrowCount[[i]] <- StudentBorrowCount_i
+ }
+```
+
+```{r}
+libraryData %>%
+  group_by(???Њ??U?n) %>%
+  #???D18??
+  summarise(
+    borrowCount=length(?{?j)
+  ) %>%
+  ungroup -> result
+result
+```
+```{r}
+# 0
+allBorrowCount <- vector("numeric",18)
+for(i in c(1:18)){
+  # 1
+  storageLocation_i <- storageLocations[i] 
+  # 2
+  numericalIndexForSubsample<-which(libraryData$???Њ??U?n==storageLocation_i)
+  subsample_i <- libraryData[numericalIndexForSubsample,]
+  # 3
+  borrowCount_i <- length(subsample_i$?{?j)
+  # 4
+  allBorrowCount[[i]]<-borrowCount_i  
+}
+```
+```{r}
+libraryData %>%
+  mutate(
+    ?{?n = str_sub(?{?j,5,6)
+    ##???c?? libraryData$?{?n <- str_sub(libraryData$?{?j,5,6)
+  )
+```
+
+```{r}
+libraryData %>%
+  group_by(?{?@,???{?N) %>%
+  summarise(
+    borrowCount=length(?{?j)
+  ) %>%
+  ungroup -> result2
+result2
+```
+
+```{r}
+#0 container
+a <- length(libraryData$"?{?@" %>% unique())
+b <- length(libraryData$"???{?N" %>% unique())
+CollegeEntranceYearBorrow <- a*b
+for (i in seq_along(College)) {
+  for (j in seq_along(EntranceYear)) {
+    #1
+    
+    #2
+    
+    #3
+    
+    #4
+    
+  }
+}
+```
+
+#?Q?o????{???I?????M?????????
+```{r}
+libraryData$"?????????" <- ymd_hms(libraryData$"?????????",tz = "Asia/Taipei")
+libraryData %>%
+  group_by(?{?j) %>%
+  summarise(
+    ?????M?????????=min(?????????)
+  ) %>%
+  ungroup -> result3
+result3
+```
+
+
+```{r}
+libraryData %>%
+  mutate(
+    ????????? = ymd_hms(?????????,tz="Asia/Taipei")
+  ) %>%
+  group_by(?{?j) %>%
+  summarise(
+    ?????M?????????=min(?????????)
+  ) %>%
+  ungroup -> result3
+result3
+```
+
+
+
+
+
+###
+
+$$\sum_{i=1}^{10} i$$
+
+```{r}
+ans<-0
+for(i in 1:10){
+  newlyAdded<-i
+  ans<-ans+newlyAdded
+}
+```
+
+
+
